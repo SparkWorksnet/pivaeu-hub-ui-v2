@@ -2,9 +2,9 @@
 import type { PanelProps } from 'primevue/panel'
 import type { Facet } from '../../../utils/types'
 import { useDataTruncator } from '@/composables/useDataTruncator'
-import Panel from 'primevue/panel'
 import PhCaretDown from '~icons/ph/caret-down'
 import Typography from '../typography/Typography.vue'
+import { ref } from 'vue'
 
 const props = defineProps<{
   title?: string
@@ -16,7 +16,7 @@ defineSlots<{
 }>()
 
 const model = defineModel<string[]>()
-const collapsed = defineModel<boolean>('collapsed')
+const collapsed = ref(false)
 
 const {
   data: truncatedFacets,
@@ -87,43 +87,33 @@ const panelPreset = {
 </script>
 
 <template>
-  <Panel
-    v-model:collapsed="collapsed"
+  <div
     class="flex min-w-64 flex-col bg-surface text-surface-text rounded-custom"
-    :pt="panelPreset"
-    :pt-options="{ mergeSections: false, mergeProps: false }"
-    toggleable
   >
-    <template #header>
-      <div class="flex w-full flex-col justify-center gap-2">
-        <slot
-          name="header"
-          :title="props.title"
+    <div class="flex items-center justify-between w-full gap-2 cursor-pointer px-4 py-4 pr-6" 
+      @click="collapsed = !collapsed"
+    >
+      <slot
+        name="header"
+        :title="props?.title"
+      >
+        <Typography
+          variant="by-heading-5"
+          class="flex flex-row justify-between text-surface-text"
         >
-          <Typography
-            variant="by-heading-5"
-            class="flex flex-row justify-between text-surface-text"
-          >
-            {{ title }}
-            <!-- <PhCaretDown class="text-lg font-semibold" /> -->
-          </Typography>
-        </slot>
-      </div>
-    </template>
-    <template #togglericon="{ collapsed }">
+          {{ title }}
+        </Typography>
+      </slot>
       <PhCaretDown
         class="text-lg font-semibold transition-transform duration-200 ease-in-out"
-        :class="{
-          'rotate-180': !collapsed,
-        }"
+        :class="{ 'rotate-180': !collapsed }"
       />
-    </template>
-    <div class="flex-1">
+    </div>
+    <div v-if="!collapsed" class="flex-1">
       <ul class="flex flex-col divide-y border-neutral-20">
         <li
           v-for="(facet, i) in truncatedFacets"
           :key="i"
-          class=""
         >
           <label class="relative">
             <input
@@ -166,5 +156,5 @@ const panelPreset = {
         </li>
       </ul>
     </div>
-  </Panel>
+  </div>
 </template>
