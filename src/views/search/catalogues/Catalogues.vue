@@ -6,11 +6,11 @@ import { useDcatApCatalogSearch } from '@/sdk'
 import CataloguesList from '@/views/search/catalogues/CataloguesList.vue'
 import FacetBurgerButton from '@/views/search/FacetBurgerButton.vue'
 import SearchBar from '@/views/search/SearchBar.vue'
-import Sidebar from 'primevue/sidebar'
 import { ref, toRef } from 'vue'
 import { useSearchParams } from '../useSearchParams'
 import { useSelectedFacetsCatalog } from '../useSelectedFacets'
 import { useCatalogs } from './useCatalogs'
+import PhXCircle from '~icons/ph/x-circle'
 
 const searchInput = defineModel<string>('searchInput', { required: true })
 const hvdModel = defineModel<boolean>('hvd', { required: true })
@@ -48,56 +48,68 @@ const {
 
 <template>
   <!-- Facets toggle sidebar for small devices -->
-  <Sidebar
-    v-model:visible="sidebarVisible"
-    header="Search filter"
+  <div 
+    v-if="sidebarVisible"
+    class="fixed inset-0 z-50 flex"
   >
-    <FacetSidebar
-      v-model:model-value="selectedFacets"
-      v-model:hvd="hvdModel"
-      v-model:livedata="livedataModel"
-      :public="true"
-      mobile
-      :facets="availableFacetsFormatted"
-    />
-  </Sidebar>
+    <div
+      class="absolute inset-0 bg-black/70"
+      @click="toggleFacetSidebar"
+    ></div>
+
+    <div
+      class="relative z-10 max-w-80 bg-hite shadow-xl p-4 overflow-auto  bg-white"
+    >
+      <header class="text-lg font-bold flex justify-between">
+        Search filter
+        <PhXCircle @click="toggleFacetSidebar" class="cursor-pointer text-xl" />
+      </header>
+      <FacetSidebar
+        v-model:model-value="selectedFacets"
+        v-model:hvd="hvdModel"
+        v-model:livedata="livedataModel"
+        :public="true"
+        mobile
+        :facets="availableFacetsFormatted" />
+    </div>
+  </div>
   <div class="container relative mx-auto grid max-w-content-max grid-cols-1 sm:grid-cols-[minmax(auto,20rem)_1fr]">
     <!-- Permanent facets for large devices -->
     <div
       name="sidebar"
-      class="relative hidden sm:block sm:max-w-96 lg:min-w-[420px]"
-    >
+      class="relative hidden sm:block sm:max-w-96 lg:min-w-[420px]">
       <div
         name="stickysidey"
-        class="sticky top-0 h-screen"
-      >
+        class="sticky top-0 h-screen">
         <FacetSidebar
           v-model:model-value="selectedFacets"
           v-model:hvd="hvdModel"
           v-model:livedata="livedataModel"
           :public="true"
           mobile
-          :facets="availableFacetsFormatted"
-        />
+          :facets="availableFacetsFormatted" />
       </div>
     </div>
-    <div name="content" class="flex flex-col overflow-x-auto">
-      <FacetBurgerButton class="sm:hidden" :open-sidebar="toggleFacetSidebar" />
-      <SearchBar v-model="searchInput" :search-action="doSearch" />
+    <div
+      name="content"
+      class="flex flex-col overflow-x-auto">
+      <FacetBurgerButton
+        class="sm:hidden"
+        :open-sidebar="toggleFacetSidebar" />
+      <SearchBar
+        v-model="searchInput"
+        :search-action="doSearch" />
       <div class="flex-1">
         <section
           name="datasets"
-          class="mb-10 flex flex-col gap-6 px-6"
-        >
+          class="mb-10 flex flex-col gap-6 px-6">
           <SelectedFacetsOverview
             v-model="selectedFacets"
-            :facets="availableFacetsFormatted"
-          />
+            :facets="availableFacetsFormatted" />
           <div class="flex flex-col gap-6">
             <SearchInfoPanel
               v-model:direction="sortDirection"
-              v-model:sort="sort"
-            >
+              v-model:sort="sort">
               {{ getSearchResultsCount }} Catalogues
             </SearchInfoPanel>
           </div>
@@ -106,8 +118,7 @@ const {
             :get-search-results-pages-count="getSearchResultsPagesCount"
             :is-loading="isLoading"
             :is-fetching="isFetching"
-            :show-only-public="showOnlyPublic"
-          />
+            :show-only-public="showOnlyPublic" />
         </section>
       </div>
     </div>

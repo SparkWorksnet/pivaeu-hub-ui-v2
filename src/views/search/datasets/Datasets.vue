@@ -11,6 +11,8 @@ import { ref, toRef } from 'vue'
 import { useSearchParams } from '../useSearchParams'
 import { useSelectedFacets } from '../useSelectedFacets'
 import { useDatasetSearchView } from './useDatasetsSearchView'
+import PhXCircle from '~icons/ph/x-circle'
+
 
 const searchInput = defineModel<string>('searchInput', { required: true })
 const hvdModel = defineModel<boolean>('hvd', { required: true })
@@ -48,19 +50,32 @@ const {
 
 <template>
   <!-- Facets toggle sidebar for small devices -->
-  <Sidebar
-    v-model:visible="sidebarVisible"
-    header="Search filter"
+  <div 
+    v-if="sidebarVisible"
+    class="fixed inset-0 z-50 flex"
   >
-    <FacetSidebar
-      v-model:model-value="selectedFacets"
-      v-model:hvd="hvdModel"
-      v-model:livedata="livedataModel"
-      :public="true"
-      mobile
-      :facets="availableFacetsFormatted"
-    />
-  </Sidebar>
+    <div
+      class="absolute inset-0 bg-black/70"
+      @click="toggleFacetSidebar"
+    ></div>
+
+    <div
+      class="relative z-10 max-w-80 bg-hite shadow-xl p-4 overflow-auto bg-white"
+    >
+      <header class="text-lg font-bold flex justify-between">
+        Search filter
+        <PhXCircle @click="toggleFacetSidebar" class="cursor-pointer text-xl" />
+      </header>
+      <FacetSidebar
+        v-model:model-value="selectedFacets"
+        v-model:hvd="hvdModel"
+        v-model:livedata="livedataModel"
+        :public="true"
+        mobile
+        :facets="availableFacetsFormatted" />
+    </div>
+  </div>
+
   <div class="container relative mx-auto grid max-w-content-max grid-cols-1 sm:grid-cols-[minmax(auto,20rem)_1fr]">
     <!-- Permanent facets for large devices -->
     <div
