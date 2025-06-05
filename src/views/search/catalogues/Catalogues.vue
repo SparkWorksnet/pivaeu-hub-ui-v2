@@ -6,7 +6,6 @@ import { useDcatApCatalogSearch } from '@/sdk'
 import CataloguesList from '@/views/search/catalogues/CataloguesList.vue'
 import FacetBurgerButton from '@/views/search/FacetBurgerButton.vue'
 import SearchBar from '@/views/search/SearchBar.vue'
-import Sidebar from 'primevue/sidebar'
 import { ref, toRef } from 'vue'
 import { useSearchParams } from '../useSearchParams'
 import { useSelectedFacetsCatalog } from '../useSelectedFacets'
@@ -49,20 +48,6 @@ const {
 
 <template>
   <!-- Facets toggle sidebar for small devices -->
-  <!-- <Sidebar
-    v-model:visible="sidebarVisible"
-    header="Search filter"
-  >
-    <FacetSidebar
-      v-model:model-value="selectedFacets"
-      v-model:hvd="hvdModel"
-      v-model:livedata="livedataModel"
-      :public="true"
-      mobile
-      :facets="availableFacetsFormatted"
-    />
-  </Sidebar> -->
-
   <div 
     v-if="sidebarVisible"
     class="fixed inset-0 z-50 flex"
@@ -73,7 +58,7 @@ const {
     ></div>
 
     <div
-      class="relative z-10 max-w-full bg-hite shadow-xl p-4 overflow-auto  bg-white"
+      class="relative z-10 max-w-80 bg-hite shadow-xl p-4 overflow-auto  bg-white"
     >
       <header class="text-lg font-bold flex justify-between">
         Search filter
