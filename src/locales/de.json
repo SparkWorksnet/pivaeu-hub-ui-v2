@@ -1,4 +1,49 @@
 {
+  "themer": {
+    "title": "Theme Generator",
+    "piveauSlogan": "piveau ist eine Open-Source-Metadatenkatalog-Lösung",
+    "font": {
+      "label": "Schriftart",
+      "options": {
+        "arial": "Arial",
+        "courierNew": "Courier New",
+        "georgia": "Georgia",
+        "centuryGothic": "Century Gothic",
+        "timesNewRoman": "Times New Roman",
+        "verdana": "Verdana",
+        "inter": "Inter"
+      }
+    },
+    "colors": {
+      "primary": "Primärfarbe",
+      "primaryVariant": "Primäre Variantenfarbe",
+      "primaryLight": "Primäre helle Farbe",
+      "secondary": "Sekundärfarbe",
+      "error": "Fehlerfarbe",
+      "background": "Hintergrundfarbe",
+      "surface": "Oberflächenfarbe",
+      "textOnPrimary": "Text auf Primärfarbe",
+      "textOnSecondary": "Text auf Sekundärfarbe",
+      "textOnBackground": "Text auf Hintergrund",
+      "textOnSurface": "Text auf Oberfläche",
+      "textOnSurfaceLight": "Text auf heller Oberfläche",
+      "headerBackground": "Kopfzeilen-Hintergrund",
+      "headerText": "Kopfzeilen-Text",
+      "footerBackground": "Fußzeilen-Hintergrund",
+      "footerText": "Fußzeilen-Text"
+    },
+    "borderRadius": {
+      "label": "Rahmenradius",
+      "square": "Quadratisch",
+      "middleRound": "Mittel abgerundet",
+      "round": "Abgerundet"
+    },
+    "exampleButton": "Beispiel-Button",
+    "generatedCss": "Generiertes CSS",
+    "resetConfig": "Konfiguration zurücksetzen",
+    "saveCssConfig": "CSS-Konfiguration speichern",
+    "copySuccess": "Konfiguration in die Zwischenablage kopiert!"
+  },
   "toggler": {
     "show_less": "Weniger anzeigen",
     "show_more": "Mehr anzeigen"
@@ -181,7 +226,7 @@
       "about": "über twin.bydata",
       "findAll": "Alle Finden",
       "findTwins": "Twins Finden",
-      "docs": "Dokumentation"
+      "docs": "Doku"
     },
     "hero": {
       "welcome": "TwinByData aus Bayern",

@@ -1,4 +1,49 @@
 {
+  "themer": {
+    "title": "Theme Generator",
+    "piveauSlogan": "piveau is an open source metadata catalogue solution",
+    "font": {
+      "label": "Font",
+      "options": {
+        "arial": "Arial",
+        "courierNew": "Courier New",
+        "georgia": "Georgia",
+        "centuryGothic": "Century Gothic",
+        "timesNewRoman": "Times New Roman",
+        "verdana": "Verdana",
+        "inter": "Inter"
+      }
+    },
+    "colors": {
+      "primary": "Primary Color",
+      "primaryVariant": "Primary Variant Color",
+      "primaryLight": "Primary Light Color",
+      "secondary": "Secondary Color",
+      "error": "Error Color",
+      "background": "Background Color",
+      "surface": "Surface Color",
+      "textOnPrimary": "Text on Primary",
+      "textOnSecondary": "Text on Secondary",
+      "textOnBackground": "Text on Background",
+      "textOnSurface": "Text on Surface",
+      "textOnSurfaceLight": "Text on Surface Light",
+      "headerBackground": "Header Background",
+      "headerText": "Header Text",
+      "footerBackground": "Footer Background",
+      "footerText": "Footer Text"
+    },
+    "borderRadius": {
+      "label": "Border Radius",
+      "square": "Square",
+      "middleRound": "Middle Round",
+      "round": "Round"
+    },
+    "exampleButton": "Example Button",
+    "generatedCss": "Generated CSS",
+    "resetConfig": "Reset Config",
+    "saveCssConfig": "Save CSS Config",
+    "copySuccess": "Configuration copied to clipboard!"
+  },
   "toggler": {
     "show_less": "Show less",
     "show_more": "Show more"
