@@ -46,6 +46,7 @@ declare module 'vue' {
     'KSplitButton.story': typeof import('./src/components/base/split-button/KSplitButton.story.vue')['default']
     KTag: typeof import('./src/components/base/tag/KTag.vue')['default']
     'KTag.story': typeof import('./src/components/base/tag/KTag.story.vue')['default']
+    LanguageSelector: typeof import('./src/components/language-selector/LanguageSelector.vue')['default']
     NavigationBar: typeof import('./src/components/header-footer/NavigationBar.vue')['default']
     'PropertyTable.story': typeof import('./src/components/property-table/PropertyTable.story.vue')['default']
     PropertyTableValue: typeof import('./src/components/property-table/PropertyTableValue.vue')['default']

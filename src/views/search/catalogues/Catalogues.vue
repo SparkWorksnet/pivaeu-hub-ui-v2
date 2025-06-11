@@ -11,6 +11,8 @@ import { useSearchParams } from '../useSearchParams'
 import { useSelectedFacetsCatalog } from '../useSelectedFacets'
 import { useCatalogs } from './useCatalogs'
 import PhXCircle from '~icons/ph/x-circle'
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
 
 const searchInput = defineModel<string>('searchInput', { required: true })
 const hvdModel = defineModel<boolean>('hvd', { required: true })
@@ -48,7 +50,7 @@ const {
 
 <template>
   <!-- Facets toggle sidebar for small devices -->
-  <div 
+  <div
     v-if="sidebarVisible"
     class="fixed inset-0 z-50 flex"
   >
@@ -61,7 +63,7 @@ const {
       class="relative z-10 max-w-80 bg-hite shadow-xl p-4 overflow-auto  bg-white"
     >
       <header class="text-lg font-bold flex justify-between">
-        Search filter
+        {{ t('catalogues.searchFilter') }}
         <PhXCircle @click="toggleFacetSidebar" class="cursor-pointer text-xl" />
       </header>
       <FacetSidebar
@@ -110,7 +112,7 @@ const {
             <SearchInfoPanel
               v-model:direction="sortDirection"
               v-model:sort="sort">
-              {{ getSearchResultsCount }} Catalogues
+              {{ getSearchResultsCount }} {{ t('catalogues.count') }}
             </SearchInfoPanel>
           </div>
           <CataloguesList

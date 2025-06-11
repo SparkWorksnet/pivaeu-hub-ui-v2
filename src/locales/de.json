@@ -1,11 +1,113 @@
 {
+  "footer": {
+    "sections": {
+      "sitemap": "Seitenübersicht",
+      "socialMedia": "Social Media",
+      "legal": "Rechtliches"
+    },
+    "links": {
+      "home": "Startseite",
+      "datasets": "Datensätze",
+      "catalogues": "Kataloge",
+      "themeGenerator": "Theme Generator",
+      "docs": "Dokumentation",
+      "gitlab": "GitLab",
+      "linkedin": "LinkedIn",
+      "imprint": "Impressum",
+      "dataPrivacy": "Datenschutz",
+      "login": "Anmelden",
+      "contact": "Kontakt"
+    }
+  },
+  "catalogues": {
+    "searchFilter": "Suchfilter",
+    "count": "Kataloge",
+    "title": "Kataloge",
+    "sidebar": {
+      "title": "Suchfilter"
+    }
+  },
   "search": {
-    "searchBarPlaceholder": "Search",
-    "searchButton": "Search",
+    "searchBarPlaceholder": "Suchen ...",
+    "submitButton": "Suchen",
     "datasets": {
       "found": "Datensätze gefunden"
     }
   },
+  "themer": {
+    "title": "Theme Generator",
+    "piveauSlogan": "piveau ist eine Open-Source-Metadatenkatalog-Lösung",
+    "font": {
+      "label": "Schriftart",
+      "options": {
+        "arial": "Arial",
+        "courierNew": "Courier New",
+        "georgia": "Georgia",
+        "centuryGothic": "Century Gothic",
+        "timesNewRoman": "Times New Roman",
+        "verdana": "Verdana",
+        "inter": "Inter"
+      }
+    },
+    "colors": {
+      "primary": "Primärfarbe",
+      "primaryVariant": "Primäre Variantenfarbe",
+      "primaryLight": "Primäre helle Farbe",
+      "secondary": "Sekundärfarbe",
+      "error": "Fehlerfarbe",
+      "background": "Hintergrundfarbe",
+      "surface": "Oberflächenfarbe",
+      "textOnPrimary": "Text auf Primärfarbe",
+      "textOnSecondary": "Text auf Sekundärfarbe",
+      "textOnBackground": "Text auf Hintergrund",
+      "textOnSurface": "Text auf Oberfläche",
+      "textOnSurfaceLight": "Text auf heller Oberfläche",
+      "headerBackground": "Kopfzeilen-Hintergrund",
+      "headerText": "Kopfzeilen-Text",
+      "footerBackground": "Fußzeilen-Hintergrund",
+      "footerText": "Fußzeilen-Text"
+    },
+    "borderRadius": {
+      "label": "Rahmenradius",
+      "square": "Quadratisch",
+      "middleRound": "Mittel abgerundet",
+      "round": "Abgerundet"
+    },
+    "exampleButton": "Beispiel-Button",
+    "generatedCss": "Generiertes CSS",
+    "resetConfig": "Konfiguration zurücksetzen",
+    "saveCssConfig": "CSS-Konfiguration speichern",
+    "copySuccess": "Konfiguration in die Zwischenablage kopiert!"
+  },
+  "toggler": {
+    "show_less": "Weniger anzeigen",
+    "show_more": "Mehr anzeigen"
+  },
+  "distribution": {
+    "download": "Download",
+    "save_description": "Beschreibung speichern",
+    "preview": "Vorschau",
+    "description": "Beschreibung"
+  },
+  "details": {
+    "dataset": "Datensatz",
+    "back": "Zurück",
+    "info_tab": "Info",
+    "about_dataset": "Über diesen Datensatz",
+    "read_more": "Mehr lesen"
+  },
+  "dataset": {
+    "title": "Datensatz",
+    "provider": "Datenbereitsteller",
+    "updated": "Aktualisiert",
+    "distributions": "Distributionen",
+    "categories": "Kategorien",
+    "additional_info": "Zusätzliche Informationen",
+    "show_more": "Mehr anzeigen",
+    "error": "Fehler"
+  },
+
+
   "authentication": {
     "logged_out": "Sie wurden ausgeloggt."
   },
@@ -153,7 +255,8 @@
       "firstSteps": "First Steps",
       "about": "über twin.bydata",
       "findAll": "Alle Finden",
-      "findTwins": "Twins Finden"
+      "findTwins": "Twins Finden",
+      "docs": "Doku"
     },
     "hero": {
       "welcome": "TwinByData aus Bayern",

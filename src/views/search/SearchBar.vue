@@ -1,6 +1,9 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
 import KButton from '@/components/base/button/KButton.vue'
 import SearchInput from '@/components/search-input/SearchInput.vue'
+
+const { t } = useI18n()
 
 const props = defineProps<{
   searchAction: Function
@@ -22,13 +25,13 @@ const searchInput = defineModel<string>()
         <SearchInput
           v-model="searchInput"
           class="w-full max-w-[50rem]"
-          :placeholder="$t('search.searchBarPlaceholder')"
+          :placeholder="t('search.searchBarPlaceholder')"
           :select-options="[]"
         />
         <KButton
           type="submit"
         >
-          {{ $t('search.searchButton') }}
+          {{ t('search.submitButton') }}
         </KButton>
       </form>
     </section>

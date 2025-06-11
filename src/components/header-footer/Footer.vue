@@ -1,37 +1,42 @@
 <script setup>
-const seitenLinks = [
-  { to: '/', text: 'Home' },
-  { to: '/datasets', text: 'Datasets' },
-  { to: '/catalogues', text: 'Catalogues' },
-  { to: '/Themer', text: 'Theme Generator' },
-  { to: 'https://doc.piveau.eu/general/introduction/', text: 'Docs' },
-  { to: 'https://gitlab.com/piveau/', text: 'GitLab' },
-]
+import { useI18n } from 'vue-i18n'
+import { computed } from 'vue'
 
-const socialLinks = [
-  { href: 'https://www.linkedin.com/company/fraunhoferfokus/?originalSubdomain=de', text: 'LinkedIn' },
-]
+const { t } = useI18n()
 
-const rechtlichesLinks = [
-  { to: '#', text: 'Imprint' },
-  { to: '#', text: 'Data Privacy' },
-]
+// Make link arrays reactive using computed properties
+const seitenLinks = computed(() => [
+  { to: '/', text: t('footer.links.home') },
+  { to: '/datasets', text: t('footer.links.datasets') },
+  { to: '/catalogues', text: t('footer.links.catalogues') },
+  { to: '/Themer', text: t('footer.links.themeGenerator') },
+  { to: 'https://doc.piveau.eu/general/introduction/', text: t('footer.links.docs') },
+  { to: 'https://gitlab.com/piveau/', text: t('footer.links.gitlab') },
+])
 
-const loginLinks = [
-  { to: '/app', text: 'Login' },
-  { to: '/contact', text: 'Contact' },
-]
+const socialLinks = computed(() => [
+  { href: 'https://www.linkedin.com/company/fraunhoferfokus/?originalSubdomain=de', text: t('footer.links.linkedin') },
+])
+
+const rechtlichesLinks = computed(() => [
+  { to: '#', text: t('footer.links.imprint') },
+  { to: '#', text: t('footer.links.dataPrivacy') },
+])
+
+const loginLinks = computed(() => [
+  { to: '/app', text: t('footer.links.login') },
+  { to: '/contact', text: t('footer.links.contact') },
+])
 </script>
 
 <template>
   <footer class="bg-footer-bg text-footer-bg-text py-16 px-8">
     <div class="space-y-32 container mx-auto max-w-7xl">
-      <!-- Main Footer Content -->
       <div class="flex flex-col flex-wrap justify-between gap-x-10 gap-y-20 md:flex-row xl:gap-10">
-        <!-- Seiten Section -->
+        <!-- Sitemap Section -->
         <div class="mr-10 w-full md:w-3/12 xl:w-2/12">
           <h3 class="mb-4 text-xl font-semibold">
-            Sitemap
+            {{ t('footer.sections.sitemap') }}
           </h3>
           <ul class="flex flex-col gap-0">
             <li
@@ -39,7 +44,7 @@ const loginLinks = [
               :key="link.text"
               class="text-copy-sm"
             >
-            <template v-if="link.to.startsWith('http')">
+              <template v-if="link.to.startsWith('http')">
                 <a
                   :href="link.to"
                   target="_blank"
@@ -50,21 +55,21 @@ const loginLinks = [
                 </a>
               </template>
               <template v-else>
-              <RouterLink
+                <RouterLink
                   :to="link.to"
                   class="hover:text-secondary-hover"
-              >
-                {{ link.text }}
-              </RouterLink>
-            </template>
+                >
+                  {{ link.text }}
+                </RouterLink>
+              </template>
             </li>
           </ul>
         </div>
 
-        <!-- Wo du uns findest Section -->
+        <!-- Social Media Section -->
         <div class="w-full md:w-3/12 xl:w-2/12">
           <h3 class="mb-4 text-xl font-semibold">
-            Social Media
+            {{ t('footer.sections.socialMedia') }}
           </h3>
           <ul class="flex flex-col gap-0">
             <li
@@ -73,9 +78,9 @@ const loginLinks = [
               class="text-copy-sm"
             >
               <a
-                  :href="link.href"
-                  target="_blank"
-                  class="hover:text-secondary-hover"
+                :href="link.href"
+                target="_blank"
+                class="hover:text-secondary-hover"
               >
                 {{ link.text }}
               </a>
@@ -83,10 +88,10 @@ const loginLinks = [
           </ul>
         </div>
 
-        <!-- Rechtliches Section -->
+        <!-- Legal Section -->
         <div class="mr-10 w-full md:w-3/12 xl:w-2/12">
           <h3 class="mb-4 text-xl font-semibold">
-            Legal
+            {{ t('footer.sections.legal') }}
           </h3>
           <ul class="flex flex-col gap-0">
             <li
@@ -95,8 +100,8 @@ const loginLinks = [
               class="text-copy-sm"
             >
               <RouterLink
-                  :to="link.to"
-                  class="hover:text-primary-hover"
+                :to="link.to"
+                class="hover:text-primary-hover"
               >
                 {{ link.text }}
               </RouterLink>
@@ -113,8 +118,8 @@ const loginLinks = [
               class="text-copy-sm"
             >
               <RouterLink
-                  :to="link.to"
-                  class="hover:text-secondary-hover font-bold"
+                :to="link.to"
+                class="hover:text-secondary-hover font-bold"
               >
                 {{ link.text }}
               </RouterLink>
@@ -122,17 +127,6 @@ const loginLinks = [
           </ul>
         </div>
       </div>
-
-      <!-- Logo Section -->
-      <!-- <div class="flex flex-wrap justify-center md:items-center items-start flex-col gap-6 md:flex-row">
-        <a href="https://www.stmd.bayern.de/">
-          <img
-              src=""
-              alt="Piveau"
-              class="h-14 max-h-[110px]"
-          >
-        </a>
-      </div> -->
     </div>
   </footer>
 </template>
