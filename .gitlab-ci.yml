@@ -8,12 +8,10 @@ stages:
 build-asset:
   stage: build
   image: node:18-alpine
-  cache:
-    <<: *global_cache
 
   tags:
     - dps-piveau-runner   # use dps-piveau-runner
-    -
+
   before_script:
     - npm i -g pnpm
     - pnpm config set store-dir .pnpm-store
