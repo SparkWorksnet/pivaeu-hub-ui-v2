@@ -1,4 +1,39 @@
 {
+  "footer": {
+    "sections": {
+      "sitemap": "Sitemap",
+      "socialMedia": "Social Media",
+      "legal": "Legal"
+    },
+    "links": {
+      "home": "Home",
+      "datasets": "Datasets",
+      "catalogues": "Catalogues",
+      "themeGenerator": "Theme Generator",
+      "docs": "Docs",
+      "gitlab": "GitLab",
+      "linkedin": "LinkedIn",
+      "imprint": "Imprint",
+      "dataPrivacy": "Data Privacy",
+      "login": "Login",
+      "contact": "Contact"
+    }
+  },
+  "catalogues": {
+    "searchFilter": "Search filter",
+    "count": "Catalogues",
+    "title": "Catalogues",
+    "sidebar": {
+      "title": "Search filter"
+    }
+  },
+  "search": {
+    "searchBarPlaceholder": "Search ...",
+    "submitButton": "Search",
+    "datasets": {
+      "found": "Datasets found"
+    }
+  },
   "themer": {
     "title": "Theme Generator",
     "piveauSlogan": "piveau is an open source metadata catalogue solution",

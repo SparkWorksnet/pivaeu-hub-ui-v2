@@ -1,4 +1,39 @@
 {
+  "footer": {
+    "sections": {
+      "sitemap": "Seitenübersicht",
+      "socialMedia": "Social Media",
+      "legal": "Rechtliches"
+    },
+    "links": {
+      "home": "Startseite",
+      "datasets": "Datensätze",
+      "catalogues": "Kataloge",
+      "themeGenerator": "Theme Generator",
+      "docs": "Dokumentation",
+      "gitlab": "GitLab",
+      "linkedin": "LinkedIn",
+      "imprint": "Impressum",
+      "dataPrivacy": "Datenschutz",
+      "login": "Anmelden",
+      "contact": "Kontakt"
+    }
+  },
+  "catalogues": {
+    "searchFilter": "Suchfilter",
+    "count": "Kataloge",
+    "title": "Kataloge",
+    "sidebar": {
+      "title": "Suchfilter"
+    }
+  },
+  "search": {
+    "searchBarPlaceholder": "Suchen ...",
+    "submitButton": "Suchen",
+    "datasets": {
+      "found": "Datensätze gefunden"
+    }
+  },
   "themer": {
     "title": "Theme Generator",
     "piveauSlogan": "piveau ist eine Open-Source-Metadatenkatalog-Lösung",
@@ -71,13 +106,8 @@
     "show_more": "Mehr anzeigen",
     "error": "Fehler"
   },
-  "search": {
-    "searchBarPlaceholder": "Search",
-    "searchButton": "Search",
-    "datasets": {
-      "found": "Datensätze gefunden"
-    }
-  },
+
+
   "authentication": {
     "logged_out": "Sie wurden ausgeloggt."
   },
