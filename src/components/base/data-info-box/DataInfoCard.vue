@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import type { RouteLocationRaw } from 'vue-router'
 import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import SummaryBox from '../summary-box/SummaryBox.vue'
 import KTag from '../tag/KTag.vue'
 import Typography from '../typography/Typography.vue'
+const { t } = useI18n()
 
 interface Summary {
   title: string
@@ -54,7 +56,7 @@ const computedWrapperComponent = computed(() => {
               <SummaryBox
                 v-if="fileFormats.length > 0"
                 class="col-span-12 lg:col-span-4 mt-6 md:mt-0 lg:ml-10"
-                title="Dateiformate"
+                :title="t('search.file-formats')"
               >
                 <template #text>
                   <div class="flex flex-wrap gap-2">

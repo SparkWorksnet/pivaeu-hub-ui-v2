@@ -10,8 +10,10 @@ import { dcatApDataset, defineHubSearch, getTranslationFor } from '@piveau/sdk-v
 import DOMPurify from 'isomorphic-dompurify'
 import { marked } from 'marked'
 import appConfig from '../../config/appConfig'
+import { useI18n } from 'vue-i18n'
 
 export function useDcatApSearch() {
+  const { t } = useI18n()
   return defineHubSearch(
     {
       baseUrl: appConfig.piveauHubSearchUrl,
@@ -44,10 +46,10 @@ export function useDcatApSearch() {
         getPublisher: baseGetters.getPublisher,
         getFormats: baseGetters.getFormats || [],
         getSummary: [
-          { title: 'Aktualisiert', text: baseGetters.getIssued || baseGetters.getModified || '' },
-          { title: 'Kategorie', text: [...new Set(baseGetters.getCategories.map(cat => getTranslationFor(cat.label, 'de')))].join(', ') },
-          { title: 'Bereitsteller', text: baseGetters.getPublisher?.name || '' },
-          { title: 'Lizenz', text: baseGetters.getLicenses?.[0] || '' },
+          { title: t('search.updated'), text: baseGetters.getIssued || baseGetters.getModified || '' },
+          { title: t('search.category'), text: [...new Set(baseGetters.getCategories.map(cat => getTranslationFor(cat.label, 'de')))].join(', ') },
+          { title: t('search.provider'), text: baseGetters.getPublisher?.name || '' },
+          { title: t('search.license'), text: baseGetters.getLicenses?.[0] || '' },
         ],
       }
 

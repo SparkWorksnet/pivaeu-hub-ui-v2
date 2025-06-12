@@ -32,7 +32,12 @@
     "submitButton": "Suchen",
     "datasets": {
       "found": "Datensätze gefunden"
-    }
+    },
+    "updated": "Aktualisiert",
+    "category": "Kategorie",
+    "provider": "Bereitsteller",
+    "license": "Lizenz",
+    "file-formats": "Dateiformate"
   },
   "themer": {
     "title": "Theme Generator",
@@ -524,7 +529,7 @@
   },
   "catalogFacets": {
     "facets": {
-      "country": "Herkunft",
+      "country": "HerkunftMAJID",
       "superCatalog": "Superkatalog"
     }
   },

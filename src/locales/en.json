@@ -32,7 +32,12 @@
     "submitButton": "Search",
     "datasets": {
       "found": "Datasets found"
-    }
+    },
+    "updated": "Updated",
+    "category": "Category",
+    "provider": "Provider",
+    "license": "License",
+    "file-formats": "File Formats"
   },
   "themer": {
     "title": "Theme Generator",
@@ -515,6 +520,12 @@
     "operator": "Operator",
     "moreFilters": "More filters",
     "lessFilters": "Less filters"
+  },
+  "catalogFacets": {
+    "facets": {
+      "country": "Country",
+      "superCatalog": "Super Catalog"
+    }
   },
   "homepage": {
     "title": "Good Morning",
