@@ -15,7 +15,7 @@ mirror-node:
     # Login to GitLab registry
     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
     # Login to Docker Hub using access token
-    - docker login -u $DOCKER_HUB_USER --password-stdin docker.io <<< $DOCKER_HUB_ACCESS_TOKEN
+    - echo $DOCKER_HUB_ACCESS_TOKEN | docker login -u $DOCKER_HUB_USER --password-stdin docker.io
   script:
     - docker pull node:18-alpine
     - docker tag node:18-alpine $CI_REGISTRY_IMAGE/node:18-alpine
