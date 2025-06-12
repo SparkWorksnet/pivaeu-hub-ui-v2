@@ -2,7 +2,7 @@ import i18n from '@/i18n'
 import router from '@/router'
 import { defaultConfig, plugin as FormKitPlugin } from '@formkit/vue'
 import { plugin as piveauPlugin } from '@piveau/sdk-vue'
-import { de } from '@piveau/sdk-vue/locale'
+import { de, en } from '@piveau/sdk-vue/locale'
 import { QueryClient, VueQueryPlugin } from '@tanstack/vue-query'
 
 import { createPinia } from 'pinia'
@@ -75,16 +75,23 @@ async function renderApp() {
           ...de,
           metadata: {
             ...de.metadata,
-            modificationDate: 'Aktualisiert',
+            modificationDate: 'Zuletzt aktualisiert', // Proper German translation
+          },
+        },
+        en: {
+          ...en,
+          metadata: {
+            ...en.metadata,
+            modificationDate: 'Last modified', // English translation
           },
         },
       },
-      locale: 'de',
-      fallbackLocale: 'de',
+      locale: i18n.global.locale.valueOf(),
+      fallbackLocale: 'en',
       dateFormatStrings: {
         short: 'DD.MM.YYYY',
         medium: 'DD.MM.YYYY',
-        long: 'DD. MMMM YYYY hh:mm:ss',
+        long: 'DD. MMMM YYYY HH:mm:ss',
       },
     },
   })
