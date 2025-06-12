@@ -2,8 +2,26 @@
 # This pipeline builds a Vue.js application, creates a Docker image, and deploys it to OpenShift
 
 stages:
+  - prepare  # Stage 0: Mirror Node.js image to GitLab registry
   - build    # Stage 1: Build the Vue.js application
   - deploy   # Stage 2: Deploy the built image to OpenShift
+
+mirror-node:
+  stage: prepare
+  image: docker:latest
+  services:
+    - docker:dind # Enable Docker-in-Docker for container operations
+  before_script:
+    # Login to GitLab registry
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    # Login to Docker Hub using access token
+    - docker login -u $DOCKER_HUB_USER --password-stdin docker.io <<< $DOCKER_HUB_ACCESS_TOKEN
+  script:
+    - docker pull node:18-alpine
+    - docker tag node:18-alpine $CI_REGISTRY_IMAGE/node:18-alpine
+    - docker push $CI_REGISTRY_IMAGE/node:18-alpine
+  only:
+    - master
 
 build-asset:
   stage: build
