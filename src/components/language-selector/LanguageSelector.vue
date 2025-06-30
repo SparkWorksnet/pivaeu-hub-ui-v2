@@ -101,7 +101,7 @@ onUnmounted(() => {
     <!-- Dropdown Menu -->
     <div
       v-show="isDropdownOpen"
-      class="absolute right-0 mt-2 w-48 bg-white dark:bg-surface-900 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 dark:ring-white dark:ring-opacity-10 z-50"
+      class="absolute right-0 mt-2 w-48 bg-surface dark:bg-surface-900 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 dark:ring-white dark:ring-opacity-10 z-50"
     >
       <div class="py-1">
         <button
