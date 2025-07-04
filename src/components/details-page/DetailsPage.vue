@@ -118,7 +118,7 @@ const truncatedEllipsedDescription = computed(() => {
               </Typography>
             </button>
           </div>
-          <LinkedDataSelector :datasetId="datasetId"/>
+          <LinkedDataSelector :resource-id="datasetId" resource="datasets"/>
           </div>
           <DetailsPageHeader :headline="headline" :title="title" :subtitle="subtitle">
             <template #subtitle>

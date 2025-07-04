@@ -9,7 +9,7 @@ import DataToggler from '../data-toggler/DataToggler.vue'
 import Dropdown from '../dropdown/Dropdown.vue'
 import DropdownItem from '../dropdown/DropdownItem.vue'
 import { PropertyTable } from '../property-table/PropertyTableRow'
-
+import LinkedDataSelector from '../base/links/LinkedDataSelector.vue'
 
 interface CardProps {
   title: string
@@ -20,6 +20,7 @@ interface CardProps {
   lastUpdated?: string
   downloadUrl: string
   linkedData?: Record<string, string>
+  distributionId: string
   data: PropertyTableEntryNode
   onSave?: () => void
 }
@@ -107,6 +108,10 @@ const resolvedData = computed(() => {
 
           <KButton>
             {{ t('distribution.preview') }}
+          </KButton>
+
+          <KButton>
+            <LinkedDataSelector :resource-id="distributionId" resource="distributions"/>
           </KButton>
 
           <!-- Why is this not showing?? -->

@@ -19,36 +19,36 @@
           class="dropdown-item"
           format="rdf"
           text="RDF/XML"
-          resources="datasets"
-          v-bind:resources-id="datasetId"></resource-details-linked-data-button>
+          :resources="resource"
+          v-bind:resources-id="resourceId"></resource-details-linked-data-button>
         <resource-details-linked-data-button
           isTooltip="true"
           class="dropdown-item"
           format="ttl"
           text="Turtle"
-          resources="datasets"
-          v-bind:resources-id="datasetId"></resource-details-linked-data-button>
+          :resources="resource"
+          v-bind:resources-id="resourceId"></resource-details-linked-data-button>
         <resource-details-linked-data-button
           isTooltip="true"
           class="dropdown-item"
           format="n3"
           text="Notation3"
-          resources="datasets"
-          v-bind:resources-id="datasetId"></resource-details-linked-data-button>
+          :resources="resource"
+          v-bind:resources-id="resourceId"></resource-details-linked-data-button>
         <resource-details-linked-data-button
           isTooltip="true"
           class="dropdown-item"
           format="nt"
           text="N-Triples"
-          resources="datasets"
-          v-bind:resources-id="datasetId"></resource-details-linked-data-button>
+          :resources="resource"
+          v-bind:resources-id="resourceId"></resource-details-linked-data-button>
         <resource-details-linked-data-button
           isTooltip="true"
           class="dropdown-item"
           format="jsonld"
           text="JSON-LD"
-          resources="datasets"
-          v-bind:resources-id="datasetId"></resource-details-linked-data-button>
+          :resources="resource"
+          v-bind:resources-id="resourceId"></resource-details-linked-data-button>
       </div>
     </div>
   </nav>
@@ -61,9 +61,12 @@ import { defineAsyncComponent } from 'vue'
 const ResourceDetailsLinkedDataButton = defineAsyncComponent(() => import('./ResourceDetailsLinkedDataButton.vue'))
 
 const props = defineProps({
-  datasetId: {
+  resourceId: {
     type: String,
     required: true,
+  },
+  resource: {
+    type: String
   },
 })
 
