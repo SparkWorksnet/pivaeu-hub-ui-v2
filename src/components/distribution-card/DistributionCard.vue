@@ -9,7 +9,7 @@ import DataToggler from '../data-toggler/DataToggler.vue'
 import Dropdown from '../dropdown/Dropdown.vue'
 import DropdownItem from '../dropdown/DropdownItem.vue'
 import { PropertyTable } from '../property-table/PropertyTableRow'
-
+import LinkedDataSelector from '../base/links/LinkedDataSelector.vue'
 
 interface CardProps {
   title: string
@@ -20,6 +20,7 @@ interface CardProps {
   lastUpdated?: string
   downloadUrl: string
   linkedData?: Record<string, string>
+  distributionId: string
   data: PropertyTableEntryNode
   onSave?: () => void
 }
@@ -55,7 +56,7 @@ const resolvedData = computed(() => {
 
 <template>
   <div class="mb-3 rounded-xl border-b-none bg-surface p-4">
-    <div class="py-12">
+    <div>
       <div class="flex items-start justify-between">
         <Typography as="h2" variant="by-heading-4" class="text-surface-text">
           {{ title }}
@@ -65,7 +66,7 @@ const resolvedData = computed(() => {
         </KTag>
       </div>
 
-      <div class="my-0 flex flex-col lg:my-12 lg:flex-row lg:justify-between lg:gap-28">
+      <div class="my-0 flex flex-col lg:flex-row lg:justify-between lg:gap-28">
         <div class="flex flex-1 flex-col gap-6">
           <div class="markdown-content mt-4 text-sm leading-6 text-surface-light" v-html="description" />
           <div class="flex">
@@ -75,7 +76,7 @@ const resolvedData = computed(() => {
           </div>
         </div>
 
-        <div class="my-12 lg:my-0 lg:basis-4/12 text-surface-text">
+        <div class="lg:my-0 lg:basis-4/12 text-surface-text">
           <DataToggler v-slot="{ truncated }" :data="resolvedData || []" :limit="1" :expanded="false">
             <PropertyTable
               :node="{
@@ -107,6 +108,10 @@ const resolvedData = computed(() => {
 
           <KButton>
             {{ t('distribution.preview') }}
+          </KButton>
+
+          <KButton>
+            <LinkedDataSelector :resource-id="distributionId" resource="distributions"/>
           </KButton>
 
           <!-- Why is this not showing?? -->

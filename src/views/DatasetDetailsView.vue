@@ -130,7 +130,7 @@ const { t } = useI18n()
 
       <template #sections>
         <section class="space-y-4">
-          <div class="my-12 flex flex-row items-center gap-2">
+          <div class="mt-12 flex flex-row items-center gap-2">
             <h2 class="text-[2.5rem] font-bold leading-[3rem] text-primary-100">
               {{ t('dataset.distributions') }}
             </h2>
@@ -148,7 +148,7 @@ const { t } = useI18n()
                   :title="distribution.title || ''" :description="distribution.descriptionMarkup || ''"
                   :format="distribution.format || 'Unknown'" :download-url="distribution.downloadUrls?.[0]!"
                   :last-updated="distribution.modified" :data="distribution.data"
-                  :linked-data="distribution.linkedData"
+                  :linked-data="distribution.linkedData" :distribution-id="distribution.id"
                 />
                 <div
                   v-if="i === truncatedFormattedDistributions.length - 1 && isDistributionsTruncated"
@@ -185,7 +185,7 @@ const { t } = useI18n()
         </div>
         <div class="h-px w-full bg-bg-divider" />
         <div class="space-y-4">
-          <div class="flex flex-col rounded-xl gap-4 bg-surface p-4 pt-12">
+          <div class="flex flex-col rounded-xl gap-4 bg-surface p-4">
             <Typography variant="by-heading-4" class="">
               {{ t('dataset.additional_info') }}
             </Typography>
