@@ -20,7 +20,6 @@
       "linkedData": "Linked Data"
     }
   },
-  
   "catalogues": {
     "searchFilter": "Search filter",
     "count": "Catalogues",
@@ -116,203 +115,16 @@
   "authentication": {
     "logged_out": "You have been logged out."
   },
-  "navigation": {
-    "home": "Home",
-    "digital-twin": "Digital Twin",
-    "dashboards": "Dashboards",
-    "data-catalog": "Datacatalog",
-    "organisation-sites": "Organisation sites",
-    "log-in": "Login",
-    "register-text": "No account yet? Register now!",
-    "impressum": "Legal Notice",
-    "user-profile": "Profile",
-    "dksr-apps": "DKSR Apps",
-    "go-back": "Back",
-    "dashboards-context": "My dashboards",
-    "apps-context": "DKSR Analytics Tools"
-  },
-  "tooltips": {
-    "home": "Home",
-    "digital-twin": "Digital Twin",
-    "dashboards": "Dashboards",
-    "data-catalog": "Datakatalog",
-    "organisation-sites": "Organization Sites"
-  },
-  "dashboard": {
-    "title": "Your City at a Glance",
-    "subtitle": "Here you can find your city's dashboards",
-    "new_dashboard": "New Dashboard",
-    "widget": {
-      "source": "Publisher",
-      "theme": "Themes",
-      "to_dashboard": "To the Dashboard"
-    }
-  },
-  "dashboards": {
-    "title": "Your City at a Glance",
-    "subtitle": "Here you can find the dashboards of your city. The dashboards present thematically related datasets visually and in context. They enable decision-making and understanding."
-  },
-  "home": {
-    "organisation_data": "Organisation data"
-  },
-  "HomepageQuickLinks": {
-    "addDashboard": {
-      "title": "Add Dashboard",
-      "subtitle": "Here you can create new dashboards"
-    },
-    "findData": {
-      "title": "Find Data",
-      "subtitle": "Here you can find all datasets available on the platform"
-    },
-    "analyzeData": {
-      "title": "Analyze Data",
-      "subtitle": "Here you can analyze your datasets"
-    }
-  },
-  "city-os": {
-    "layout": {
-      "app-header": {
-        "login": "Login",
-        "user-profile": "User Profile",
-        "warning": "Warning",
-        "toggle-sidebar": "Toggle Sidebar"
-      },
-      "app-header-dropdown": {
-        "user-menu": "User Menu",
-        "user-profile": "My Profile",
-        "personal-settings": "Personal Settings",
-        "my-work": "My Work",
-        "data-exchange": "Data Exchange",
-        "user-management": "User Management",
-        "legal-notices": "Legal Notices",
-        "logout": "Logout"
-      }
-    }
-  },
-  "user-profile": {
-    "up-content": {
-      "title-about": "About You",
-      "label-name": "Name",
-      "label-email": "Email Address",
-      "label-telephone": "Telephone",
-      "label-department": "Department",
-      "label-organization": "Organization",
-      "title-login": "Login Information",
-      "label-username": "Username",
-      "button-logout": "Logout"
-    }
-  },
   "landing-page": {
-    "hof": {
-      "hof-lp-header": {
-        "title": "Innovation Space Hofer Land",
-        "second-title": "Your Access to Interactive Information",
-        "subtitle": "Utilize the Digital Twin, innovative dashboards, and the data catalog for comprehensive analysis and insights into the data landscape of the Hofer Land."
-      },
-      "hof-lp-features": {
-        "digital-twin": {
-          "title": "Digital Twin",
-          "description": "A digital twin is a virtual copy of the city for planning and management.",
-          "button": "Go to Digital Twin"
-        },
-        "dashboards": {
-          "title": "Dashboards",
-          "description": "Dashboards are interactive overviews of key data and metrics.",
-          "button": "Go to Dashboards"
-        },
-        "data-catalog": {
-          "title": "Open Data Catalog",
-          "description": "A data catalog is a publicly accessible, searchable collection of all data.",
-          "button": "Go to Data Catalog"
-        }
-      },
-      "hof-lp-digital-twin": {
-        "tile-title": "Digital Twin",
-        "title": "The Digital Twin for Intelligent Urban Planning",
-        "description": "The digital twin of a city provides a virtual representation of its entire ecosystem, including infrastructure and citizens. This technology allows urban development to be planned, analyzed, and optimized.",
-        "button-digital-twin": "Go to Digital Twins",
-        "button-tutorial": "Watch Tutorial"
-      },
-      "hof-lp-dashboards": {
-        "tile-title": "Dashboards",
-        "title": "Use Dashboards to Capture Data Insights",
-        "description": "The dashboards on our platform provide clear insights into data, enabling informed decisions for city development.",
-        "button-dashboards": "Go to Dashboards"
-      },
-      "hof-lp-datacatalog": {
-        "tile-title": "Data Catalog",
-        "title": "Work with Open Data and Data from Participating Organizations",
-        "description": "The data catalog provides access to a variety of open data as well as data provided by participating organizations, supporting comprehensive data analysis and usage.",
-        "button-data-catalog": "Find Data"
-      }
-    },
     "test": "test",
     "header": {
       "home": "Home",
       "datasets": "Datasets",
       "catalogues": "Catalogues",
-      "about-kdw": "About KDW",
       "registration": "Register",
       "login": "Login",
       "about": "About",
-      "findTwins": "Find Twins",
-      "firstSteps": "First Steps",
       "docs": "Docs"
-    },
-    "hero": {
-      "welcome": "TwinByData from Bavaria",
-      "search-placeholder": "Search Datasets",
-      "search": "Search",
-      "feature-one": "Secure Data Sharing",
-      "feature-two": "Access to Real-time Data",
-      "feature-three": "Dynamic Data"
-    },
-    "partners": {
-      "description1": "An mFUND-funded research project of the BMDV",
-      "description2": "implemented by the project partners DKSR and Fraunhofer FOKUS",
-      "description3": "for Mainzer Stadtwerke AG."
-    },
-    "discover-data": {
-      "title": "Discover the Municipal DataWorks",
-      "box-one-text": "View Open Data of your city as a citizen",
-      "box-one-button-text": "Explore Data",
-      "box-two-text": "View reliable and restrictive data as a data provider",
-      "box-two-button-text": "Login"
-    },
-    "open-data": {
-      "title": "Open Data and restrictive data from participant organizations",
-      "chip-one": "Open Data",
-      "chip-two": "Restrictive Data",
-      "chip-three": "Live Data",
-      "chip-four": "Municipal Data",
-      "description": "The data catalog enables access to a wide range of Open Data as well as data provided by participating organizations, supporting comprehensive data analysis and usage.",
-      "box-one-title": "Municipal Data-sharing Platform",
-      "box-one-text": "Digital public services through a secure platform for the exchange of diverse data.",
-      "box-two-title": "Legal and Technical Security",
-      "box-two-text": "Legal and technical security through the development of access rights",
-      "box-three-title": "Timeliness and Reliability",
-      "box-three-text": "High data quality and reliability through regular maintenance of the data catalog",
-      "box-four-title": "Open Data Access for Citizens",
-      "box-four-text": "Open Data access for interested and engaged citizens who want to be involved in city development"
-    },
-    "discover-data-detailed": {
-      "main-title": "Discover Data",
-      "main-description": "This platform integrates data from more than eight different categories, enabling a comprehensive understanding of topics such as economic and social developments, climate changes and adaptations, as well as concrete urban and regional development. The goal is to support a socio-ecological market economy through clear data visualization and processing.",
-      "source-one-name": "Available Datasets",
-      "source-two-name": "Distributions",
-      "source-three-name": "Data Providers",
-      "secondary-title": "Data to Get Started",
-      "get-started-one-button": "To the Dataset",
-      "get-started-one-title": "Companies in the Renewable Energy Sector",
-      "get-started-two-button": "To the Dataset",
-      "get-started-two-title": "Traffic Monitoring Data from TREMOD",
-      "get-started-three-button": "To the Dataset",
-      "get-started-three-title": "Evaluation of 5G Mobile Coverage"
-    },
-    "get-in-touch": {
-      "title": "Get in Touch",
-      "text": "Send us your application or schedule a meeting with us so that we can show you the platform.",
-      "button-text": "Get in touch"
     },
     "footer": {
       "sitemap": {
@@ -400,89 +212,6 @@
             "descending": "Descending"
           }
         }
-      },
-      "headline": {
-        "KHeadline": {
-          "datacatalog": "Data catalog",
-          "datacatalog-text": "Explore, analyze, and share important data. Learn more about data types and collaboration on the platform.",
-          "newData": "New Data",
-          "organizationData": "Organization Data"
-        }
-      },
-      "facet-sidebar": {
-        "FacetSidebar": {
-          "search-catalog": "Browse catalog",
-          "live-data": "Live Data",
-          "high-value-data": "High Value Data"
-        }
-      }
-    },
-    "views": {
-      "DatasetSearchView": {
-        "datasets": "Datasets found",
-        "searchDataCatalog": "Search for twins",
-        "search": "Search"
-      }
-    }
-  },
-  "views": {
-    "public": {
-      "PublicDataNoticesView": {
-        "legal": {
-          "header": {
-            "title": "Legal Information and Data Protection",
-            "description": "Welcome to our section for legal information and data protection. Here you will find all the essential details about our imprint, legal notices, and our privacy policy. These pages are designed to provide transparency about the operation of our website and to explain how we handle your personal data."
-          },
-          "impressum": {
-            "notice": {
-              "heading": "Legal Notice",
-              "paragraph1": "All rights reserved. Texts, images, graphics, sound, animations, and videos, as well as their arrangement on this website, are subject to copyright and other protection laws. The content of this website may not be copied, distributed, modified, or made accessible to third parties for commercial purposes.",
-              "paragraph2": "Our website may contain links to other providers' websites. Despite careful and regular checks, we do not assume any liability for the content of external links. We have no influence on the design and content of the sites we link to. If you want to visit such websites, you should observe the respective applicable notices. We are not responsible for the privacy standards and practices of other providers. If you become aware of illegal content or practices of external links, we kindly ask you to inform us immediately.",
-              "paragraph3": "Furthermore, we use Google Analytics, a web analysis service from Google. Google Analytics uses cookies (small text files) that are stored on your computer and enable an analysis of your use of the website. The information generated by the cookie about your use of this website (including your IP address) will be transmitted to and stored by a Google server in the USA. Google will use this information to evaluate your use of the website, compile reports on website activity for website operators, and provide other services relating to website and internet usage. Google may also transfer this information to third parties if required by law or if third parties process this data on behalf of Google. Under no circumstances will Google associate your IP address with other data held by Google. You can prevent the installation of cookies by adjusting your browser software settings; however, we must inform you that in this case, you may not be able to use all the functionalities of this website. By using our website, you consent to the processing of data collected about you by Google in the manner and for the purposes described above."
-            }
-          },
-          "tabs": {
-            "impressum": "Imprint",
-            "datenschutz": "Data Protection",
-            "nutzungsbedingungen": "Terms of Use",
-            "statements": "Statements"
-          }
-        }
-      }
-    },
-    "app": {
-      "digital-twin-view": {
-        "digital-twin-title": "Digital Twin",
-        "digital-twin-subtitle": "The city's digital twin offers a virtual representation of the city and, for example, digitally displays data on buildings, infrastructure and nature. {break}This technology allows planning, analysis, and optimization of urban development.",
-        "tutorial-button": "Watch Tutorial"
-      },
-      "DKSRAppsView": {
-        "title": "DKSR Analysis Tools",
-        "subtitle": "Here you can find use case-specific data analysis tools",
-        "apps": {
-          "heatwaves": {
-            "title": "Understanding Heatwaves",
-            "content": "Heatwaves are dangerously hot periods that increase health risks. Understanding their severity factors helps planners and citizens improve urban heat resilience and reduce casualties."
-          },
-          "bikePlanner": {
-            "title": "Bike Lane Planner",
-            "content": "This experimental tool could help city planners quickly test various strategies for placing new bike lanes."
-          },
-          "heatActions": {
-            "title": "Planning Heatwave Actions",
-            "content": "Cities face the risk of heatwaves and must invest in new infrastructure. Our tool organizes data to simplify decision-making and explore solutions."
-          },
-          "heatRisk": {
-            "title": "Heatwave Risk Areas",
-            "content": "Cities face the risk of heatwaves and must invest in new infrastructure. Our tool organizes data to simplify decision-making and explore solutions."
-          }
-        },
-        "categories": {
-          "traffic": "Traffic",
-          "environment": "Environment",
-          "energy": "Energy",
-          "citizens": "Citizens"
-        }
       }
     }
   },
@@ -528,10 +257,6 @@
       "country": "Country",
       "superCatalog": "Super Catalog"
     }
-  },
-  "homepage": {
-    "title": "Good Morning",
-    "subtitle": "What’s new on your platform?"
   },
   "datasetDetails": {
     "previewFailedToLoad": "Something went wrong. Please reload the page or try again later."
@@ -969,57 +694,6 @@
       },
       "createNewCatalogue": "Create a new Catalogue",
       "createNewDataset": "Create a new Dataset"
-    }
-  },
-  "userdashboard": {
-    "widgets": {
-      "orgnews": {
-        "status": {
-          "public": "Public",
-          "draft": "Draft"
-        },
-        "overview": "Your new data sets at a glance",
-        "lastModified": "Last modified",
-        "datasetstab": "Datasets",
-        "statustab": "Status",
-        "formattab": "Format",
-        "nodata": "No data available"
-      },
-      "news": {
-        "newsfrom": "News from the Municipal Data Work",
-        "loading": "Loading...",
-        "error": "Something went wrong. Please reload the page or try again later.",
-        "view": "View",
-        "new": {
-          "dataset": "New dataset \"{title}\" was uploaded",
-          "catalog": "New catalog \"{title}\" was created",
-          "organization": "New organization \"{title}\" was created"
-        }
-      }
-    }
-  },
-  "organisation": {
-    "subtitle": "Here you will find all the organizations that help to shape the platform.",
-    "categoriesOfData": "Categories of data",
-    "datasets": {
-      "label": "Organizational datasets",
-      "noData": "No data available",
-      "search": "Search Datasets",
-      "datasetName": "Dataset name",
-      "createdOn": "Created on",
-      "license": "License",
-      "format": "Format"
-    },
-    "colleagues": {
-      "label": "Colleagues",
-      "noData": "No data available",
-      "search": "Search Colleagues",
-      "name": "Name",
-      "position": "Position",
-      "access": "Access",
-      "contact": "Contact",
-      "email": "Email",
-      "phone": "Phone"
     }
   }
 }
