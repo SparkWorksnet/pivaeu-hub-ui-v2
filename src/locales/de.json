@@ -112,232 +112,20 @@
     "show_more": "Mehr anzeigen",
     "error": "Fehler"
   },
-
-
   "authentication": {
     "logged_out": "Sie wurden ausgeloggt."
   },
-  "navigation": {
-    "home": "Startseite",
-    "digital-twin": "Digitaler Zwilling",
-    "dashboards": "Dashboards",
-    "data-catalog": "Datenkatalog",
-    "organisation-sites": "Organisationspräsenzen",
-    "log-in": "Anmelden",
-    "register-text": "Noch kein Konto? Jetzt registrieren!",
-    "impressum": "Rechtliche Hinweise",
-    "user-profile": "Profil",
-    "dksr-apps": "DKSR Analysetools",
-    "go-back": "Zurück",
-    "dashboards-context": "Meine Dashboards",
-    "apps-context": "DKSR Analysetools"
-  },
-  "tooltips": {
-    "home": "Home",
-    "digital-twin": "Digitaler Zwilling",
-    "dashboards": "Dashboards",
-    "data-catalog": "Datakatalog",
-    "organisation-sites": "Organisationspräsenzen"
-  },
-  "dashboard": {
-    "title": "Deine Stadt im Überblick",
-    "subtitle": "Hier findest du die Dashboards deiner Stadt",
-    "new_dashboard": "Neues Dashboard",
-    "widget": {
-      "source": "Herausgeber",
-      "theme": "Themen",
-      "to_dashboard": "Zum Dashboard"
-    }
-  },
-  "dashboards": {
-    "title": "Ihre Stadt im Überblick",
-    "subtitle": "Hier finden Sie die Dashboards Ihrer Stadt. Auf den Dashboards werden thematisch zusammengehörige Datensets grafisch und im Zusammenhang dargestellt. Die Dashboards ermöglichen es Entscheidungen zu treffen und nachzuvollziehen."
-  },
-  "home": {
-    "organisation_data": "Organisationsdaten"
-  },
-  "data-catalog": {},
-  "HomepageQuickLinks": {
-    "addDashboard": {
-      "title": "Dashboard hinzufügen",
-      "subtitle": "Hier kannst du neue Dashboards erstellen"
-    },
-    "findData": {
-      "title": "Daten finden",
-      "subtitle": "Hier kannst du alle Datensets finden, die es auf der Plattform gibt"
-    },
-    "analyzeData": {
-      "title": "Daten analysieren",
-      "subtitle": "Hier kannst du deine Datensets analysieren"
-    }
-  },
-  "city-os": {
-    "layout": {
-      "app-header": {
-        "login": "Anmelden",
-        "user-profile": "Nutzerprofil",
-        "warning": "Warnung",
-        "toggle-sidebar": "Seitenleiste umschalten"
-      },
-      "app-header-dropdown": {
-        "user-menu": "Nutzermenü",
-        "user-profile": "Mein Profil",
-        "personal-settings": "Persönliche Einstellungen",
-        "my-work": "Meine Arbeit",
-        "data-exchange": "Datenaustausch",
-        "user-management": "Nutzermanagement",
-        "legal-notices": "Rechtliche Hinweise",
-        "logout": "Ausloggen"
-      }
-    }
-  },
-  "user-profile": {
-    "up-content": {
-      "title-about": "Über dich",
-      "label-name": "Name",
-      "label-email": "E-Mail-Adresse",
-      "label-telephone": "Telefon",
-      "label-department": "Abteilung",
-      "label-organization": "Organisation",
-      "title-login": "Anmeldedaten",
-      "label-username": "Benutzername",
-      "button-logout": "Abmelden"
-    }
-  },
   "landing-page": {
-    "hof": {
-      "hof-lp-header": {
-        "title": "Innovationsraum Hofer Land",
-        "second-title": "Ihr Zugang zu interaktiven Informationen",
-        "subtitle": "Nutzen Sie den Digitalen Zwilling, innovative Dashboards und den Datenkatalog für umfassende Analysen und Einblicke in die Datenwelt des Hofer Landes."
-      },
-      "hof-lp-features": {
-        "digital-twin": {
-          "title": "Digitaler Zwilling",
-          "description": "Ein digitaler Zwilling ist eine virtuelle Kopie der Stadt für Planung und Verwaltung.",
-          "button": "Zum Digitalen Zwilling"
-        },
-        "dashboards": {
-          "title": "Dashboards",
-          "description": "Dashboards sind interaktive Übersichten wichtiger Daten und Kennzahlen.",
-          "button": "Zu den Dashboards"
-        },
-        "data-catalog": {
-          "title": "Offener Datenkatalog",
-          "description": "Ein Datenkatalog ist eine freizugängliche, durchsuchbare Sammlung aller Daten.",
-          "button": "Zum Datenkatalog"
-        }
-      },
-      "hof-lp-digital-twin": {
-        "tile-title": "Digitaler Zwilling",
-        "title": "Der Digitale Zwilling für intelligente Stadtplanung",
-        "description": "Der digitale Zwilling einer Stadt bietet eine virtuelle Repräsentation ihres gesamten Ökosystems, einschließlich Infrastruktur und Bürger. Diese Technologie gibt die Möglichkeit, urbane Entwicklung zu planen, zu analysieren und zu optimieren.",
-        "button-digital-twin": "Zu den digitalen Zwillingen",
-        "button-tutorial": "Tutorial ansehen"
-      },
-      "hof-lp-dashboards": {
-        "tile-title": "Dashboards",
-        "title": "Nutzen Sie Dashboards, um Einblicke in Daten festzuhalten",
-        "description": "Die Dashboards unserer Plattform bieten klare Einblicke in Daten und ermöglichen fundierte Entscheidungen für die Stadtentwicklung.",
-        "button-dashboards": "Zu den Dashboards"
-      },
-      "hof-lp-datacatalog": {
-        "tile-title": "Datenkatalog",
-        "title": "Arbeiten Sie mit Open Data und Daten, von Teilnehmerorganisationen",
-        "description": "Der Datenkatalog ermöglicht den Zugriff auf eine Vielzahl von Open Data sowie auf Daten, die von den teilnehmenden Organisationen bereitgestellt wurden, und unterstützt so eine umfassende Datenanalyse und -nutzung.",
-        "button-data-catalog": "Daten finden"
-      }
-    },
     "test": "test",
     "header": {
       "home": "Home",
       "datasets": "Datensätze",
       "catalogues": "Kataloge",
-      "datawork": "Kommunales Datenwerk",
-      "about-kdw": "Über KDW",
       "legal-notice": "Rechtliche Hinweise",
       "registration": "Registrieren",
       "login": "Anmelden",
       "firstSteps": "First Steps",
-      "about": "über twin.bydata",
-      "findAll": "Alle Finden",
-      "findTwins": "Twins Finden",
       "docs": "Doku"
-    },
-    "hero": {
-      "welcome": "TwinByData aus Bayern",
-      "search-placeholder": "Datensätze suchen",
-      "search": "Suchen",
-      "feature-one": "Sicheres Teilen von Daten",
-      "feature-two": "Zugang zu Echtzeitdaten",
-      "feature-three": "Dynamische Daten"
-    },
-    "partners": {
-      "description1": "Ein mFUND-gefördertes Forsch ungsprojekt des BMDV",
-      "description2": "umgesetzt durch die Projektpartner DKSR und Fraunhofer FOKUS",
-      "description3": "für die Mainzer Stadtwerke AG."
-    },
-    "discover-data": {
-      "title": "Entdecke das Kommunale DatenWerk",
-      "box-one-text": "Als Bürger:in Open Data ihrer Stadt einsehen",
-      "box-one-button-text": "Daten erkunden",
-      "box-two-text": "Als Datenbereitsteller:in zuverlässige und restriktive Daten einsehen",
-      "box-two-button-text": "Anmelden"
-    },
-    "open-data": {
-      "title": "Open Data und restriktive Daten von Teilnehmerorganisationen",
-      "chip-one": "Offene Daten",
-      "chip-two": "Restriktive Daten",
-      "chip-three": "Live Daten",
-      "chip-four": "Kommunale Daten",
-      "description": "Der Datenkatalog ermöglicht den Zugriff auf eine Vielzahl von Open Data sowie auf Daten, die von den teilnehmenden Organisationen bereitgestellt wurden, und unterstützt so eine umfassende Datenanalyse und -nutzung.",
-      "box-one-title": "Kommunale Data-sharing Plattform",
-      "box-one-text": "Digitale Daseinsvorsorge durch eine sichere Plattform für den Austausch unterschiedlicher Daten.",
-      "box-two-title": "Rechtliche und technische Sicherheit",
-      "box-two-text": "Rechtliche und technische Sicherheit, durch die Ausarbeitung von Zugriffsrechten",
-      "box-three-title": "Aktualität und Zuverlässigkeit:",
-      "box-three-text": "Hohe Datenqualität und Zuverlässigkeit durch regelmäßiges Pflegen des Datenkatalogs",
-      "box-four-title": "Open Data Zugang für Bürger",
-      "box-four-text": "Open Data Zugang für interessierte und engagierte Bürger, die an der Stadtentwicklung beteiligt sein möchten"
-    },
-    "discover-data-detailed": {
-      "main-title": "Daten entdecken",
-      "main-description": "In diese Plattform fließen Daten aus mehr als acht verschiedenen Kategorien ein, was ein umfassendes Verständnis für Themen wie wirtschaftliche und soziale Entwicklungen, klimatische Veränderungen und Anpassungen, sowie die konkrete Stadt- und Regionalentwicklung ermöglichen. Ziel ist es, mittels der übersichtlichen Darstellung und Verarbeitung von Daten eine sozial-ökologische Marktwirtschaft zu unterstützen.",
-      "source-one-name": "Verfügbare Datensätze",
-      "source-two-name": "Distributionen",
-      "source-three-name": "Datenbereitsteller",
-      "secondary-title": "Daten zum Loslegen",
-      "get-started-one-button": "Zum Datensatz",
-      "get-started-one-title": "Unternehmen im Bereich Erneuerbare Energien",
-      "get-started-two-button": "Zum Datensatz",
-      "get-started-two-title": "Verkehrsmonitoringsdaten aus TREMOD",
-      "get-started-three-button": "Zum Datensatz",
-      "get-started-three-title": "Auswertung Mobilfunkabdeckung 5G"
-    },
-    "get-in-touch": {
-      "title": "Kontakt aufnehmen",
-      "text": "Schicken Sie uns Ihre Bewerbung oder vereinbaren Sie einen Termin mit uns, damit wir Ihnen die Plattform zeigen können",
-      "button-text": "Kontakt aufnehmen"
-    },
-    "footer": {
-      "sitemap": {
-        "data-catalog": "Datenkatalog",
-        "apply": "Bewerben",
-        "login": "Anmelden",
-        "home": "Startseite",
-        "discover": "Entdecke das Kommunale DatenWerk",
-        "open-data": "Open Data und restriktive Daten von Teilnehmerorganisationen",
-        "discover-data": "Daten Entdecken",
-        "how-to": "Wie bekommst du dein KDW?",
-        "contact": "Kontakt aufnehmen",
-        "legal": "Rechtliches",
-        "impressum": "Impressum",
-        "privacy-policy": "Datenschutz",
-        "accessibility": "Barrierefreiheit",
-        "terms": "Nutzungsbedingungen",
-        "feedback": "Feedback"
-      },
-      "funding-partners": "Projektpartner & Fördergeber"
     }
   },
   "dpi": {
@@ -405,21 +193,6 @@
             "descending": "Absteigend"
           }
         }
-      },
-      "headline": {
-        "KHeadline": {
-          "datacatalog": "Datenkatalog",
-          "datacatalog-text": "Erkunden, analysieren und teilen Sie wichtige Daten. Hier erfahren Sie mehr über Datentypen und die Zusammenarbeit auf der Plattform.",
-          "newData": "Neue Daten",
-          "organizationData": "Organisationsdaten"
-        }
-      },
-      "facet-sidebar": {
-        "FacetSidebar": {
-          "search-catalog": "Katalog durchsuchen",
-          "live-data": "Live Daten",
-          "high-value-data": "Hochwertige Daten"
-        }
       }
     },
     "views": {
@@ -427,67 +200,6 @@
         "datasets": "Datensätze gefunden",
         "searchDataCatalog": "Twins suchen",
         "search": "Suchen"
-      }
-    }
-  },
-  "views": {
-    "public": {
-      "PublicDataNoticesView": {
-        "legal": {
-          "header": {
-            "title": "Rechtliche Informationen und Datenschutz",
-            "description": "Willkommen in unserem Bereich für rechtliche Informationen und Datenschutz. Hier finden Sie alle wesentlichen Details zu unserem Impressum, rechtlichen Hinweisen und unserer Datenschutzerklärung. Diese Seiten dienen dazu, Ihnen Transparenz über den Betrieb unserer Website zu bieten und zu erklären, wie wir mit Ihren persönlichen Daten umgehen."
-          },
-          "impressum": {
-            "notice": {
-              "heading": "Rechtliche Hinweise",
-              "paragraph1": "Alle Rechte vorbehalten. Text, Bilder, Grafiken, Sound, Animationen und Videos sowie deren Anordnung auf dieser Website unterliegen dem Schutz des Urheberrechts und anderer Schutzgesetze. Der Inhalt dieser Website darf nicht zu kommerziellen Zwecken kopiert, verbreitet, verändert oder Dritten zugänglich gemacht werden.",
-              "paragraph2": "Unsere Webseite kann Links zu Webseiten anderer Anbieter enthalten. Trotz sorgfältiger und regelmäßiger Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links. Wir haben keinerlei Einfluss auf die Gestaltung und die Inhalte der von uns gelinkten Seiten. Soweit Sie solche Websites besuchen wollen, sollten Sie die hierfür jeweils geltenden Hinweise beachten. Wir sind nicht für die Datenschutzstandards und die Praktiken anderer Anbieter verantwortlich. Sollten Ihnen rechtswidrige Inhalte oder Praktiken externer Links bekannt werden, bitten wir Sie uns umgehend in Kenntnis zu setzen.",
-              "paragraph3": "Des Weiteren verwenden wir Google Analytics, einen Webanalysedienst von Google. Google Analytics verwendet so genannte Cookies (kleine Textdateien), die auf Ihrem Computer gespeichert werden und die eine Analyse der Benutzung der Website durch Sie ermöglichen. Die durch die Cookie erzeugten Informationen über Ihre Benutzung dieser Homepage (einschließlich Ihrer IP-Adresse) werden an einen Server von Google in den USA übertragen und dort gespeichert. Google wird diese Informationen benutzen, um Ihre Nutzung der Website auszuwerten, um Reports über die Websiteaktivitäten für die Homepage-Betreiber zusammenzustellen und um weitere mit der Websitenutzung und der Internetnutzung verbundene Dienstleistungen zu erbringen. Auch wird Google diese Informationen gegebenenfalls an Dritte übertragen, sofern dieses gesetzlich vorgeschrieben ist oder soweit Dritte diese Daten im Auftrag von Google verarbeiten. Google wird in keinem Fall Ihre IP-Adresse mit anderen Daten von Google in Verbindung bringen. Sie können die Installation der Cookies durch eine entsprechende Einstellung in Ihrer Browser-Software verhindern, wir weisen Sie jedoch darauf hin, dass Sie in diesem Fall gegebenenfalls nicht sämtliche Funktionen dieser Website in vollem Umfang nutzen können. Durch die Nutzung unserer Homepage erklären Sie sich mit der Bearbeitung, der über Sie erhobenen Daten durch Google, in der zuvor beschriebenen Art und Weise und zu dem zuvor benannten Zweck einverstanden."
-            }
-          },
-          "tabs": {
-            "impressum": "Impressum",
-            "datenschutz": "Datenschutz",
-            "nutzungsbedingungen": "Nutzungsbedingungen",
-            "statements": "Statements"
-          }
-        }
-      }
-    },
-    "app": {
-      "digital-twin-view": {
-        "digital-twin-title": "Digitaler Zwilling",
-        "digital-twin-subtitle": "Der digitale Zwilling der Stadt bietet eine virtuelle Darstellung der Stadt und bildet beispielsweise Daten zu Gebäuden, Infrastruktur und Natur digital erlebbar ab. {break}Diese Technologie gibt die Möglichkeit, urbane Entwicklung zu planen, zu analysieren und zu optimieren.",
-        "tutorial-button": "Tutorial ansehen"
-      },
-      "DKSRAppsView": {
-        "title": "DKSR Analysetools",
-        "subtitle": "Hier findest du Use Case spezifische Datenanalysetools",
-        "apps": {
-          "heatwaves": {
-            "title": "Hitzewellen verstehen",
-            "content": "Hitzewellen sind gefährlich heiße Perioden, die Gesundheitsrisiken erhöhen. Das Verständnis ihrer Schwerefaktoren hilft Planern und Bürgern, die städtische Hitzeresilienz zu verbessern und Opferzahlen zu reduzieren."
-          },
-          "bikePlanner": {
-            "title": "Fahrradweg-Planer",
-            "content": "Dieses experimentelle Tool könnte Stadtplanern helfen, verschiedene Strategien zur Platzierung neuer Radwege schnell zu testen."
-          },
-          "heatActions": {
-            "title": "Maßnahmen bei Hitzewellen planen",
-            "content": "Städte stehen vor dem Risiko von Hitzewellen und müssen in neue Infrastrukturen investieren. Unser Tool organisiert Daten, um Entscheidungsfindung zu vereinfachen und Lösungen zu erkunden."
-          },
-          "heatRisk": {
-            "title": "Hitzewellen Risikogebiete",
-            "content": "Städte stehen vor dem Risiko von Hitzewellen und müssen in neue Infrastrukturen investieren. Unser Tool organisiert Daten, um Entscheidungsfindung zu vereinfachen und Lösungen zu erkunden."
-          }
-        },
-        "categories": {
-          "traffic": "Verkehr",
-          "environment": "Umwelt",
-          "energy": "Energie",
-          "citizens": "Bürger"
-        }
       }
     }
   },
@@ -534,39 +246,8 @@
       "superCatalog": "Superkatalog"
     }
   },
-  "homepage": {
-    "title": "Guten Morgen",
-    "subtitle": "Was gibt es Neues auf deiner Plattform?"
-  },
   "datasetDetails": {
     "previewFailedToLoad": "Etwas ist schiefgelaufen. Bitte laden Sie die Seite neu oder versuchen sie es zu einem späteren Zeitpunkt noch einmal."
-  },
-  "userdashboard": {
-    "widgets": {
-      "orgnews": {
-        "status": {
-          "public": "Öffentlich",
-          "draft": "Entwurf"
-        },
-        "overview": "Deine neuen Datensets im Überblick",
-        "lastModified": "Letzte Änderung",
-        "datasetstab": "Datasets",
-        "statustab": "Status",
-        "formattab": "Format",
-        "nodata": "Keine Daten vorhanden"
-      },
-      "news": {
-        "newsfrom": "Neues aus dem Kommunalen DatenWerk",
-        "loading": "Daten werden geladen...",
-        "error": "Etwas ist schiefgelaufen. Bitte laden Sie die Seite neu oder versuchen sie es zu einem späteren Zeitpunkt noch einmal.",
-        "view": "Ansehen",
-        "new": {
-          "dataset": "Neues Datenset \"{title}\" wurde hochgeladen",
-          "catalog": "Neuer Katalog \"{title}\" wurde erstellt",
-          "organization": "Neue Organisation \"{title}\" wurde erstellt"
-        }
-      }
-    }
   },
   "message": {
     "dataupload": {
@@ -1982,33 +1663,6 @@
           "label": "Zeitraum des Zeitraums"
         }
       }
-    }
-  },
-  "organisation": {
-    "subtitle": "Hier findest du alle Organisationen, die helfen, die Plattform mitzugestalten.",
-    "categoriesOfData": "Kategorien der Daten",
-    "datasets": {
-      "label": "Organisationsdatensets",
-      "noData": "Keine Daten vorhanden",
-      "search": "Datensatz suchen",
-      "datasetName": "Datensatz Name",
-      "createdOn": "Erstellt am",
-      "license": "Lizenz",
-      "format": "Format",
-      "id": "ID",
-      "catalog": "Katalog",
-      "description": "Beschreibung"
-    },
-    "colleagues": {
-      "label": "Mitarbeiter",
-      "noData": "Keine Daten vorhanden",
-      "search": "Mitarbeiter suchen",
-      "name": "Name",
-      "position": "Position",
-      "access": "Berechtigung",
-      "contact": "Kontakt",
-      "email": "Email",
-      "phone": "Telefon"
     }
   }
 }

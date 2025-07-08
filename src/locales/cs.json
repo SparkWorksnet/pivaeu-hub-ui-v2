@@ -2,136 +2,7 @@
   "authentication": {
     "logged_out": "Byli jste odhlášeni."
   },
-  "navigation": {
-    "home": "Domů",
-    "digital-twin": "Digitální dvojče",
-    "dashboards": "Dashboardy",
-    "data-catalog": "Datový katalog",
-    "organisation-sites": "Stránky organizace",
-    "log-in": "Přihlásit se",
-    "register-text": "Nemáte ještě účet? Zaregistrujte se nyní!",
-    "impressum": "Právní oznámení",
-    "user-profile": "Profil",
-    "dksr-apps": "DKSR Aplikace",
-    "go-back": "Zpět",
-    "dashboards-context": "Moje dashboardy",
-    "apps-context": "Analytické nástroje DKSR"
-  },
-  "tooltips": {
-    "home": "Domů",
-    "digital-twin": "Digitální dvojče",
-    "dashboards": "Dashboardy",
-    "data-catalog": "Datový katalog",
-    "organisation-sites": "Stránky organizace"
-  },
-  "dashboard": {
-    "title": "Vaše město na první pohled",
-    "subtitle": "Zde naleznete dashboardy svého města",
-    "new_dashboard": "Nový Dashboard",
-    "widget": {
-      "source": "Vydavatel",
-      "theme": "Témata",
-      "to_dashboard": "Na dashboard"
-    }
-  },
-  "dashboards": {
-    "title": "Vaše město na první pohled",
-    "subtitle": "Zde naleznete dashboardy svého města. Dashboardy prezentují tematicky související datové sady vizuálně a v kontextu. Umožňují rozhodování a porozumění."
-  },
-  "home": {
-    "organisation_data": "Data organizace"
-  },
-  "HomepageQuickLinks": {
-    "addDashboard": {
-      "title": "Přidat dashboard",
-      "subtitle": "Zde můžete vytvořit nové dashboardy"
-    },
-    "findData": {
-      "title": "Najít data",
-      "subtitle": "Zde naleznete všechny datové sady dostupné na platformě"
-    },
-    "analyzeData": {
-      "title": "Analyzovat data",
-      "subtitle": "Zde můžete analyzovat své datové sady"
-    }
-  },
-  "city-os": {
-    "layout": {
-      "app-header": {
-        "login": "Přihlásit se",
-        "user-profile": "Uživatelský profil",
-        "warning": "Varování",
-        "toggle-sidebar": "Přepnout postranní panel"
-      },
-      "app-header-dropdown": {
-        "user-menu": "Uživatelské menu",
-        "user-profile": "Můj profil",
-        "personal-settings": "Osobní nastavení",
-        "my-work": "Moje práce",
-        "data-exchange": "Výměna dat",
-        "user-management": "Správa uživatelů",
-        "legal-notices": "Právní oznámení",
-        "logout": "Odhlásit se"
-      }
-    }
-  },
-  "user-profile": {
-    "up-content": {
-      "title-about": "O vás",
-      "label-name": "Jméno",
-      "label-email": "Emailová adresa",
-      "label-telephone": "Telefon",
-      "label-department": "Oddělení",
-      "label-organization": "Organizace",
-      "title-login": "Přihlašovací informace",
-      "label-username": "Uživatelské jméno",
-      "button-logout": "Odhlásit se"
-    }
-  },
   "landing-page": {
-    "hof": {
-      "hof-lp-header": {
-        "title": "Inovační prostor Hofer Land",
-        "second-title": "Váš přístup k interaktivním informacím",
-        "subtitle": "Využijte digitální dvojče, inovativní dashboardy a datový katalog pro komplexní analýzu a vhled do datové krajiny Hofer Land."
-      },
-      "hof-lp-features": {
-        "digital-twin": {
-          "title": "Digitální dvojče",
-          "description": "Digitální dvojče je virtuální kopie města pro plánování a správu.",
-          "button": "Přejít na Digitální dvojče"
-        },
-        "dashboards": {
-          "title": "Dashboardy",
-          "description": "Dashboardy jsou interaktivní přehledy klíčových dat a metrik.",
-          "button": "Přejít na Dashboardy"
-        },
-        "data-catalog": {
-          "title": "Otevřený datový katalog",
-          "description": "Datový katalog je veřejně přístupná, prohledávatelná sbírka všech dat.",
-          "button": "Přejít na Datový katalog"
-        }
-      },
-      "hof-lp-digital-twin": {
-        "tile-title": "Digitální dvojče",
-        "title": "Digitální dvojče pro inteligentní plánování měst",
-        "description": "Digitální dvojče města poskytuje virtuální reprezentaci celého ekosystému, včetně infrastruktury a obyvatel. Tato technologie umožňuje plánování, analýzu a optimalizaci rozvoje měst.",
-        "button-digital-twin": "Přejít na digitální dvojčata",
-        "button-tutorial": "Sledovat tutoriál"
-      },
-      "hof-lp-dashboards": {
-        "tile-title": "Dashboardy",
-        "title": "Použijte dashboardy k zachycení datových poznatků",
-        "description": "Dashboardy na naší platformě poskytují jasné poznatky z dat, které umožňují informované rozhodování o rozvoji měst.",
-        "button-dashboards": "Přejít na dashboardy"
-      },
-      "hof-lp-datacatalog": {
-        "tile-title": "Datový katalog",
-        "title": "Práce s otevřenými daty a daty od zúčastněných organizací",
-        "description": "Datový katalog poskytuje přístup k různým otevřeným datům i datům poskytovaným zúčastněnými organizacemi, podporujícími komplexní analýzu a využití dat.",
-        "button-data-catalog": "Najít data"
-      }
-    },
     "test": "test",
     "header": {
       "home": "Domů",
@@ -140,60 +11,6 @@
       "legal-notice": "Právní oznámení",
       "registration": "Registrovat",
       "login": "Přihlásit se"
-    },
-    "hero": {
-      "welcome": "Vítejte na Municipal DataWorks",
-      "search-placeholder": "Hledat datové sady",
-      "search": "Hledat",
-      "feature-one": "Bezpečné sdílení dat",
-      "feature-two": "Přístup k datům v reálném čase",
-      "feature-three": "Dynamická data"
-    },
-    "partners": {
-      "description1": "Výzkumný projekt BMDV financovaný z prostředků mFUND",
-      "description2": "realizované partnery projektu DKSR a Fraunhofer FOKUS",
-      "description3": "pro Mainzer Stadtwerke AG."
-    },
-    "discover-data": {
-      "title": "Objevte Municipal DataWorks",
-      "box-one-text": "Prohlédněte si otevřená data vašeho města jako občan",
-      "box-one-button-text": "Prozkoumat data",
-      "box-two-text": "Prohlédněte si spolehlivá a restriktivní data jako poskytovatel dat",
-      "box-two-button-text": "Přihlásit se"
-    },
-    "open-data": {
-      "title": "Otevřená data a restriktivní data od zúčastněných organizací",
-      "chip-one": "Otevřená data",
-      "chip-two": "Restriktivní data",
-      "chip-three": "Živá data",
-      "description": "Datový katalog umožňuje přístup k široké škále otevřených dat i dat poskytovaných zúčastněnými organizacemi, podporujícími komplexní analýzu a využití dat.",
-      "box-one-title": "Platforma pro sdílení dat města",
-      "box-one-text": "Digitální veřejné služby prostřednictvím bezpečné platformy pro výměnu různých dat.",
-      "box-two-title": "Právní a technická bezpečnost",
-      "box-two-text": "Právní a technická bezpečnost prostřednictvím vývoje přístupových práv",
-      "box-three-title": "Aktualizovanost a spolehlivost",
-      "box-three-text": "Vysoká kvalita a spolehlivost dat díky pravidelné údržbě datového katalogu",
-      "box-four-title": "Přístup k otevřeným datům pro občany",
-      "box-four-text": "Přístup k otevřeným datům pro zájemce a aktivní občany, kteří se chtějí podílet na rozvoji města"
-    },
-    "discover-data-detailed": {
-      "main-title": "Objevte data",
-      "main-description": "Tato platforma integruje data z více než osmi různých kategorií, což umožňuje komplexní pochopení témat, jako jsou ekonomický a sociální rozvoj, změny klimatu a adaptace, stejně jako konkrétní městský a regionální rozvoj. Cílem je podpořit socio-ekologickou tržní ekonomiku prostřednictvím jasné vizualizace a zpracování dat.",
-      "source-one-name": "Dostupné datové sady",
-      "source-two-name": "Distribuce",
-      "source-three-name": "Poskytovatelé dat",
-      "secondary-title": "Data pro začátek",
-      "get-started-one-button": "Na datovou sadu",
-      "get-started-one-title": "Firmy v sektoru obnovitelné energie",
-      "get-started-two-button": "Na datovou sadu",
-      "get-started-two-title": "Údaje o monitorování dopravy z TREMOD",
-      "get-started-three-button": "Na datovou sadu",
-      "get-started-three-title": "Vyhodnocení pokrytí 5G mobilní sítě"
-    },
-    "get-in-touch": {
-      "title": "Kontaktujte nás",
-      "text": "Zašlete nám svou žádost nebo si domluvte schůzku, abychom vám mohli ukázat platformu.",
-      "button-text": "Kontaktovat nás"
     },
     "footer": {
       "sitemap": {
@@ -212,8 +29,7 @@
         "accessibility": "Přístupnost",
         "terms": "Podmínky použití",
         "feedback": "Zpětná vazba"
-      },
-      "funding-partners": "Financující partneři"
+      }
     }
   },
   "dpi": {
@@ -281,89 +97,6 @@
             "descending": "Sestupně"
           }
         }
-      },
-      "headline": {
-        "KHeadline": {
-          "datacatalog": "Datový katalog",
-          "datacatalog-text": "Prozkoumejte, analyzujte a sdílejte důležitá data. Zjistěte více o typech dat a spolupráci na platformě.",
-          "newData": "Nová data",
-          "organizationData": "Data organizace"
-        }
-      },
-      "facet-sidebar": {
-        "FacetSidebar": {
-          "search-catalog": "Prohledávat katalog",
-          "live-data": "Živá data",
-          "high-value-data": "Vysoce hodnotná data"
-        }
-      }
-    },
-    "views": {
-      "DatasetSearchView": {
-        "datasets": "Datové sady",
-        "searchDataCatalog": "Hledat v datovém katalogu",
-        "search": "Search"
-      }
-    }
-  },
-  "views": {
-    "public": {
-      "PublicDataNoticesView": {
-        "legal": {
-          "header": {
-            "title": "Právní informace a ochrana osobních údajů",
-            "description": "Vítejte v naší sekci právních informací a ochrany osobních údajů. Zde najdete všechny důležité podrobnosti o našem imprintu, právních oznámeních a našich zásadách ochrany osobních údajů. Tyto stránky jsou navrženy tak, aby poskytovaly transparentnost o provozu našeho webu a vysvětlily, jak nakládáme s vašimi osobními údaji."
-          },
-          "impressum": {
-            "notice": {
-              "heading": "Právní oznámení",
-              "paragraph1": "Všechna práva vyhrazena. Texty, obrázky, grafika, zvuky, animace a videa, stejně jako jejich uspořádání na tomto webu, podléhají autorským právům a dalším ochranným zákonům. Obsah této webové stránky nesmí být kopírován, distribuován, upravován ani zpřístupňován třetím stranám pro komerční účely.",
-              "paragraph2": "Naše webové stránky mohou obsahovat odkazy na weby jiných poskytovatelů. Navzdory pečlivým a pravidelným kontrolám nepřebíráme žádnou odpovědnost za obsah externích odkazů. Nemáme žádný vliv na design a obsah stránek, na které odkazujeme. Pokud chcete navštívit takové webové stránky, měli byste dodržovat příslušná upozornění. Nejsme odpovědní za standardy a praktiky ochrany osobních údajů jiných poskytovatelů. Pokud se dozvíte o nezákonném obsahu nebo praktikách externích odkazů, prosíme, abyste nás okamžitě informovali.",
-              "paragraph3": "Kromě toho používáme Google Analytics, službu webové analýzy od společnosti Google. Google Analytics používá soubory cookie (malé textové soubory), které jsou uloženy ve vašem počítači a umožňují analýzu vašeho používání webu. Informace generované souborem cookie o vašem používání této webové stránky (včetně vaší IP adresy) budou přeneseny a uloženy na serveru společnosti Google v USA. Google tyto informace použije k vyhodnocení vašeho používání webu, k vytváření zpráv o aktivitě webu pro provozovatele webu a k poskytování dalších služeb souvisejících s používáním webu a internetu. Google může také tyto informace přenést třetím stranám, pokud to vyžaduje zákon nebo pokud třetí strany zpracovávají tato data jménem společnosti Google. V žádném případě nebude Google spojovat vaši IP adresu s jinými daty, která má k dispozici. Instalaci souborů cookie můžete zabránit změnou nastavení softwaru vašeho prohlížeče; musíme vás však informovat, že v takovém případě nemusíte být schopni plně využívat všechny funkce této webové stránky. Používáním našich webových stránek souhlasíte se zpracováním údajů, které o vás společnost Google shromáždila, způsobem a pro účely popsané výše."
-            }
-          },
-          "tabs": {
-            "impressum": "Impressum",
-            "datenschutz": "Ochrana osobních údajů",
-            "nutzungsbedingungen": "Podmínky použití",
-            "statements": "Prohlášení"
-          }
-        }
-      }
-    },
-    "app": {
-      "digital-twin-view": {
-        "digital-twin-title": "Digitální dvojče",
-        "digital-twin-subtitle": "Digitální dvojče města nabízí virtuální reprezentaci města a například digitálně hmatatelným způsobem prezentuje data o budovách, infrastruktuře a přírodě. {break}Tato technologie umožňuje plánování, analýzu a optimalizaci rozvoje měst.",
-        "tutorial-button": "Sledovat tutoriál"
-      },
-      "DKSRAppsView": {
-        "title": "DKSR analytické nástroje",
-        "subtitle": "Zde najdeš nástroje pro analýzu dat specifických pro konkrétní případy použití",
-        "apps": {
-          "heatwaves": {
-            "title": "Porozumění vlnám horka",
-            "content": "Vlny horka jsou nebezpečně horká období, která zvyšují zdravotní rizika. Pochopení jejich závažnosti pomáhá plánovačům a občanům zlepšit odolnost měst proti horku a snížit počet obětí."
-          },
-          "bikePlanner": {
-            "title": "Plánovač cyklostezek",
-            "content": "Tento experimentální nástroj může pomoci městským plánovačům rychle otestovat různé strategie pro umístění nových cyklostezek."
-          },
-          "heatActions": {
-            "title": "Plánování opatření proti vlnám horka",
-            "content": "Města čelí riziku vln horka a musí investovat do nové infrastruktury. Náš nástroj organizuje data, aby usnadnil rozhodování a zkoumal řešení."
-          },
-          "heatRisk": {
-            "title": "Rizikové oblasti vln horka",
-            "content": "Města čelí riziku vln horka a musí investovat do nové infrastruktury. Náš nástroj organizuje data, aby usnadnil rozhodování a zkoumal řešení."
-          }
-        },
-        "categories": {
-          "traffic": "Doprava",
-          "environment": "Životní prostředí",
-          "energy": "Energie",
-          "citizens": "Občané"
-        }
       }
     }
   },
@@ -403,10 +136,6 @@
     "operator": "Operátor",
     "moreFilters": "Více filtrů",
     "lessFilters": "Méně filtrů"
-  },
-  "homepage": {
-    "title": "Dobré ráno",
-    "subtitle": "Co je nového na vaší platformě?"
   },
   "datasetDetails": {
     "previewFailedToLoad": "Něco se pokazilo. Obnovte stránku nebo to zkuste znovu později."
@@ -2101,57 +1830,6 @@
       },
       "createNewCatalogue": "Vytvořit nový katalog",
       "createNewDataset": "Vytvořit novou datovou sadu"
-    }
-  },
-  "userdashboard": {
-    "widgets": {
-      "orgnews": {
-        "status": {
-          "public": "Veřejné",
-          "draft": "Koncept"
-        },
-        "overview": "Vaše nové datové sady na první pohled",
-        "lastModified": "Poslední úprava",
-        "datasetstab": "Datové sady",
-        "statustab": "Stav",
-        "formattab": "Formát",
-        "nodata": "Žádná data nejsou k dispozici"
-      },
-      "news": {
-        "newsfrom": "Novinky z Městských datových prací",
-        "loading": "Načítání...",
-        "error": "Něco se pokazilo. Prosím, znovu načtěte stránku nebo to zkuste později.",
-        "view": "Zobrazit",
-        "new": {
-          "dataset": "Nová datová sada \"{title}\" byla nahrána",
-          "catalog": "Nový katalog \"{title}\" byl vytvořen",
-          "organization": "Nová organizace \"{title}\" byla vytvořena"
-        }
-      }
-    }
-  },
-  "organisation": {
-    "subtitle": "Zde najdete všechny organizace, které pomáhají formovat platformu.",
-    "categoriesOfData": "Kategorie dat",
-    "datasets": {
-      "label": "Organizační datové sady",
-      "noData": "Žádná data nejsou k dispozici",
-      "search": "Vyhledat datové sady",
-      "datasetName": "Název datové sady",
-      "createdOn": "Vytvořeno dne",
-      "license": "Licence",
-      "format": "Formát"
-    },
-    "colleagues": {
-      "label": "Kolegové",
-      "noData": "Žádná data nejsou k dispozici",
-      "search": "Vyhledat kolegy",
-      "name": "Jméno",
-      "position": "Pozice",
-      "access": "Přístup",
-      "contact": "Kontakt",
-      "email": "Email",
-      "phone": "Telefon"
     }
   }
 }
