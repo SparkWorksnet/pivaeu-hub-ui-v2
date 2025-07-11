@@ -73,7 +73,7 @@ onUnmounted(() => {
     <!-- Dropdown Button -->
     <button
       @click="toggleDropdown"
-      class="flex items-center gap-2 px-3 py-2 text-sm font-medium text-surface-text hover:text-primary-hover rounded-md hover:bg-surface-100 dark:hover:bg-surface-800 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-surface-900"
+      class="flex items-center gap-2 px-3 py-2 text-sm font-medium text-surface hover:text-primary-hover rounded-md hover:bg-surface-100 dark:hover:bg-surface-800 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-surface-900"
       :class="{ 'bg-surface-100 dark:bg-surface-800': isDropdownOpen }"
     >
       <!-- Current Language Flag -->

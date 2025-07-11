@@ -20,6 +20,16 @@
   ::file-selector-button {
     border-color: var(--color-gray-200, currentcolor);
   }
+
+}
+
+@layer base {
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible {
+    @apply outline-none ring-2 ring-black rounded
+  }
 }
 
 @layer base {

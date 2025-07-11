@@ -25,7 +25,7 @@ onMounted(() => {
   <div class="flex items-center gap-2">
     <!-- Dynamic Sun/Moon Icon -->
     <svg 
-      class="h-4 w-5 text-surface-text"
+      class="h-4 w-5 text-surface"
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"
@@ -48,7 +48,7 @@ onMounted(() => {
 
     <!-- Toggle Switch -->
     <label
-      class="relative block h-4 w-7 rounded-full bg-gray transition-colors [-webkit-tap-highlight-color:_transparent] has-checked:bg-primary dark:bg-surface-800 dark:has-checked:bg-primary-hover cursor-pointer"
+      class="relative block h-4 w-7 rounded-full bg-gray transition-colors [-webkit-tap-highlight-color:_transparent] has-checked:bg-primary dark:bg-surface-800 dark:has-checked:bg-primary-hover cursor-pointe"
     >
       <input 
         type="checkbox" 
