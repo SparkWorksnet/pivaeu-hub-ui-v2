@@ -34,14 +34,14 @@ const handleNavigate = (navigate) => {
       v-slot="{ href, navigate, isActive, isExactActive }"
       :to="link.to"
     >
-      <a
+      <div
         class="header-icon-container text-base leading-[1.625rem]"
         :class="{ active: isActive && isExactActive }"
         :href="href"
         @click="handleNavigate(navigate)"
       >
         {{ link.label ? $t(link.label) : link.name }}
-      </a>
+      </div>
     </RouterLink>
   </div>
 </template>
