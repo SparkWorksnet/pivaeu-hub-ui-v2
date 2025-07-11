@@ -1,6 +1,6 @@
 <template>
-  <app-link :to="createLinkedDataURL()" target="_blank" is-tooltip="true" >
-    <div class="px-2 py-1">{{ text }}</div>
+  <app-link :to="createLinkedDataURL()" target="_blank" is-tooltip="true">
+    {{ text }}
   </app-link>
 </template>
 

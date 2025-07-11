@@ -48,7 +48,7 @@ onMounted(() => {
 
     <!-- Toggle Switch -->
     <label
-      class="relative block h-4 w-7 rounded-full bg-gray transition-colors [-webkit-tap-highlight-color:_transparent] has-checked:bg-primary dark:bg-surface-800 dark:has-checked:bg-primary-hover cursor-pointer"
+      class="relative block h-4 w-7 rounded-full bg-gray transition-colors [-webkit-tap-highlight-color:_transparent] has-checked:bg-primary dark:bg-surface-800 dark:has-checked:bg-primary-hover cursor-pointe"
     >
       <input 
         type="checkbox" 

@@ -2,53 +2,59 @@
   <nav>
     <!-- Linked Data link-->
     <div class="relative">
-      <div class="text-nowrap cursor-pointer underline">
+      <button class="text-nowrap cursor-pointer underline" @click="toggleDropdown" aria-haspopup="listbox">
         <span
           :title="$t('footer.links.linkedData')"
-          data-toggle="tooltip"
-          @click="toggleDropdown">
+          data-toggle="tooltip">
           {{ $t('footer.links.linkedData') }}
           <i class="icon-[ph--caret-down] text-xs align-middle" />
         </span>
-      </div>
+      </button>
       <div
         v-if="showDropdown"
         class="absolute z-10 w-full top-full border dark:border rounded-md shadow-md bg-surface-0 dark:bg-surface-800 text-surface-800 dark:text-white/80 dark:border-surface-700 max-h-[200px]">
-        <resource-details-linked-data-button
+        <ul class="w-full">
+          <li class="w-full hover:bg-gray p-1"><resource-details-linked-data-button
           isTooltip="true"
-          class="dropdown-item"
+          class="dropdown-item w-full"
           format="rdf"
           text="RDF/XML"
           :resources="resource"
-          v-bind:resources-id="resourceId"></resource-details-linked-data-button>
-        <resource-details-linked-data-button
+          v-bind:resources-id="resourceId"></resource-details-linked-data-button></li>
+          <li class="w-full hover:bg-gray p-1"><resource-details-linked-data-button
           isTooltip="true"
           class="dropdown-item"
           format="ttl"
           text="Turtle"
           :resources="resource"
           v-bind:resources-id="resourceId"></resource-details-linked-data-button>
-        <resource-details-linked-data-button
+          </li>
+          <li class="w-full hover:bg-gray p-1"><resource-details-linked-data-button
           isTooltip="true"
           class="dropdown-item"
           format="n3"
           text="Notation3"
           :resources="resource"
-          v-bind:resources-id="resourceId"></resource-details-linked-data-button>
-        <resource-details-linked-data-button
+          v-bind:resources-id="resourceId"></resource-details-linked-data-button></li>
+        <li class="w-full hover:bg-gray p-1">
+          <resource-details-linked-data-button
           isTooltip="true"
           class="dropdown-item"
           format="nt"
           text="N-Triples"
           :resources="resource"
           v-bind:resources-id="resourceId"></resource-details-linked-data-button>
-        <resource-details-linked-data-button
+        </li>
+        <li class="w-full hover:bg-gray p-1">
+          <resource-details-linked-data-button
           isTooltip="true"
           class="dropdown-item"
           format="jsonld"
           text="JSON-LD"
           :resources="resource"
           v-bind:resources-id="resourceId"></resource-details-linked-data-button>
+        </li>
+        </ul>
       </div>
     </div>
   </nav>
@@ -81,4 +87,5 @@ function toggleDropdown() {
 .dropdown-item :hover {
   background: var(--gray-hover);
 }
+
 </style>

@@ -47,10 +47,12 @@ const {
           {{ title }}
         </Typography>
       </slot>
-      <PhCaretDown
+      <button>
+        <PhCaretDown
         class="text-lg font-semibold transition-transform duration-200 ease-in-out"
         :class="{ 'rotate-180': !collapsed }"
       />
+      </button>
     </div>
     <div v-if="!collapsed" class="flex-1">
       <ul class="flex flex-col divide-y border-neutral-20">
@@ -68,7 +70,7 @@ const {
               :name="facet.label"
             > 
             <div
-              class="max-h-12 w-full px-4 py-3 pr-6"
+              class="max-h-12 w-full px-4 py-3 pr-6 peer-focus-visible:ring-2 peer-focus-visible:ring-black"
               :class="{
                 'text-surface-text hover:bg-neutral-20': !model?.includes(facet.id),
                 'border-b border-b-primary bg-primary-light font-semibold': model?.includes(facet.id),
@@ -89,6 +91,7 @@ const {
                 </Typography>
               </div>
             </div>
+            </input>
           </label>
         </li>
         <li v-if="isTruncationNeeded">

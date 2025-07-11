@@ -52,6 +52,7 @@ function toggle() {
     <div class="relative rounded-r-none md:w-56 inline-flex rounded-full bg-surface border cursor-pointer">
       <button
         @click="toggleDropdown"
+        aria-haspopup="listbox"
         class="flex-auto font-light px-3 py-2 flex items-center justify-between">
         {{ selectedOption }}
         <i class="icon-[ph--caret-down] text-surface-text text-xs" />
@@ -64,7 +65,10 @@ function toggle() {
         <ul
           v-for="option in sortOptions"
           :key="option.id"
-          :value="option.id">
+          :value="option.id"
+          tabindex="0"
+          @keydown.enter="selectOption(option.id, option.name)"
+          >
           <li
             @click="selectOption(option.id, option.name)"
             class="leading-none m-0 py-3 px-5 font-light dark:bg-primary-400/40 text-primary-700 dark:text-white/80 cursor-pointer hover:bg-gray-hover"
