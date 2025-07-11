@@ -100,17 +100,17 @@ const resolvedData = computed(() => {
             noreferrer
             download
           >
-            <KButton>
+            <KButton size="small">
               {{ defaultDownloadText }}
               <i class="icon-[ph--arrow-square-out]" />
             </KButton>
           </a>
 
-          <KButton>
+         <!--  <KButton>
             {{ t('distribution.preview') }}
-          </KButton>
+          </KButton> -->
 
-          <KButton>
+          <KButton size="small">
             <LinkedDataSelector :resource-id="distributionId" resource="distributions"/>
           </KButton>
 
