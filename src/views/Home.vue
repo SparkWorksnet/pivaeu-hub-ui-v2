@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { RouterLink } from 'vue-router';
+
 
 </script>
 
@@ -36,22 +38,18 @@
           </p>
 
           <div class="mt-4 flex justify-center gap-4 sm:mt-6">
-            <button class="mt-4">
-            <a class="inline-block rounded-3xl bg-primary px-5 py-3 font-medium text-primary-text transition-colors hover:bg-primary-hover"
-              href="/datasets">
+            <RouterLink class="mt-4 flex w-m items-center justify-center gap-2 rounded-3xl px-5 py-3 text-primary-text bg-primary hover:bg-primary-hover hover:text-white transition-colors hover:bg-primary-hover"
+              to="/datasets">
               Explore Demo
-            </a>
-          </button>
-            <button type="submit"
-              class="mt-4 flex w-m items-center justify-center gap-2 rounded-3xl px-5 py-3 text-gray-700 bg-gray hover:bg-primary-hover hover:text-white">
-              <span class="font-medium">  <a href="https://doc.piveau.eu/general/introduction/" target="_blank" rel="noopener noreferrer"
-                class="inline-block size-full"> Documentation </a> </span>
-
+            </RouterLink>
+            <a  href="https://doc.piveau.eu/general/introduction/" target="_blank" rel="noopener noreferrer"
+                class="mt-4 flex w-m items-center justify-center gap-2 rounded-3xl px-5 py-3 text-gray-700 bg-gray hover:bg-primary-hover hover:text-white" >
+                Documentation 
               <svg class="size-4 rtl:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none"
                 viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
-            </button>
+            </a>
           </div>
         </div>
       </div>
@@ -62,7 +60,7 @@
     <!--        Newsletter Prototype        -->
     <!-- ////////////////////////////////// -->
 
-    <section class="p-10 pb-18 bg-surface">
+    <!-- <section class="p-10 pb-18 bg-surface">
       <div class="p-8 md:p-12 lg:px-16 lg:py-24">
         <div class="mx-auto max-w-lg text-center">
           <h2 class="text-2xl font-bold text-surface-text md:text-3xl dark:text-white">
@@ -97,7 +95,7 @@
           </form>
         </div>
       </div>
-    </section>
+    </section> -->
 
   </div>
 </template>
