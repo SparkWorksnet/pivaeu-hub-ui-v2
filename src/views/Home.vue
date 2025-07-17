@@ -1,9 +1,12 @@
 <script setup lang="ts">
+import { RouterLink } from 'vue-router';
+
 
 </script>
 
 <template>
   <div>
+    
 
     <!-- ////////////////////// -->
     <!-- Hero Section Prototype -->
@@ -21,72 +24,49 @@
 
 
     <!-- Note: This is only a prototype/draft, open for feedback, ideas and further design/decelopment-->
-    <section class="bg-surface">
-      <div class="max-w-(--breakpoint-xl) mx-auto w-screen px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-32 bg-surface">
-        <div class="mx-auto max-w-prose text-center">
-          <h1 class="text-4xl font-bold text-surface-text sm:text-5xl">
-            Unlock the Power of Public Sector Data with
+    <section>
+      <div class="max-w-(--breakpoint-xl) mx-auto h-screen w-screen bg-surface relative">
+        <div class="mx-auto max-w-prose text-center z-10 px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-32">
+          <h1 class="text-4xl font-bold text-surface-text sm:text-5xl z-10">
+            Data Catalogues Done Right with
             <span class="text-primary"> piveau </span>
           </h1>
 
           <p class="mt-4 text-surface-light sm:text-lg/relaxed">
-            <strong>piveau</strong> is a comprehensive <strong> data management ecosystem </strong>that streamlines the
-            entire data lifecycle — from
-            <strong>collection and aggregation to publication and reuse</strong>.
-          </p>
+            <strong>piveau</strong> is an <strong>open source metadata catalogue solution</strong> that covers 
+            the essential life cycle of your metadata:
+            <strong>harvesting, storage and quality assurance</strong>.
+          </p> <br />
+          <!-- <ul>
+            <li class="list-disc">Designed around <span class="text-primary">Semantic Web technologies</span>, the <span class="text-primary">W3C DCAT standard</span>, and the <span class="text-primary">European DCAT-AP standard</span> for Open Data</li>
+            <li class="list-disc">closes the gap between <span class="text-primary">formal metadata specifications</span> and their <span class="text-primary">real-world application</span></li>
+          </ul>
+            With a strong emphasis on Open Data, piveau is the leading solution for public administrations and non-profit organizations to publish interoperable and flexible metadata catalogues. -->
 
-          <div class="mt-4 flex justify-center gap-4 sm:mt-6">
-            <button class="mt-4">
-            <a class="inline-block rounded-3xl bg-primary px-5 py-3 font-medium text-primary-text transition-colors hover:bg-primary-hover"
-              href="/datasets">
+          <div class="mt-4 flex justify-center gap-4 sm:mt-6 z-10">
+            <RouterLink class="mt-4 flex w-m items-center justify-center gap-2 rounded-3xl px-5 py-3 text-primary-text bg-primary hover:bg-primary-hover hover:text-white transition-colors hover:bg-primary-hover"
+              to="/datasets">
               Explore Demo
-            </a>
-          </button>
-            <button type="submit"
-              class="mt-4 flex w-m items-center justify-center gap-2 rounded-3xl px-5 py-3 text-gray-700 bg-gray hover:bg-primary-hover hover:text-white">
-              <span class="font-medium">  <a href="https://doc.piveau.eu/general/introduction/" target="_blank" rel="noopener noreferrer"
-                class="inline-block size-full"> Documentation </a> </span>
-
+            </RouterLink>
+            <a  href="https://doc.piveau.eu/general/introduction/" target="_blank" rel="noopener noreferrer"
+                class="mt-4 flex w-m items-center justify-center gap-2 rounded-3xl px-5 py-3 text-gray-700 bg-gray hover:bg-primary-hover hover:text-white" >
+                Documentation 
               <svg class="size-4 rtl:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none"
                 viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ////////////////////////////////// -->
-    <!-- Theme Generator Section Prototype  -->
-    <!-- ////////////////////////////////// -->
-
-    <!-- Note: This is only a prototype/draft, open for feedback, ideas and further design/decelopment. We can also remove it completly when going live! -->
-    <section
-      class="overflow-hidden bg-[url(https://images.unsplash.com/photo-1601952899827-3db57e7943f7?q=80&w=1586&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] bg-cover bg-bottom bg-no-repeat">
-      <div class="p-8 md:p-12 lg:px-16 lg:py-24">
-        <div class="text-center">
-          <h2 class="text-2xl font-black [color:#141414] sm:text-3xl md:text-5xl">Try our new Theme Generator</h2>
-
-          <p class="mt-5 [color:#171717]">
-            Adapt piveau to your visual framework with our new theme generator.
-          </p>
-
-          <div class="mt-4 sm:mt-8">
-            <a href="/themer"
-              class="inline-block rounded-full bg-primary px-12 py-3 text-sm font-medium text-white transition hover:bg-primary-hover">
-              Try Theme Generator
             </a>
           </div>
         </div>
       </div>
     </section>
+
 
     <!-- ////////////////////////////////// -->
     <!--        Newsletter Prototype        -->
     <!-- ////////////////////////////////// -->
 
-    <section class="p-10 pb-18 bg-surface">
+    <!-- <section class="p-10 pb-18 bg-surface">
       <div class="p-8 md:p-12 lg:px-16 lg:py-24">
         <div class="mx-auto max-w-lg text-center">
           <h2 class="text-2xl font-bold text-surface-text md:text-3xl dark:text-white">
@@ -121,9 +101,9 @@
           </form>
         </div>
       </div>
-    </section>
-
+    </section> -->
   </div>
+ 
 </template>
 
 <style scoped>

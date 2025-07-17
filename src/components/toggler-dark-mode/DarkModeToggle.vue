@@ -48,16 +48,16 @@ onMounted(() => {
 
     <!-- Toggle Switch -->
     <label
-      class="relative block h-4 w-7 rounded-full bg-gray transition-colors [-webkit-tap-highlight-color:_transparent] has-checked:bg-primary dark:bg-surface-800 dark:has-checked:bg-primary-hover cursor-pointe"
+      class="relative block h-4 w-7 rounded-full bg-gray transition-colors [-webkit-tap-highlight-color:_transparent] has-checked:bg-primary dark:bg-surface-800 dark:has-checked:bg-primary-hover cursor-pointer"
     >
       <input 
         type="checkbox" 
-        class="peer sr-only" 
+        class="peer opacity-0 absolute" 
         :checked="isDark"
         @change="toggleDarkMode"
       >
       <span
-        class="absolute inset-y-0 start-0 m-0.5 size-3 rounded-full bg-white transition-[inset-inline-start] peer-checked:start-3 dark:bg-surface-900"
+        class="absolute inset-y-0 start-0 m-0.5 size-3 rounded-full bg-white transition-[inset-inline-start] peer-checked:start-3 dark:bg-surface-900  peer-focus-within:ring-2 peer-focus-within:ring-black"
       ></span>
     </label>
   </div>
