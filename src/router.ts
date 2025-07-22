@@ -5,6 +5,8 @@ import Catalogues from '@/views/search/catalogues/Catalogues.vue'
 import Datasets from '@/views/search/datasets/Datasets.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import Themer from './views/Themer.vue'
+import Imprint from './components/header-footer/Imprint.vue'
+import PrivacyPolicy from './components/header-footer/PrivacyPolicy.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -44,6 +46,22 @@ const router = createRouter({
       name: 'themer',
       path:  '/themer',
       component: Themer,
+      meta : {
+        requiresAuth: false,
+      }
+    },
+    {
+      name: 'imprint',
+      path: '/imprint',
+      component: Imprint,
+      meta : {
+        requiresAuth: false,
+      }
+    },
+    {
+      name: 'privacypolicy',
+      path: '/privacypolicy',
+      component: PrivacyPolicy,
       meta : {
         requiresAuth: false,
       }
