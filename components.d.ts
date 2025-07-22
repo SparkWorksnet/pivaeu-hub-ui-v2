@@ -51,6 +51,7 @@ declare module 'vue' {
     LanguageSelector: typeof import('./src/components/language-selector/LanguageSelector.vue')['default']
     LinkedDataSelector: typeof import('./src/components/base/links/LinkedDataSelector.vue')['default']
     NavigationBar: typeof import('./src/components/header-footer/NavigationBar.vue')['default']
+    PrivacyPolicy: typeof import('./src/components/header-footer/PrivacyPolicy.vue')['default']
     'PropertyTable.story': typeof import('./src/components/property-table/PropertyTable.story.vue')['default']
     PropertyTableValue: typeof import('./src/components/property-table/PropertyTableValue.vue')['default']
     ResourceDetailsLinkedDataButton: typeof import('./src/components/base/links/ResourceDetailsLinkedDataButton.vue')['default']
