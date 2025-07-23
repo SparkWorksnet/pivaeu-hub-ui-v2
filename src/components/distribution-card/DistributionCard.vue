@@ -51,11 +51,7 @@ const resolvedData = computed(() => {
 </script>
 
 <template>
-<<<<<<< HEAD
-  <div class="border-b-none mb-3 rounded-xl bg-surface p-4">
-=======
   <div class="mb-3 rounded-xl border-b-none bg-surface p-4 mt-6">
->>>>>>> 5116269 (small header fixes)
     <div>
       <div class="flex items-start justify-between">
         <Typography as="h2" variant="by-heading-4" class="text-surface-text">
