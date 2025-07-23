@@ -133,7 +133,7 @@ const { t } = useI18n()
       </template>
 
       <template #sections>
-        <section class="space-y-4">
+        <section class="space-y-4 mb-20">
           <div class="mt-12 flex flex-row items-center gap-2">
             <h2 class="text-[2.5rem] leading-[3rem] font-bold text-surface-text">
               {{ t('dataset.distributions') }}
@@ -182,17 +182,11 @@ const { t } = useI18n()
             </template>
           </div>
         </section>
-        <div
-          v-if="(resultEnhanced?.getCategories?.length || 0) > 0" class="
-            space-y-3
-          "
-        >
-          <Typography
-            variant="by-heading-4" class="text-primary-100 font-semibold"
-          >
+        <div v-if="(resultEnhanced?.getCategories?.length || 0) > 0" class="space-y-3 mb-20">
+          <Typography variant="by-heading-4" class="font-semibold text-primary-100">
             {{ t('dataset.categories') }}
           </Typography>
-          <div class="flex flex-row gap-2">
+          <div class="flex flex-row gap-2 mt-5">
             <KTag
               v-for="category in resultEnhanced?.getCategories" :key="category.id" interactive
               @click="router.push({ name: 'Datasets', query: { categories: category.id } })"
@@ -201,9 +195,9 @@ const { t } = useI18n()
             </KTag>
           </div>
         </div>
-        <div class="bg-bg-divider h-px w-full" />
-        <div class="space-y-4">
-          <div class="flex flex-col gap-4 rounded-xl bg-surface p-4">
+        <div class="h-px w-full bg-bg-divider" />
+        <div class="space-y-4 mb-20">
+          <div class="flex flex-col rounded-xl gap-4 bg-surface p-4">
             <Typography variant="by-heading-4" class="">
               {{ t('dataset.additional_info') }}
             </Typography>

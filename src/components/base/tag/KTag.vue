@@ -41,7 +41,7 @@ const combinedAttrs = computed(() => {
   <component
     :is="isInteractive ? 'button' : 'span'"
     :class="{
-      'h-8 rounded-2xl bg-gray px-4 py-1 outline-hidden focus:ring-secondary focus:ring-offset-2': isInteractive,
+      'bg-gray focus:ring-offset-2 focus:ring-secondary rounded-2xl outline-hidden px-3 py-2 rounded-3xl': isInteractive,
     }"
     @click.prevent="$emit('click', $event)"
   >

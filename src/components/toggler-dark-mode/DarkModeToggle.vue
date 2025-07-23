@@ -24,8 +24,8 @@ onMounted(() => {
 <template>
   <div class="flex items-center gap-2">
     <!-- Dynamic Sun/Moon Icon -->
-    <svg
-      class="h-4 w-5 text-surface"
+    <svg 
+      class="h-4 w-5"
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"
