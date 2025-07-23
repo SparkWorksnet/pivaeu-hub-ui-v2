@@ -51,7 +51,11 @@ const resolvedData = computed(() => {
 </script>
 
 <template>
+<<<<<<< HEAD
   <div class="border-b-none mb-3 rounded-xl bg-surface p-4">
+=======
+  <div class="mb-3 rounded-xl border-b-none bg-surface p-4 mt-6">
+>>>>>>> 5116269 (small header fixes)
     <div>
       <div class="flex items-start justify-between">
         <Typography as="h2" variant="by-heading-4" class="text-surface-text">
@@ -112,39 +116,21 @@ const resolvedData = computed(() => {
             nofollow
             noreferrer
             download
-            class="
-              dark:bg-primary-dark dark:text-surface-900
-              dark:hover:bg-primary-dark-hover
-              dark:active:bg-primary-dark-pressed
-              inline-flex h-8 min-w-fit items-center justify-center rounded-3xl
-              border-transparent bg-primary px-4 py-2 text-center align-bottom
-              text-sm font-medium text-white
-              hover:bg-primary-hover
-              active:bg-primary
-            "
+            class="text-white dark:text-surface-900 bg-primary dark:bg-primary-dark hover:bg-primary-hover dark:hover:bg-primary-dark-hover active:bg-primary dark:active:bg-primary-dark-pressed rounded-3xl border-transparent inline-flex min-w-fit items-center justify-center text-center font-medium align-bottom h-8 text-sm px-5 py-5"
           >
 
             {{ defaultDownloadText }}
-            <i class="icon-[ph--arrow-square-out]" />
-
+            <i class="icon-[ph--arrow-square-out] ml-2" />
+           
           </a>
 
           <!--  <KButton>
             {{ t('distribution.preview') }}
           </KButton> -->
 
-          <LinkedDataSelector
-            :resource-id="distributionId" resource="distributions" class="
-              dark:bg-primary-dark dark:text-surface-900
-              dark:hover:bg-primary-dark-hover
-              dark:active:bg-primary-dark-pressed
-              inline-flex h-8 min-w-fit items-center justify-center rounded-3xl
-              border-transparent bg-primary px-4 py-2 text-center align-bottom
-              text-sm font-medium text-white
-              hover:bg-primary-hover
-              active:bg-primary
-            "
-          />
+         
+          <LinkedDataSelector :resource-id="distributionId" resource="distributions" class="text-white dark:text-surface-900 bg-primary dark:bg-primary-dark hover:bg-primary-hover dark:hover:bg-primary-dark-hover active:bg-primary dark:active:bg-primary-dark-pressed rounded-3xl border-transparent inline-flex min-w-fit items-center justify-center text-center font-medium align-bottom h-8 text-sm px-5 py-5"/>
+          
 
           <!-- Why is this not showing?? -->
           <Dropdown severity="secondary" :label="defaultSaveText">

@@ -35,7 +35,7 @@ function handleNavigate(navigate) {
       :to="link.to"
     >
       <div
-        class="header-icon-container text-base leading-[1.625rem]"
+        class="header-icon-container text-base leading-[1.625rem] text-header-bg-text"
         :class="{ active: isActive && isExactActive }"
         :href="href"
         @click="handleNavigate(navigate)"
@@ -75,7 +75,7 @@ function handleNavigate(navigate) {
 #thenavguy.nav-links a .active {
   border-bottom-width: 3px;
   border-spacing: 1rem;
-  border-color: var(--piveau-text-on-primary);
+  border-color: var(--piveau-primary);
   font-size: 1rem;
   line-height: 1.625rem;
   /* @apply border-b-[3px] border-spacing-4 border-primary text-base leading-[1.625rem] ; */

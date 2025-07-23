@@ -53,14 +53,8 @@ const computedWrapperComponent = computed(() => {
         <slot name="body">
           <div class="grid grid-cols-12 gap-2">
             <!-- Description -->
-            <p
-              class="
-                col-span-12 line-clamp-6 max-w-full overflow-hidden break-words
-                text-surface-light
-                lg:col-span-8
-              "
-            >
-              {{ description }}
+            <p class="col-span-12 line-clamp-6 text-surface-light lg:col-span-8 break-words overflow-hidden max-w-full">
+               <div class="markdown-content" v-html="description" />
             </p>
             <slot name="sidebar">
               <!-- File Format Tags -->

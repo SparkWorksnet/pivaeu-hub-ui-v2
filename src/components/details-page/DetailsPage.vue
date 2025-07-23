@@ -109,22 +109,17 @@ const truncatedEllipsedDescription = computed(() => {
     <div class="mx-auto w-full max-w-content-max space-y-6 pt-1">
       <section name="dsd-header" class="flex flex-col gap-6">
         <!-- Go previous page -->
-        <div class="flex flex-col gap-6">
+        <div class="flex flex-col gap-12">
           <div class="flex justify-between">
-            <div>
-              <button class="mt-[10px] -ml-6 cursor-pointer px-4 py-1" @click="router.back()">
-                <Typography
-                  variant="paragraph-1" class="
-                    flex items-center gap-2 text-primary
-                    hover:text-primary-hover
-                  "
-                >
-                  <PhCaretLeft />
-                  <span>{{ t('details.back') }}</span>
-                </Typography>
-              </button>
-            </div>
-            <LinkedDataSelector :resource-id="datasetId" resource="datasets" />
+          <div>
+            <button class="-ml-6 mt-[14px] px-4 py-1 cursor-pointer" @click="router.back()">
+              <Typography variant="paragraph-1" class="flex items-center gap-2 text-primary hover:text-primary-hover">
+                <PhCaretLeft />
+                <span>{{ t('details.back') }}</span>
+              </Typography>
+            </button>
+          </div>
+          <LinkedDataSelector :resource-id="datasetId" resource="datasets" class="mt-4" />
           </div>
           <DetailsPageHeader :headline="headline" :title="title" :subtitle="subtitle">
             <template #subtitle>

@@ -24,8 +24,13 @@ onMounted(() => {
 <template>
   <div class="flex items-center gap-2">
     <!-- Dynamic Sun/Moon Icon -->
+<<<<<<< HEAD
     <svg
       class="h-4 w-5 text-surface"
+=======
+    <svg 
+      class="h-4 w-5"
+>>>>>>> 5116269 (small header fixes)
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"
