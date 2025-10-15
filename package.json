@@ -80,7 +80,7 @@
     "eslint-plugin-vue": "^9.17.0",
     "histoire": "^0.17.17",
     "jsdom": "^24.0.0",
-K    "knip": "^5.43.6",
+    "knip": "^5.43.6",
     "msw": "^2.7.3",
     "npm-run-all2": "^6.1.1",
     "postcss": "^8.5.1",
