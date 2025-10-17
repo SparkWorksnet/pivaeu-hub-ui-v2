@@ -98,9 +98,12 @@ generate-and-upload-sbom:
     - pnpm sbom # Generate sbom.json
     - |
       if [ -f "sbom.json" ]; then
-        echo "Uploading SBOM to Dependency-Track..."
-        curl -X PUT -H "X-Api-Key: $DEPENDENCY_TRACK_API_KEY" -F "bom=@sbom.json" "$DEPENDENCY_TRACK_BASE_URL/api/v1/bom"
-        echo "SBOM upload complete."
+        RESPONSE=$(curl -X PUT -H "X-Api-Key: $DEPENDENCY_TRACK_API_KEY" \
+        -F "project=$DEPENDENCY_TRACK_PROJECT_UUID" \
+        -F "bom=@sbom.json" \
+        "$DEPENDENCY_TRACK_BASE_URL/api/v1/bom")
+        echo "SBOM upload response: $RESPONSE"
+        echo "View project at: $DEPENDENCY_TRACK_BASE_URL/projects/$DEPENDENCY_TRACK_PROJECT_UUID"
       else
         echo "sbom.json not found. SBOM generation might have failed."
         exit 1
