@@ -21,7 +21,7 @@ defineProps<{
     </slot>
     <slot name="title" :title="title">
       <Typography
-        as="h1" variant="by-heading-2" class="mb-2 block text-surface-text"
+        as="h1" variant="header-3" class="mb-2 block text-surface-text"
       >
         {{ title }}
       </Typography>

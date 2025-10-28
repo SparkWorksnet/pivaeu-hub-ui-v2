@@ -26,7 +26,7 @@ const toggleText = computed(() => isExpanded.value ? t('toggler.show_less') : t(
 </script>
 
 <template>
-  <div class="flex flex-col gap-4">
+  <div class="flex flex-col">
     <slot :truncated="truncated" :is-expanded="isExpanded">
       {{ truncated }}
     </slot>

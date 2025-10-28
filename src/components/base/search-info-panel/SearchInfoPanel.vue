@@ -9,7 +9,7 @@ const direction = defineModel<string>('direction', { default: 'desc' })
   <section>
     <div
       class="
-        flex flex-col gap-x-2 gap-y-4
+        flex flex-col gap-x-2 gap-y-4 px-2
         lg:flex-row lg:flex-nowrap lg:items-center lg:justify-between
       "
     >

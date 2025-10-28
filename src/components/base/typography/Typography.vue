@@ -14,6 +14,7 @@ const props = withDefaults(
       | 'header-2'
       | 'header-3'
       | 'header-4'
+      | 'header-5'
       | 'paragraph-1'
       | 'paragraph-2'
       | 'caption'

@@ -51,13 +51,14 @@ const defaultSaveText = computed(() => props.saveText || 'Linked Data')
   <div class="mb-3 rounded-xl border-b-none bg-surface p-4 mt-6">
     <div>
       <div class="flex items-start justify-between">
-        <Typography as="h2" variant="by-heading-4" class="text-surface-text">
+        <Typography as="h2" variant="header-4" class="text-surface-text">
           {{ title }}
         </Typography>
         <KTag
           class="
             hidden
             md:block
+            text-sm
           "
         >
           {{ format }}
@@ -87,7 +88,7 @@ const defaultSaveText = computed(() => props.saveText || 'Linked Data')
             lg:my-0 lg:basis-4/12
           "
         >
-          <DataToggler v-slot="{ truncated }" :data="resolvedData || []" :limit="1" :expanded="false">
+          <DataToggler v-slot="{ truncated }" :data="resolvedData || []" :limit="1" :expanded="false" class="text-sm">
             <PropertyTable
               :node="{
                 id: 'root',

@@ -11,7 +11,7 @@ const expanded = ref(true)
   <Story
     title="Components/Data Toggler"
   >
-    <div class="flex flex-col gap-4">
+    <div class="flex flex-col">
       <DataToggler v-slot="{ truncated }" v-model:expanded="expanded" :data="list" :limit="4">
         <div class="flex flex-col gap-2">
           <span v-for="item in truncated" :key="item">{{ item }}</span>

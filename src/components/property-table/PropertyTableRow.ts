@@ -56,7 +56,7 @@ const PropertyTable = defineComponent({
     }
 
     return () => h('table', {
-      class: 'flex flex-col gap-4 mb-4 overflow-x-auto',
+      class: 'flex flex-col gap-2 mb-2 overflow-x-auto',
     }, renderNodes(node.value?.data || []))
   },
 })
