@@ -59,10 +59,10 @@ const {
 </script>
 
 <template>
-  <div class="container mx-auto px-8 pt-3">
-    <div class="mx-auto w-full max-w-content-max space-y-6 pt-1">
+  <div class="container mx-auto px-8">
+    <div class="mx-auto w-full max-w-content-max space-y-6">
       <section name="dsd-header" class="flex flex-col gap-6">
-        <div class="flex flex-col gap-12">
+        <div class="flex flex-col gap-6">
           <div class="flex justify-between">
           <div>
             <button class="-ml-6 mt-[14px] px-4 py-1 cursor-pointer" @click="router.back()">
@@ -110,7 +110,7 @@ const {
             <template v-if="id === 'dataset'">
               <div class="flex flex-col gap-4">
                 <div>
-                  <Typography as="h5" variant="by-heading-4" class="mb-8">
+                  <Typography as="h5" variant="header-4" class="mb-2">
                     <slot name="about-this-dataset">
                       {{ t('details.about_dataset') }}
                     </slot>

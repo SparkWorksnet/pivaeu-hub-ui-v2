@@ -131,11 +131,11 @@ const { t } = useI18n()
       </template>
 
       <template #sections>
-        <section class="space-y-4 mb-20">
-          <div class="mt-12 flex flex-row items-center gap-2">
-            <h2 class="text-[2.5rem] leading-[3rem] font-bold text-surface-text">
+        <section class="mb-10">
+          <div class="flex flex-row items-center gap-2">
+            <Typography variant="header-3">
               {{ t('dataset.distributions') }}
-            </h2>
+            </Typography>
             <KTag class="rounded-full bg-secondary">
               {{
                 getFormattedDistributions?.length
@@ -209,7 +209,7 @@ const { t } = useI18n()
             </div>
           </div>
         </section>
-        <div v-if="(resultEnhanced?.getCategories?.length || 0) > 0" class="space-y-3 mb-20">
+        <div v-if="(resultEnhanced?.getCategories?.length || 0) > 0" class="space-y-3">
           <Typography variant="by-heading-4" class="font-semibold text-primary-100">
             {{ t('dataset.categories') }}
           </Typography>
