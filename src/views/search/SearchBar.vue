@@ -13,12 +13,12 @@ const searchInput = defineModel<string>()
 </script>
 
 <template>
-  <div class="mt-[5px] flex-none px-6 py-[1.875rem]">
+  <div class="mt-[5px] flex-none px-6 pt-8 pb-4">
     <section
       name="top"
       class="
         flex flex-col
-        lg:py-16
+        lg:pt-10
       "
     >
       <form

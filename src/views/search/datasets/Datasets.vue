@@ -112,7 +112,7 @@ const {
       <div class="flex-1">
         <section
           name="datasets"
-          class="mb-10 flex flex-col gap-6 px-6"
+          class="mb-10 flex flex-col gap-6 px-2"
         >
           <SelectedFacetsOverview
             v-model="selectedFacets"
@@ -123,7 +123,7 @@ const {
               v-model:direction="sortDirection"
               v-model:sort="sort"
             >
-              {{ getSearchResultsCount }} {{ $t('search.datasets.found') }}
+              <span class="text-primary-hover">{{ getSearchResultsCount }}</span> {{ $t('search.datasets.found') }}
             </SearchInfoPanel>
           </div>
           <SearchItems
