@@ -40,20 +40,20 @@ const computedWrapperComponent = computed(() => {
     :to="props.to || '/'"
     class="
       group by relative mx-auto mb-6 box-border w-full rounded-custom border
-      border-b-[3px] border-transparent bg-surface p-12 text-surface-text
+      border-b-[3px] border-transparent bg-surface px-6 py-5 text-surface-text
       hover:border-b-primary
     "
   >
     <!-- Header -->
-    <div class="flex flex-col gap-by5">
-      <Typography v-if="title || id" variant="by-heading-4" class="mb-6">
+    <div class="flex flex-col gap-by3">
+      <Typography v-if="title || id" variant="header-4">
         {{ title || id }}
       </Typography>
-      <div class="flex flex-col gap-16">
+      <div class="flex flex-col gap-5">
         <slot name="body">
           <div class="grid grid-cols-12 gap-2">
             <!-- Description -->
-            <p class="col-span-12 line-clamp-6 text-surface-light lg:col-span-8 break-words overflow-hidden max-w-full">
+            <p class="col-span-12 line-clamp-6 text-surface-light lg:col-span-8 break-words overflow-hidden max-w-full text-sm">
                <div class="markdown-content" v-html="description" />
             </p>
             <slot name="sidebar">
@@ -63,7 +63,7 @@ const computedWrapperComponent = computed(() => {
                 class="
                   col-span-12 mt-6
                   md:mt-0
-                  lg:col-span-4 lg:ml-10
+                  lg:col-span-4 lg:ml-10 text-xs
                 "
                 :title="t('search.file-formats')"
               >

@@ -48,7 +48,7 @@ function toggle() {
 </script>
 
 <template>
-  <div class="relative flex w-full">
+  <div class="relative flex w-full text-sm">
     <div
       class="
         relative inline-flex cursor-pointer rounded-full rounded-r-none border
