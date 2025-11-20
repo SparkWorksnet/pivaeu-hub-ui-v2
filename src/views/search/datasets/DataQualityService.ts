@@ -1,14 +1,11 @@
 import axios from 'axios';
-import mockData from './mock-data.json';
-import mockDataDistr from './mock-data-distribution.json'
 
 export async function getDatasetMetrics(datasetId: string) {
-    const response = mockData;
-    return response;
+    const response = await axios.get(`https://data.europa.eu/api/mqa/cache/datasets/${datasetId}`)
+    return response.data;
 }
 
 export async function getDistributionsMetrics(datasetId: string) {
-    const response = mockDataDistr;
-
-    return response;
+    const response = await axios.get(`https://data.europa.eu/api/mqa/cache/datasets/${datasetId}/distributions`)
+    return response.data;
 }

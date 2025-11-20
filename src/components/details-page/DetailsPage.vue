@@ -105,7 +105,7 @@ const showQualityPage = ref(false);
         </slot>
       </section>
       <div v-if="showQualityPage">
-        <DataQuality />
+        <DataQuality :id="props.datasetId"/>
       </div>
       <div v-else>
       <section>
