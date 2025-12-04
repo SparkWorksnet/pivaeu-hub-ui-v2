@@ -21,6 +21,8 @@ import KButton from '../base/button/KButton.vue'
 
 import DataQuality from '@/views/search/datasets/DataQuality.vue'
 
+import appConfig from '../../../config/appConfig'
+
 const props = withDefaults(defineProps<{
   headline?: string
   title?: string
@@ -60,6 +62,7 @@ const {
   limit: 7,
 })
 
+const isQualityPageAvailable = computed(() => !!appConfig.piveauDataQualityUrl?.trim());
 const showQualityPage = ref(false);
 </script>
 
@@ -87,7 +90,7 @@ const showQualityPage = ref(false);
               </slot>
             </template>
             </DetailsPageHeader>
-            <KButton size="small" @click="showQualityPage = !showQualityPage">
+            <KButton v-if="isQualityPageAvailable" size="small" @click="showQualityPage = !showQualityPage">
               {{ showQualityPage ? t('details.overview') : t('details.quality') }}
             </KButton>
           </div>
