@@ -7,7 +7,6 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
-    Accordion: typeof import('./src/components/base/dropdown-list/Accordion.vue')['default']
     AppLink: typeof import('./src/components/base/links/AppLink.vue')['default']
     DarkModeToggle: typeof import('./src/components/toggler-dark-mode/DarkModeToggle.vue')['default']
     'DataInfoBox.story': typeof import('./src/components/base/data-info-box/DataInfoBox.story.vue')['default']
