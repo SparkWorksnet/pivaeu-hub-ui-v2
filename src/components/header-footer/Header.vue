@@ -48,7 +48,7 @@ const visible = ref(false)
           <div class="
               hidden items-center gap-1
               md:flex mr-5 px-8
-            "> 
+            ">
             <LanguageSelector />
             <DarkModeToggle />
             </div>
@@ -66,7 +66,7 @@ const visible = ref(false)
             </a>
             <a target="_blank" href="https://gitlab.com/piveau/"
               class="flex items-center font-light text-header-bg-text">
-              <img src="../../assets/images/icons8-gitlab-48.png" alt="Gitlab" class="mr-1 size-5">
+              <img src="../../assets/images/icons8-gitlab-48.png" alt="Gitlab" class="mr-1 h-5 w-5 shrink-0 object-contain">
               <!-- GitLab -->
             </a>
             </div>
