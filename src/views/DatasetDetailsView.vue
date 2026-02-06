@@ -223,7 +223,7 @@ const { t } = useI18n()
           </div>
         </div>
         <div class="h-px w-full bg-bg-divider" />
-        <div class="space-y-4 mb-20">
+        <div class="space-y-4 mt-6 mb-8">
           <div class="flex flex-col rounded-xl gap-4 bg-surface p-4">
             <Typography variant="by-heading-4" class="">
               {{ t('dataset.additional_info') }}
