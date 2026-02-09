@@ -14,7 +14,7 @@ const visible = ref(false)
 <template>
   <header class="border-gray-200 bg-header-bg text-header-bg-text">
     <div class="lg:container mx-auto px-2 py-8 md:px-10">
-      <div class="flex items-center gap-4">
+      <div class="flex items-center gap-4 pr-2 md:pr-6">
         <!-- Left: Logo -->
         <div class="flex items-center flex-shrink-0">
           <RouterLink class="block" to="/">
@@ -24,7 +24,7 @@ const visible = ref(false)
         </div>
 
         <!-- Center: Navigation -->
-        <div class="flex min-w-0 flex-1 justify-center">
+        <div class="flex min-w-0 flex-1 justify-center px-2">
           <div class="hidden min-w-0 overflow-hidden md:block">
             <NavigationBar />
           </div>
