@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 </script>
 
 <template>
@@ -20,81 +23,72 @@ import { RouterLink } from 'vue-router'
 
     <!-- Note: This is only a prototype/draft, open for feedback, ideas and further design/decelopment -->
     <section>
-      <div
-        class="
-          relative mx-auto h-screen w-screen max-w-(--breakpoint-xl) bg-surface
-        "
-      >
-        <div
-          class="
+      <div>
+        <section>
+          <div class="relative mx-auto h-screen w-screen max-w-(--breakpoint-xl) bg-surface">
+            <div
+              class="
             z-10 mx-auto max-w-prose px-4 py-16 text-center
             sm:px-6 sm:py-24
             lg:px-8 lg:py-32
           "
-        >
-          <h1
-            class="
-              z-10 text-4xl font-bold text-surface-text
-              sm:text-5xl
-            "
-          >
-            Data Catalogues Done Right with
-            <span class="text-primary"> piveau </span>
-          </h1>
+            >
+              <h1 class="z-10 text-4xl font-bold text-surface-text sm:text-5xl">
+                {{ t('home.piveau.title.before') }}
+                <span class="text-primary"> {{ t('home.piveau.title.brand') }} </span>
+              </h1>
 
-          <p
-            class="
-              mt-4 text-surface-light
-              sm:text-lg/relaxed
-            "
-          >
-            <strong>piveau</strong> is an <strong>open source metadata catalogue solution</strong> that covers
-            the essential life cycle of your metadata:
-            <strong>harvesting, storage and quality assurance</strong>.
-          </p> <br>
-          <!-- <ul>
-            <li class="list-disc">Designed around <span class="text-primary">Semantic Web technologies</span>, the <span class="text-primary">W3C DCAT standard</span>, and the <span class="text-primary">European DCAT-AP standard</span> for Open Data</li>
-            <li class="list-disc">closes the gap between <span class="text-primary">formal metadata specifications</span> and their <span class="text-primary">real-world application</span></li>
-          </ul>
-            With a strong emphasis on Open Data, piveau is the leading solution for public administrations and non-profit organizations to publish interoperable and flexible metadata catalogues. -->
+              <p class="mt-4 text-surface-light sm:text-lg/relaxed">
+                <strong>{{ t('home.piveau.brand') }}</strong>
+                {{ t('home.piveau.description.part1') }}
+                <strong>{{ t('home.piveau.description.part2Strong') }}</strong>
+                {{ t('home.piveau.description.part3') }}
+                <strong>{{ t('home.piveau.description.part4Strong') }}</strong>.
+              </p>
+              <br>
 
-          <div
-            class="
-              z-10 mt-4 flex justify-center gap-4
-              sm:mt-6
-            "
-          >
-            <RouterLink
-              class="
+              <div class="z-10 mt-4 flex justify-center gap-4 sm:mt-6">
+                <RouterLink
+                  class="
                 w-m mt-4 flex items-center justify-center gap-2 rounded-3xl
                 bg-primary px-5 py-3 text-primary-text transition-colors
                 hover:bg-primary-hover hover:text-white
               "
-              to="/datasets"
-            >
-              Explore Demo
-            </RouterLink>
-            <a
-              href="https://doc.piveau.eu/general/introduction/" target="_blank" rel="noopener noreferrer"
-              class="
+                  to="/datasets"
+                >
+                  {{ t('home.piveau.actions.exploreDemo') }}
+                </RouterLink>
+
+                <a
+                  href="https://doc.piveau.eu/general/introduction/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="
                 w-m mt-4 flex items-center justify-center gap-2 rounded-3xl
                 bg-gray px-5 py-3 text-gray-700
                 hover:bg-primary-hover hover:text-white
               "
-            >
-              Documentation
-              <svg
-                class="
-                  size-4
-                  rtl:rotate-180
-                " xmlns="http://www.w3.org/2000/svg" fill="none"
-                viewBox="0 0 24 24" stroke="currentColor"
-              >
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </a>
+                >
+                  {{ t('home.piveau.actions.documentation') }}
+                  <svg
+                    class="size-4 rtl:rotate-180"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
           </div>
-        </div>
+        </section>
       </div>
     </section>
 

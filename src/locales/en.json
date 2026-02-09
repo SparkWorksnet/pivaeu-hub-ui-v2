@@ -704,5 +704,24 @@
       "createNewCatalogue": "Create a new Catalogue",
       "createNewDataset": "Create a new Dataset"
     }
+  },
+  "home": {
+    "piveau": {
+      "title": {
+        "before": "Data Catalogues Done Right with",
+        "brand": "piveau"
+      },
+      "brand": "piveau",
+      "description": {
+        "part1": " is an ",
+        "part2Strong": "open source metadata catalogue solution ",
+        "part3": " that covers the essential life cycle of your metadata: ",
+        "part4Strong": "harvesting, storage and quality assurance"
+      },
+      "actions": {
+        "exploreDemo": "Explore demo",
+        "documentation": "Documentation"
+      }
+    }
   }
 }
