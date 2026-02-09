@@ -31,7 +31,7 @@ const visible = ref(false)
         </div>
 
         <!-- Right: Actions (kept to the right, no overlap) -->
-        <div class="flex items-center justify-end gap-6">
+        <div class="flex items-center justify-end gap-3 sm:gap-6">
           <div class="md:hidden">
             <KButton variant="null" class="text-header-bg-text" @click="visible = !visible">
               <i class="icon-[ph--list]" />
@@ -43,23 +43,25 @@ const visible = ref(false)
             <DarkModeToggle />
           </div>
 
-          <div class="hidden items-center gap-4 md:flex ml-4">
+          <div class="hidden items-center gap-3 md:flex ml-2">
             <a
               target="_blank"
               href="https://doc.piveau.eu/general/introduction/"
-              class="flex items-center ml-4 text-header-bg-text"
+              class="ml-2 inline-flex items-center whitespace-nowrap text-header-bg-text hover:text-primary-hover"
             >
               {{ t('landing-page.header.docs') }}
             </a>
             <a
               target="_blank"
               href="https://gitlab.com/piveau/"
-              class="flex items-center font-light text-header-bg-text"
+              class="inline-flex items-center text-header-bg-text hover:text-primary-hover"
+              aria-label="GitLab"
+              title="GitLab"
             >
               <img
                 src="../../assets/images/icons8-gitlab-48.png"
                 alt="Gitlab"
-                class="mr-1 h-5 w-5 shrink-0 object-contain"
+                class="h-5 w-5 shrink-0 object-contain"
               >
             </a>
           </div>
@@ -67,7 +69,7 @@ const visible = ref(false)
       </div>
     </div>
 
-    <!-- mobile menu unchanged -->
+    <!-- mobile menu -->
     <div class="mx-auto px-6 py-8 md:hidden" :class="{ hidden: !visible }">
       <NavigationBar direction="vertical" />
       <div class="mt-8 flex flex-col gap-4 border-t border-neutral-200 pt-8">
@@ -75,16 +77,22 @@ const visible = ref(false)
         <a
           target="_blank"
           href="https://doc.piveau.eu/general/introduction/"
-          class="text-fg flex items-center font-light hover:text-primary-hover"
+          class="text-fg inline-flex items-center font-light hover:text-primary-hover"
         >
-          Docs
+          {{ t('landing-page.header.docs') }}
         </a>
         <a
           target="_blank"
           href="https://gitlab.com/piveau/"
-          class="text-fg flex items-center font-light hover:text-primary-hover"
+          class="text-fg inline-flex items-center font-light hover:text-primary-hover"
+          aria-label="GitLab"
+          title="GitLab"
         >
-          <img src="../../assets/images/icons8-gitlab-48.png" alt="Gitlab" class="mr-1 size-4">
+          <img
+            src="../../assets/images/icons8-gitlab-48.png"
+            alt="Gitlab"
+            class="h-4 w-4 shrink-0 object-contain"
+          >
         </a>
       </div>
     </div>
