@@ -25,7 +25,7 @@ const visible = ref(false)
 
         <!-- Center: Navigation -->
         <div class="flex min-w-0 flex-1 justify-center px-2">
-          <div class="hidden min-w-0 overflow-hidden md:block">
+          <div class="hidden min-w-0 overflow-x-auto md:block">
             <NavigationBar />
           </div>
         </div>
