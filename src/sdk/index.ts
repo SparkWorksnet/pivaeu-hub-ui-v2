@@ -35,7 +35,7 @@ export function useDcatApSearch() {
       const baseGetters = dcatApDatasetSetup(dataset, localeInstance)
 
       const getCatalogId = dataset.catalog.id
-      const getCatalogTitle = getTranslationFor(dataset.catalog.title, ['de'])
+      const getCatalogTitle = getTranslationFor(dataset.catalog.title, [localeInstance.currentLocale])
 
       const getDescriptionMarkup = DOMPurify.sanitize(marked(baseGetters.getDescription || '', { async: false }))
 
@@ -47,7 +47,7 @@ export function useDcatApSearch() {
         getFormats: baseGetters.getFormats || [],
         getSummary: [
           { title: t('search.updated'), text: baseGetters.getIssued || baseGetters.getModified || '' },
-          { title: t('search.category'), text: [...new Set(baseGetters.getCategories.map(cat => getTranslationFor(cat.label, 'de')))].join(', ') },
+          { title: t('search.category'), text: [...new Set(baseGetters.getCategories.map(cat => getTranslationFor(cat.label, localeInstance.currentLocale)))].join(', ') },
           { title: t('search.provider'), text: baseGetters.getPublisher?.name || '' },
           { title: t('search.license'), text: baseGetters.getLicenses?.[0] || '' },
         ],
