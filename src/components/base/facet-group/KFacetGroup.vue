@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import type { Facet } from '../../../utils/types'
 import { useDataTruncator } from '@/composables/useDataTruncator'
-import { ref } from 'vue'
+import { ref, toRef } from 'vue'
 import PhCaretDown from '~icons/ph/caret-down'
 import Typography from '../typography/Typography.vue'
 
@@ -23,7 +23,7 @@ const {
   isTruncated,
   isTruncationNeeded,
 } = useDataTruncator<Facet>({
-  data: props.facets,
+  data: toRef(props, 'facets'),
   limit: 5,
 })
 </script>
@@ -63,7 +63,7 @@ const {
       <ul class="flex flex-col divide-y border-neutral-20">
         <li
           v-for="(facet, i) in truncatedFacets"
-          :key="i"
+          :key="`${facet.id}@${i}`"
         >
           <label class="relative">
             <input
@@ -104,7 +104,6 @@ const {
                 </Typography>
               </div>
             </div>
-            </input>
           </label>
         </li>
         <li v-if="isTruncationNeeded">
