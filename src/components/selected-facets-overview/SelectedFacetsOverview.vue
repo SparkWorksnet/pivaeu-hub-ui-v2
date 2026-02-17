@@ -92,6 +92,7 @@ function beforeLeave(el: any) {
       <div
         v-for="facet in flattenedSelectedFacets"
         :key="`selected-facet-${facet.title}-${facet.value}`"
+        class="max-w-full min-w-0"
       >
         <KInteractiveChip
           :id="`selected-facet-${facet.title}-${facet.value}`"
@@ -100,11 +101,13 @@ function beforeLeave(el: any) {
         >
           <div
             class="
-              flex flex-row flex-nowrap items-center gap-1 whitespace-nowrap
+              flex max-w-full min-w-0 flex-row flex-nowrap items-center gap-1
             "
           >
-            <Typography>{{ facet.label || facet.title }}:</Typography>
-            <Typography variant="paragraph-1">
+            <Typography class="shrink-0">
+              {{ facet.label || facet.title }}:
+            </Typography>
+            <Typography variant="paragraph-1" class="min-w-0 truncate">
               {{ facet.value }}
             </Typography>
           </div>

@@ -51,6 +51,7 @@ declare module 'vue' {
     'KTag.story': typeof import('./src/components/base/tag/KTag.story.vue')['default']
     LanguageSelector: typeof import('./src/components/language-selector/LanguageSelector.vue')['default']
     LinkedDataSelector: typeof import('./src/components/base/links/LinkedDataSelector.vue')['default']
+    MainLayout: typeof import('./src/components/MainLayout.vue')['default']
     NavigationBar: typeof import('./src/components/header-footer/NavigationBar.vue')['default']
     PrivacyPolicy: typeof import('./src/components/header-footer/PrivacyPolicy.vue')['default']
     'PropertyTable.story': typeof import('./src/components/property-table/PropertyTable.story.vue')['default']

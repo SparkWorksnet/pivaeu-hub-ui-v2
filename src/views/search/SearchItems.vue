@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import DataInfoCard from '@/components/base/data-info-box/DataInfoCard.vue'
-import { computed, defineProps } from 'vue'
+import { computed } from 'vue'
 
 import { useSearchParams } from './useSearchParams'
 

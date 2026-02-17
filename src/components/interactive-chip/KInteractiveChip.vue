@@ -15,6 +15,7 @@ const emit = defineEmits<{
 <template>
   <button
     tabindex="-1"
+    class="max-w-full min-w-0"
     @click="emit('click', props.idName)"
   >
     <KTag removable>

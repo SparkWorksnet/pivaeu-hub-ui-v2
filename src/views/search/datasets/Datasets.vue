@@ -58,9 +58,7 @@ const {
     />
 
     <div
-      class="
-        bg-hite relative z-10 max-w-80 overflow-auto bg-white p-4 shadow-xl
-      "
+      class="relative z-10 max-w-80 overflow-auto bg-white p-4 shadow-xl"
     >
       <header class="flex justify-between text-lg font-bold">
         Search filter
@@ -79,8 +77,8 @@ const {
 
   <div
     class="
-      relative container mx-auto grid max-w-content-max grid-cols-1
-      sm:grid-cols-[minmax(auto,20rem)_1fr]
+      relative container mx-auto flex max-w-content-max flex-col px-2
+      md:flex-row md:gap-x-16
     "
   >
     <!-- Permanent facets for large devices -->
@@ -88,8 +86,8 @@ const {
       name="sidebar"
       class="
         relative hidden
-        sm:block sm:max-w-96
-        lg:min-w-[420px]
+        md:block md:w-80 md:flex-shrink-0
+        lg:w-90
       "
     >
       <div
@@ -106,13 +104,13 @@ const {
         />
       </div>
     </div>
-    <div name="content" class="flex flex-col overflow-x-auto">
-      <FacetBurgerButton class="sm:hidden" :open-sidebar="toggleFacetSidebar" />
+    <div name="content" class="flex min-w-0 flex-1 flex-col">
+      <FacetBurgerButton class="md:hidden" :open-sidebar="toggleFacetSidebar" />
       <SearchBar v-model="searchInput" :search-action="doSearch" />
       <div class="flex-1">
         <section
           name="datasets"
-          class="mb-10 flex flex-col gap-6 px-2"
+          class="mb-10 flex flex-col gap-6"
         >
           <SelectedFacetsOverview
             v-model="selectedFacets"

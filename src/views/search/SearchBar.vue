@@ -3,8 +3,8 @@ import KButton from '@/components/base/button/KButton.vue'
 import SearchInput from '@/components/search-input/SearchInput.vue'
 import { useI18n } from 'vue-i18n'
 
-const props = defineProps<{
-  searchAction: Function
+defineProps<{
+  searchAction: ((payload: Event) => void) | undefined
 }>()
 
 const { t } = useI18n()
@@ -13,12 +13,12 @@ const searchInput = defineModel<string>()
 </script>
 
 <template>
-  <div class="mt-[5px] flex-none px-6 pt-8 pb-4">
+  <div class="mt-[5px] flex-none pt-8 pb-4">
     <section
       name="top"
       class="
         flex flex-col
-        lg:pt-10
+        md:pt-10
       "
     >
       <form
@@ -27,7 +27,7 @@ const searchInput = defineModel<string>()
       >
         <SearchInput
           v-model="searchInput"
-          class="w-full max-w-[50rem]"
+          class="w-full"
           :placeholder="t('search.searchBarPlaceholder')"
           :select-options="[]"
         />

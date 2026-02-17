@@ -49,21 +49,37 @@ const computedWrapperComponent = computed(() => {
       <Typography v-if="title || id" variant="header-4">
         {{ title || id }}
       </Typography>
-      <div class="flex flex-col gap-5">
+      <div
+        class="
+          flex flex-col gap-6
+          lg:gap-12
+        "
+      >
         <slot name="body">
-          <div class="grid grid-cols-12 gap-2">
+          <div
+            class="
+              grid grid-cols-12 gap-y-12
+              lg:gap-x-6
+            "
+          >
             <!-- Description -->
-            <div class="col-span-12 line-clamp-6 text-surface-light lg:col-span-8 break-words overflow-hidden max-w-full text-sm">
-               <div class="markdown-content" v-html="description" />
+            <div
+              class="
+                col-span-12 line-clamp-6 max-w-full overflow-hidden text-sm
+                break-words text-surface-light
+                lg:col-span-9
+              "
+            >
+              <div class="markdown-content" v-html="description" />
             </div>
             <slot name="sidebar">
               <!-- File Format Tags -->
               <SummaryBox
                 v-if="fileFormats.length > 0"
                 class="
-                  col-span-12 mt-6
+                  col-span-12 text-xs
                   md:mt-0
-                  lg:col-span-4 lg:ml-10 text-xs
+                  lg:col-span-3
                 "
                 :title="t('search.file-formats')"
               >
@@ -83,11 +99,17 @@ const computedWrapperComponent = computed(() => {
         </slot>
         <!-- Metadata Grid -->
         <div
-          v-if="properties && properties.length > 0" class="flex flex-row gap-6"
+          v-if="properties && properties.length > 0"
+          class="grid grid-cols-12 gap-x-6 gap-y-4"
         >
           <div
             v-for="(value, key) in properties"
-            :key="key" class="flex-1 overflow-x-hidden"
+            :key="key"
+            class="
+              col-span-12 overflow-x-hidden
+              md:col-span-6
+              lg:col-span-3
+            "
           >
             <SummaryBox class="max-w-full" :title="value.title" :text="value.text || '-'" truncate />
           </div>

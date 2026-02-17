@@ -29,9 +29,7 @@ const model = useVModel(props, 'modelValue', emit, { passive: true })
 
 <template>
   <div
-    class="
-      flex flex-col gap-6 py-18 pr-15 
-    "
+    class="flex flex-col gap-6 py-18"
   >
     <div
       v-if="ghost"

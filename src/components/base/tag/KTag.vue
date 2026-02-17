@@ -53,7 +53,7 @@ const combinedAttrs = computed(() => {
     >
       <div
         class="
-          flex min-w-fit flex-nowrap items-center gap-2 text-secondary-text
+          flex min-w-0 flex-nowrap items-center gap-2 text-secondary-text
         " :class="{ 'flex-row-reverse': props.iconRight }"
       >
         <PhX v-if="props.removable && !hasIcon" />

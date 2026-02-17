@@ -81,8 +81,8 @@ const {
   </div>
   <div
     class="
-      relative container mx-auto grid max-w-content-max grid-cols-1
-      sm:grid-cols-[minmax(auto,20rem)_1fr]
+      relative container mx-auto flex max-w-content-max flex-col px-2
+      md:flex-row md:gap-x-16
     "
   >
     <!-- Permanent facets for large devices -->
@@ -90,8 +90,8 @@ const {
       name="sidebar"
       class="
         relative hidden
-        sm:block sm:max-w-96
-        lg:min-w-[420px]
+        md:block md:w-80 md:flex-shrink-0
+        lg:w-90
       "
     >
       <div
@@ -110,10 +110,10 @@ const {
     </div>
     <div
       name="content"
-      class="flex flex-col overflow-x-auto"
+      class="flex min-w-0 flex-1 flex-col"
     >
       <FacetBurgerButton
-        class="sm:hidden"
+        class="md:hidden"
         :open-sidebar="toggleFacetSidebar"
       />
       <SearchBar
@@ -123,7 +123,7 @@ const {
       <div class="flex-1">
         <section
           name="datasets"
-          class="mb-10 flex flex-col gap-6 px-2"
+          class="mb-10 flex flex-col gap-6"
         >
           <SelectedFacetsOverview
             v-model="selectedFacets"

@@ -8,7 +8,7 @@ const props = defineProps<{
 
 <template>
   <section>
-    <div class="flex items-center gap-2 p-2">
+    <div class="flex items-center gap-2">
       <KButton
         variant="null"
         @click="openSidebar()"
