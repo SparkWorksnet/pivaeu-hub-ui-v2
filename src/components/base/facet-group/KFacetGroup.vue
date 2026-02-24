@@ -30,7 +30,7 @@ const {
 
 <template>
   <div
-    class="flex min-w-64 flex-col rounded-custom bg-surface text-surface-text"
+    class="flex min-w-64 flex-col rounded-custom bg-surface text-surface-text overflow-hidden"
   >
     <div
       class="
