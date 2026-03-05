@@ -8,11 +8,11 @@ import {
   getDistributionsMetrics,
 } from './DataQualityService'
 
-const props = defineProps({
-  id: String,
-})
+import { useRoute } from 'vue-router';
 
-const datasetId = props.id
+
+const route = useRoute()
+const datasetId = route.params.datasetId
 
 const datasetMetrics = ref({})
 const relevantDatasetMetrics = ref([])
@@ -239,27 +239,17 @@ onMounted(() => {
         </p>
 
         <!-- Cards -->
-        <div
-          v-if="isDatasetMetricsAvailable" class="
+        <div v-if="isDatasetMetricsAvailable" class="
             grid grid-cols-1 gap-6
             md:grid-cols-2
             lg:grid-cols-3
-          "
-        >
-          <div
-            v-for="card in relevantDatasetMetrics"
-            :key="card.title"
-            class="rounded-xl bg-surface p-5"
-          >
+          ">
+          <div v-for="card in relevantDatasetMetrics" :key="card.title" class="rounded-xl bg-surface p-5">
             <h4 class="text-pistis-700 mb-4 text-xl font-semibold">
               {{ card.title }}
             </h4>
             <ul class="space-y-3 text-sm">
-              <li
-                v-for="line in card.items"
-                :key="line.title"
-                class="flex items-center justify-between"
-              >
+              <li v-for="line in card.items" :key="line.title" class="flex items-center justify-between">
                 <span class="wrap-anywhere">{{ Object.keys(line)[0] }}</span>
                 <KTag>{{ line[Object.keys(line)[0]] }}</KTag>
               </li>
