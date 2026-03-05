@@ -1,4 +1,6 @@
 import DatasetDetailsView from '@/views/DatasetDetailsView.vue'
+import DatasetsOverview from '../src/components/details-page/DatasetsOverview.vue'
+import DatasetsQuality from '@/views/search/datasets/DataQuality.vue'
 import Home from '@/views/Home.vue'
 import NotFound from '@/views/NotFound.vue'
 import Catalogues from '@/views/search/catalogues/Catalogues.vue'
@@ -35,12 +37,24 @@ const router = createRouter({
       },
     },
     {
-      name: 'dataset-details',
+      // name: 'dataset-details',
       path: '/datasets/:datasetId',
       component: DatasetDetailsView,
       meta: {
         requiresAuth: false,
       },
+       children: [
+      {
+        path: '',
+        name: 'dataset-details',
+        component: DatasetsOverview,
+      },
+      {
+        path: 'quality',
+        name: 'dataset-details-quality',
+        component: DatasetsQuality,
+      },
+  ],
     },
     {
       name: 'themer',

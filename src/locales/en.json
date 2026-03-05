@@ -105,11 +105,11 @@
   "details": {
     "dataset": "Dataset",
     "back": "Back",
-    "quality": "Data Quality",
+    "quality": "Quality",
     "info_tab": "Info",
     "about_dataset": "About this dataset",
     "read_more": "Read more",
-    "overview": "Dataset Overview"
+    "overview": "Overview"
   },
   "dataset": {
     "title": "Dataset",
