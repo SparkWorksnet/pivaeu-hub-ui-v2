@@ -12,8 +12,23 @@ The new Vanilla is a boilerplate to help developers create data portals based on
 
 ## Project Setup
 
+Requirements:
+- Node.js >= 24; see [.nvmrc](.nvmrc)
+- pnpm >= 10; see [package.json](package.json)
+
+### Clone repository
+
 ```sh
 git clone https://gitlab.com/piveau/ui/vanilla.git
+```
+
+### pnpm
+
+This project uses pnpm as package manager. If you don't have pnpm installed, you can install it using the following command:
+
+```sh
+npm install --global corepack@latest
+corepack enable pnpm@10
 ```
 
 ### Install dependencies
@@ -39,6 +54,10 @@ pnpm build
 ```sh
 pnpm story:dev
 ```
+
+## Configuration
+
+WIP
 
 ## CI/CD Pipeline
 
