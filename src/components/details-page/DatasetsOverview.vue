@@ -123,7 +123,9 @@ const {
     <slot name="sections">
       <section class="mb-10">
         <div class="flex flex-row items-center gap-2">
-          <Typography variant="header-3">
+          <Typography
+            variant="by-heading-4" class="text-primary-100 font-semibold"
+          >
             {{ t('dataset.distributions') }}
           </Typography>
           <KTag class="rounded-full bg-secondary">
@@ -242,11 +244,13 @@ const {
         </div>
       </div>
       <div class="bg-bg-divider h-px w-full" />
-      <div class="mt-6 mb-8 space-y-4">
+      <div class="mt-12 mb-8 space-y-4">
         <div class="flex flex-col gap-4 rounded-xl bg-surface p-4">
-          <Typography variant="by-heading-4" class="">
-            {{ t('dataset.additional_info') }}
-          </Typography>
+          <Typography  as="h5" variant="header-4" class="mb-2">
+                  <slot name="about-this-dataset">
+                  {{ t('dataset.additional_info') }}
+                  </slot>
+                </Typography>
           <PropertyTable
             v-if="isSuccess" :node="{
               type: 'node',
