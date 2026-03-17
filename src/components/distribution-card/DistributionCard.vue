@@ -48,7 +48,7 @@ const defaultSaveText = computed(() => props.saveText || 'Linked Data')
 </script>
 
 <template>
-  <div class="mb-3 rounded-xl border-b-none bg-surface p-4 mt-6">
+  <div class="rounded-xl border-b-none bg-surface p-4 mt-6">
     <div>
       <div class="flex items-start justify-between">
         <Typography as="h2" variant="header-4" class="text-surface-text">
