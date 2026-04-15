@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { PropertyTableEntryNode } from '@piveau/sdk-vue'
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import LinkedDataSelector from '../base/links/LinkedDataSelector.vue'
 import KTag from '../base/tag/KTag.vue'
@@ -21,16 +21,29 @@ interface CardProps {
   linkedData?: Record<string, any>
   distributionId: string
   data: PropertyTableEntryNode
+  itemId: any
   onSave?: () => void
 }
 const props = withDefaults(defineProps<CardProps>(), {
   downloadText: 'Download',
   saveText: 'Linked Data',
-  onSave: () => {},
+
+  onSave: () => { },
 })
 
 const { t } = useI18n()
+let activeId = ref();
+let showActivedropdown = ref(false);
 
+function handleToggle(id) {
+activeId.value = activeId.value === id ? null : id
+if (activeId.value === props.itemId) {
+  showActivedropdown.value = true
+  console.log(activeId.value, '####id', id);
+}else showActivedropdown.value = false
+
+
+}
 const dataOrder = ['modified', 'license', 'created', 'languages']
 const resolvedData = computed(() => {
   const sortedData = [...props.data.data || []].sort((a, b) => {
@@ -54,27 +67,21 @@ const defaultSaveText = computed(() => props.saveText || 'Linked Data')
         <Typography as="h2" variant="header-4" class="text-surface-text">
           {{ title }}
         </Typography>
-        <KTag
-          class="
+        <KTag class="
             hidden
             md:block
             text-sm
-          "
-        >
+          ">
           {{ format }}
         </KTag>
       </div>
 
-      <div
-        class="
+      <div class="
           my-0 flex flex-col
           lg:flex-row lg:justify-between lg:gap-28
-        "
-      >
+        ">
         <div class="flex flex-1 flex-col gap-6">
-          <div
-            class="markdown-content mt-4 text-sm leading-6 text-surface-light" v-html="description"
-          />
+          <div class="markdown-content mt-4 text-sm leading-6 text-surface-light" v-html="description" />
           <div class="flex">
             <KTag class="md:hidden">
               {{ format }}
@@ -82,44 +89,37 @@ const defaultSaveText = computed(() => props.saveText || 'Linked Data')
           </div>
         </div>
 
-        <div
-          class="
+        <div class="
             text-surface-text
             lg:my-0 lg:basis-4/12
-          "
-        >
+          ">
           <DataToggler v-slot="{ truncated }" :data="resolvedData || []" :limit="1" :expanded="false" class="text-sm">
-            <PropertyTable
-              :node="{
-                id: 'root',
-                label: '',
-                type: 'node',
-                isRoot: true,
-                data: truncated,
-              }"
-            />
+            <PropertyTable :node="{
+              id: 'root',
+              label: '',
+              type: 'node',
+              isRoot: true,
+              data: truncated,
+            }" />
           </DataToggler>
         </div>
       </div>
 
       <div class="flex items-center justify-between">
         <div class="flex gap-6">
-          <a
-            :href="downloadUrl"
-            target="_blank"
-            nofollow
-            noreferrer
-            download
-            class="text-white bg-primary dark:bg-primary-dark hover:bg-primary-hover dark:hover:bg-primary-dark-hover active:bg-primary dark:active:bg-primary-dark-pressed rounded-3xl border-transparent inline-flex min-w-fit items-center justify-center text-center font-medium align-bottom h-8 text-sm px-5 py-5"
-          >
+          <a :href="downloadUrl" target="_blank" nofollow noreferrer download
+            class="text-white bg-primary dark:bg-primary-dark hover:bg-primary-hover dark:hover:bg-primary-dark-hover active:bg-primary dark:active:bg-primary-dark-pressed rounded-3xl border-transparent inline-flex min-w-fit items-center justify-center text-center font-medium align-bottom h-8 text-sm px-5 py-5">
             {{ defaultDownloadText }}
             <i class="icon-[ph--arrow-square-out] ml-2" />
           </a>
 
-          <LinkedDataSelector :resource-id="distributionId" resource="distributions" button-class="text-white bg-primary dark:bg-primary-dark hover:bg-primary-hover dark:hover:bg-primary-dark-hover active:bg-primary dark:active:bg-primary-dark-pressed rounded-3xl border-transparent inline-flex min-w-fit items-center justify-center text-center font-medium align-bottom h-8 text-sm px-5 py-5"/>
+          <LinkedDataSelector @toggle="handleToggle(itemId)" :showDropdown="showActivedropdown"
+            resource-id="distributionId" :indist="true" resource="distributions"
+            button-class="text-white bg-primary dark:bg-primary-dark hover:bg-primary-hover dark:hover:bg-primary-dark-hover active:bg-primary dark:active:bg-primary-dark-pressed rounded-3xl border-transparent inline-flex min-w-fit items-center justify-center text-center font-medium align-bottom h-8 text-sm px-5 py-5" />
 
           <Dropdown severity="secondary" :label="defaultSaveText">
-            <DropdownItem v-for="[key, uri] in Object.entries(linkedData || {})" :key="key" as="a" :href="uri" target="_blank">
+            <DropdownItem v-for="[key, uri] in Object.entries(linkedData || {})" :key="key" as="a" :href="uri"
+              target="_blank">
               {{ key }}
             </DropdownItem>
           </Dropdown>
@@ -128,4 +128,3 @@ const defaultSaveText = computed(() => props.saveText || 'Linked Data')
     </div>
   </div>
 </template>
-

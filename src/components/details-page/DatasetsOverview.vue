@@ -142,8 +142,9 @@ const {
                 :title="distribution.title || ''" :description="distribution.descriptionMarkup || ''"
                 :format="distribution.format || 'Unknown'" :download-url="distribution.downloadUrls?.[0]!"
                 :last-updated="distribution.modified" :data="distribution.data" :linked-data="distribution.linkedData"
-                :distribution-id="distribution.id" download-text="Download" save-text="Linked Data"
-              />
+                :distribution-id="distribution.id" download-text="Download" save-text="Linked Data" :itemId="i"
+              
+                />
               <div
                 v-if="i === truncatedFormattedDistributions.length - 1 && isDistributionsTruncated"
                 name="distribution-card-overlay" class="
