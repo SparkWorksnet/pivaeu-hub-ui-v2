@@ -2,7 +2,7 @@
   <nav>
     <!-- Linked Data link-->
     <div class="relative" :class="{ 'distributionButton': indist, 'active': showDropdown }">
-      <button :class="buttonClass" @click="$emit('toggle'), toggleNotDist()" aria-haspopup="listbox">
+      <button :class="buttonClass" :style="{ zIndex: (showDropdown || showOuttaDistDropdown) ? 10 : 0 }" @click="$emit('toggle'), toggleNotDist()" aria-haspopup="listbox">
         <span :title="$t('footer.links.linkedData')" data-toggle="tooltip">
           {{ $t('footer.links.linkedData') }}
           <i class="icon-[ph--caret-down] text-xs align-middle mb-1" />
@@ -95,7 +95,6 @@ function toggleDropdown() {
 .distributionButton {
   button {
     position: relative;
-    z-index: 10;
   }
 
   div {
