@@ -1,15 +1,14 @@
 <template>
-  <details>{{ props.showDropdown }}</details>
   <nav>
     <!-- Linked Data link-->
     <div class="relative" :class="{ 'distributionButton': indist, 'active': showDropdown }">
-      <button :class="buttonClass" @click="$emit('toggle')" aria-haspopup="listbox">
+      <button :class="buttonClass" @click="$emit('toggle'), toggleNotDist()" aria-haspopup="listbox">
         <span :title="$t('footer.links.linkedData')" data-toggle="tooltip">
           {{ $t('footer.links.linkedData') }}
           <i class="icon-[ph--caret-down] text-xs align-middle mb-1" />
         </span>
       </button>
-      <div v-if="showDropdown"
+      <div v-if="showDropdown || showOuttaDistDropdown"
         class="absolute z-10 w-full top-full border dark:border rounded-md shadow-md bg-surface-0 dark:bg-surface-800 text-surface-800 dark:text-white/80 dark:border-surface-700 max-h-[200px] p-1">
         <ul class="w-full">
           <li class="w-full hover:bg-[var(--surface-100)] dark:hover:bg-[var(--surface-700)] p-1 cursor-pointer">
@@ -61,7 +60,12 @@ const props = defineProps({
   },
   showDropdown:{}
 })
-
+let showOuttaDistDropdown = ref(false)
+function toggleNotDist() {
+  if (!props.indist) {
+  showOuttaDistDropdown.value = !showOuttaDistDropdown.value
+  }
+}
 const ResourceDetailsLinkedDataButton = defineAsyncComponent(() => import('./ResourceDetailsLinkedDataButton.vue'))
 
 // const showDropdown = ref(false)

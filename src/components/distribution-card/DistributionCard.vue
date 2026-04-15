@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import type { PropertyTableEntryNode } from '@piveau/sdk-vue'
-import { computed, ref } from 'vue'
-import { useI18n } from 'vue-i18n'
+import { computed } from 'vue'
 import LinkedDataSelector from '../base/links/LinkedDataSelector.vue'
 import KTag from '../base/tag/KTag.vue'
 import Typography from '../base/typography/Typography.vue'
@@ -21,29 +20,17 @@ interface CardProps {
   linkedData?: Record<string, any>
   distributionId: string
   data: PropertyTableEntryNode
-  itemId: any
+  showDropdown?: boolean
   onSave?: () => void
 }
 const props = withDefaults(defineProps<CardProps>(), {
   downloadText: 'Download',
   saveText: 'Linked Data',
-
+  showDropdown: false,
   onSave: () => { },
 })
 
-const { t } = useI18n()
-let activeId = ref();
-let showActivedropdown = ref(false);
-
-function handleToggle(id) {
-activeId.value = activeId.value === id ? null : id
-if (activeId.value === props.itemId) {
-  showActivedropdown.value = true
-  console.log(activeId.value, '####id', id);
-}else showActivedropdown.value = false
-
-
-}
+defineEmits(['toggle'])
 const dataOrder = ['modified', 'license', 'created', 'languages']
 const resolvedData = computed(() => {
   const sortedData = [...props.data.data || []].sort((a, b) => {
@@ -113,9 +100,9 @@ const defaultSaveText = computed(() => props.saveText || 'Linked Data')
             <i class="icon-[ph--arrow-square-out] ml-2" />
           </a>
 
-          <LinkedDataSelector @toggle="handleToggle(itemId)" :showDropdown="showActivedropdown"
-            resource-id="distributionId" :indist="true" resource="distributions"
-            button-class="text-white bg-primary dark:bg-primary-dark hover:bg-primary-hover dark:hover:bg-primary-dark-hover active:bg-primary dark:active:bg-primary-dark-pressed rounded-3xl border-transparent inline-flex min-w-fit items-center justify-center text-center font-medium align-bottom h-8 text-sm px-5 py-5" />
+          <LinkedDataSelector :show-dropdown="showDropdown" resource-id="distributionId" :indist="true" resource="distributions"
+            button-class="text-white bg-primary dark:bg-primary-dark hover:bg-primary-hover dark:hover:bg-primary-dark-hover active:bg-primary dark:active:bg-primary-dark-pressed rounded-3xl border-transparent inline-flex min-w-fit items-center justify-center text-center font-medium align-bottom h-8 text-sm px-5 py-5"
+            @toggle="$emit('toggle')" />
 
           <Dropdown severity="secondary" :label="defaultSaveText">
             <DropdownItem v-for="[key, uri] in Object.entries(linkedData || {})" :key="key" as="a" :href="uri"
