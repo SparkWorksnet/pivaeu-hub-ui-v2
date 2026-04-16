@@ -4,7 +4,7 @@ import { useDataTruncator } from '@/composables/useDataTruncator'
 import { getLocalizedValue } from '@/sdk/utils/helpers'
 import DOMPurify from 'isomorphic-dompurify'
 import { marked } from 'marked'
-import { computed, inject, toValue } from 'vue'
+import { computed, inject, ref, toValue } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRouter } from 'vue-router'
 import TabGroup from '../base/tab-group/TabGroup.vue'
@@ -64,6 +64,12 @@ const getFormattedDistributions = computed(() => {
 })
 
 // Distribution truncator ("show more")
+const activeDropdownId = ref<number | null>(null)
+
+function toggleDropdown(id: number) {
+  activeDropdownId.value = activeDropdownId.value === id ? null : id
+}
+
 const {
   data: truncatedFormattedDistributions,
   toggle: showAllDistributions,
@@ -142,7 +148,8 @@ const {
                 :title="distribution.title || ''" :description="distribution.descriptionMarkup || ''"
                 :format="distribution.format || 'Unknown'" :download-url="distribution.downloadUrls?.[0]!"
                 :last-updated="distribution.modified" :data="distribution.data" :linked-data="distribution.linkedData"
-                :distribution-id="distribution.id" download-text="Download" save-text="Linked Data"
+                :distribution-id="distribution.id" :showDropdown="activeDropdownId === i"
+                @toggle="toggleDropdown(i)" download-text="Download" save-text="Linked Data"
               />
               <div
                 v-if="i === truncatedFormattedDistributions.length - 1 && isDistributionsTruncated"
