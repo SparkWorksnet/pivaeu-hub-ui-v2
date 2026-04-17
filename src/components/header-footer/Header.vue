@@ -31,19 +31,19 @@ const visible = ref(false)
         </div>
 
         <!-- Right: Actions (kept to the right, no overlap) -->
-        <div class="flex shrink-0 items-center justify-end gap-3 sm:gap-6">
+        <div class="flex shrink-0 items-center justify-end gap-3 sm:gap-4">
           <div class="md:hidden">
             <KButton variant="null" class="text-header-bg-text" @click="visible = !visible">
               <i class="icon-[ph--list]" />
             </KButton>
           </div>
 
-          <div class="mr-2 hidden items-center gap-1 md:flex lg:mr-5 lg:px-8">
+          <div class="mr-2 hidden items-center gap-1 md:flex lg:mr-2 lg:px-4">
             <LanguageSelector />
             <DarkModeToggle />
           </div>
 
-          <div class="hidden items-center gap-3 md:flex ml-2">
+          <div class="hidden items-center gap-3 md:flex">
             <a
               target="_blank"
               href="https://doc.piveau.eu/general/introduction/"
@@ -103,6 +103,7 @@ const visible = ref(false)
 .brand {
   margin-left: 20px;
   display: flex;
+
 }
 
 .logo-dark {
