@@ -37,10 +37,12 @@ const button = cva(`
         hover:bg-secondary-hover
         active:bg-secondary-pressed
       `,
+      null: '',
     },
     size: {
       small: 'h-8 px-4 py-2 text-sm',
       large: 'h-12 px-4 py-3 text-lg',
+      null: 'h-12 text-lg',
     },
   },
 })

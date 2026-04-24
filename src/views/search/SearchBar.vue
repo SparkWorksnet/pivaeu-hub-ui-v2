@@ -13,7 +13,7 @@ const searchInput = defineModel<string>()
 </script>
 
 <template>
-  <div class="mt-[5px] flex-none pt-8 pb-4">
+  <div class="flex-none pb-2 md:pt-8 md:pb-4">
     <section
       name="top"
       class="
