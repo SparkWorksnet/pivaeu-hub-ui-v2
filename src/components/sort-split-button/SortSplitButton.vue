@@ -77,7 +77,7 @@ function toggle() {
         class="
           absolute top-full z-10 max-h-[200px] w-full rounded-md rounded-t-none border
           bg-surface-0 py-1 text-surface-800 shadow-md
-          dark:border dark:border-surface-700 dark:bg-surface-800
+          dark:border dark:border-surface-200 dark:bg-surface-800
           dark:text-white/80
         "
       >

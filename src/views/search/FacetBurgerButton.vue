@@ -8,9 +8,10 @@ const props = defineProps<{
 
 <template>
   <section>
-    <div class="flex items-center gap-2">
+    <div class="flex items-center gap-2 pt-2">
       <KButton
         variant="null"
+        class="!px-1"
         @click="openSidebar()"
       >
         <i class="icon-[ph--text-align-left]" />
