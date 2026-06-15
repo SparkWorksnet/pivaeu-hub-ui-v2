@@ -39,3 +39,4 @@ vanilla.iml
 
 test-results/
 playwright-report/
+*.iml
