@@ -10,14 +10,17 @@ const seitenLinks = computed(() => [
   { to: '/', text: t('footer.links.home') },
   { to: '/datasets', text: t('footer.links.datasets') },
   { to: '/catalogues', text: t('footer.links.catalogues') },
-  { to: '/Themer', text: t('footer.links.themeGenerator') },
-  { to: 'https://doc.piveau.eu/general/introduction/', text: t('footer.links.docs') },
-  { to: 'https://gitlab.com/piveau/', text: t('footer.links.gitlab') },
 ])
 
-const socialLinks = computed(() => [
-  { href: 'https://www.linkedin.com/company/fraunhoferfokus/?originalSubdomain=de', text: t('footer.links.linkedin') },
-])
+const socialLinks = computed(() =>
+  [
+    { href: import.meta.env.VITE_SOCIAL_LINKEDIN,  text: 'LinkedIn'  },
+    { href: import.meta.env.VITE_SOCIAL_TWITTER,   text: 'X / Twitter' },
+    { href: import.meta.env.VITE_SOCIAL_YOUTUBE,   text: 'YouTube'   },
+    { href: import.meta.env.VITE_SOCIAL_FACEBOOK,  text: 'Facebook'  },
+    { href: import.meta.env.VITE_SOCIAL_GITHUB,    text: 'GitHub'    },
+  ].filter(l => !!l.href)
+)
 
 const rechtlichesLinks = computed(() => [
   { to: '/imprint', text: t('footer.links.imprint') },
@@ -26,7 +29,7 @@ const rechtlichesLinks = computed(() => [
 
 const loginLinks = computed(() => [
   { to: '#', text: t('footer.links.login') },
-  { href: 'https://www.piveau.de/#contact', text: t('footer.links.contact') },
+  { href: 'mailto:info@sparkworks.net', text: 'info@sparkworks.net' },
 ])
 </script>
 
@@ -48,7 +51,7 @@ const loginLinks = computed(() => [
             xl:w-2/12
           "
         >
-        <img src="/piveau-logo.png" alt="piveau logo" class="mb-6 w-24">
+        <img src="/sparkworks-white.png" alt="SparkWorks" class="mb-6 h-8 object-contain">
           <ul class="flex flex-col gap-4">
             <li
               v-for="link in loginLinks"

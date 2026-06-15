@@ -9,6 +9,7 @@ import Typography from '../typography/Typography.vue'
 const props = withDefaults(defineProps<DataInfoCardProps>(), {
   fileFormats: () => [],
   properties: () => [],
+  hoverBorderClass: 'hover:border-b-primary',
 })
 
 const { t } = useI18n()
@@ -27,6 +28,7 @@ interface DataInfoCardProps {
   href?: string
   to?: RouteLocationRaw
   properties?: Summary[]
+  hoverBorderClass?: string
 }
 
 const computedWrapperComponent = computed(() => {
@@ -38,17 +40,19 @@ const computedWrapperComponent = computed(() => {
   <component
     :is="computedWrapperComponent"
     :to="props.to || '/'"
-    class="
-      group by relative mx-auto mb-6 box-border w-full rounded-custom border
-      border-b-[3px] border-transparent bg-surface px-6 py-5 text-surface-text
-      hover:border-b-primary
-    "
+    :class="[
+      'group by relative mx-auto mb-6 box-border w-full rounded-custom border border-b-[3px] border-transparent bg-surface px-6 py-5 text-surface-text',
+      props.hoverBorderClass,
+    ]"
   >
     <!-- Header -->
     <div class="flex flex-col gap-by3">
-      <Typography v-if="title || id" variant="header-4">
-        {{ title || id }}
-      </Typography>
+      <div class="flex items-center justify-between gap-4">
+        <Typography v-if="title || id" variant="header-4" class="min-w-0">
+          {{ title || id }}
+        </Typography>
+        <slot name="title-badge" />
+      </div>
       <div
         class="
           flex flex-col gap-6

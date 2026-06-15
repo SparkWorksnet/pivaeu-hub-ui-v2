@@ -121,7 +121,7 @@ const {
               v-model:direction="sortDirection"
               v-model:sort="sort"
             >
-              <span class="text-primary-hover">{{ getSearchResultsCount }}</span> {{ $t('search.datasets.found') }}
+              <span class="text-primary-hover">{{ getSearchResultsCount }}</span> items found
             </SearchInfoPanel>
           </div>
           <SearchItems

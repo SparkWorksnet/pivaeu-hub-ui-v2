@@ -8,6 +8,8 @@ import { computed, inject, ref, toValue } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRouter } from 'vue-router'
 import TabGroup from '../base/tab-group/TabGroup.vue'
+import ServiceInfoBanner from '../gx-quality/ServiceInfoBanner.vue'
+import appConfig from '../../../config/appConfig'
 import KTag from '../base/tag/KTag.vue'
 import Typography from '../base/typography/Typography.vue'
 import DistributionCard from '../distribution-card/DistributionCard.vue'
@@ -16,7 +18,9 @@ import { PropertyTable } from '../property-table/PropertyTableRow'
 const { t } = useI18n()
 const router = useRouter()
 
-const { resultEnhanced, isSuccess } = inject('datasetDetails')
+const { resultEnhanced, isSuccess, distributionConnectorTypes } = inject('datasetDetails') as any
+const servicesCatalogue = (appConfig as any).servicesCatalogue || '6g-dali-services'
+const isService = computed(() => resultEnhanced?.value?.getCatalogId === servicesCatalogue)
 
 const { data: truncatedDescription, toggle: toggleDescription, isTruncated: isDescriptionTruncated, isTruncationNeeded: isDescriptionTruncationNeeded } = useDataTruncator({
   data: computed(() => resultEnhanced?.value?.getDescriptionMarkup || ''),
@@ -82,6 +86,7 @@ const {
 
 <template>
   <div>
+    <ServiceInfoBanner />
     <section>
       <TabGroup
         :tabs="[
@@ -98,7 +103,7 @@ const {
               <div>
                 <Typography as="h5" variant="header-4" class="mb-2">
                   <slot name="about-this-dataset">
-                    {{ t('details.about_dataset') }}
+                    {{ isService ? 'About this service' : t('details.about_dataset') }}
                   </slot>
                 </Typography>
                 <Typography as="p" variant="by-copy-small-regular">
@@ -148,6 +153,7 @@ const {
                 :title="distribution.title || ''" :description="distribution.descriptionMarkup || ''"
                 :format="distribution.format || 'Unknown'" :download-url="distribution.downloadUrls?.[0]!"
                 :last-updated="distribution.modified" :data="distribution.data" :linked-data="distribution.linkedData"
+                :connector-type-override="distributionConnectorTypes?.[distribution.id]"
                 :distribution-id="distribution.id" :showDropdown="activeDropdownId === i"
                 @toggle="toggleDropdown(i)" download-text="Download" save-text="Linked Data"
               />

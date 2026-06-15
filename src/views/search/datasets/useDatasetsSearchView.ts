@@ -118,6 +118,7 @@ export function useDatasetSearchView<TF extends string, TM, TS extends EnhancedS
       formats: dcat.getFormats || [],
       datasetType: (dcat as any)?.public === false ? 'kritis' : 'opendata',
       summary: dcat.getSummary || [],
+      catalogueId: (dcat as any)?.getCatalogId || '',
     }))
   })
 

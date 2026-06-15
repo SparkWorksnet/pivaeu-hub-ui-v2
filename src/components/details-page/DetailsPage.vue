@@ -34,9 +34,11 @@ const props = withDefaults(defineProps<{
   summary?: { title: string, text: string }[]
   descriptionMarkup?: string
   distributions?: any[]
+  hideQuality?: boolean
 }>(), {
   headline: 'Datensatz',
   distributions: () => [],
+  hideQuality: false,
 })
 
 const { t } = useI18n()
@@ -67,7 +69,7 @@ const {
   limit: 7,
 })
 
-const isQualityPageAvailable = computed(() => !!appConfig.piveauDataQualityUrl?.trim())
+const isQualityPageAvailable = computed(() => !props.hideQuality && !!appConfig.piveauDataQualityUrl?.trim())
 
 const showQualityPage = computed(() => route.name === 'dataset-details-quality')
 

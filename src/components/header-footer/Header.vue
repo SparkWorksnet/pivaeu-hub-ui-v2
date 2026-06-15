@@ -18,8 +18,7 @@ const visible = ref(false)
         <!-- Left: Logo -->
         <div class="flex items-center flex-shrink-0">
           <RouterLink class="block" to="/">
-            <img src="/piveau-logo-gray.svg" alt="piveau logo" class="logo logo-light w-25">
-            <img src="/piveau-logo.png" alt="piveau logo" class="logo logo-dark w-24">
+            <img src="/sparkworks-white.png" alt="SparkWorks" class="h-8 object-contain">
           </RouterLink>
         </div>
 
@@ -46,23 +45,10 @@ const visible = ref(false)
           <div class="hidden items-center gap-3 md:flex">
             <a
               target="_blank"
-              href="https://doc.piveau.eu/general/introduction/"
-              class="ml-2 inline-flex items-center whitespace-nowrap text-header-bg-text hover:text-primary-hover"
+              href="https://6g-dali.eu"
+              class="ml-2 inline-flex items-center whitespace-nowrap text-header-bg-text hover:text-secondary"
             >
-              {{ t('landing-page.header.docs') }}
-            </a>
-            <a
-              target="_blank"
-              href="https://gitlab.com/piveau/"
-              class="inline-flex items-center text-header-bg-text hover:text-primary-hover"
-              aria-label="GitLab"
-              title="GitLab"
-            >
-              <img
-                src="../../assets/images/icons8-gitlab-48.png"
-                alt="Gitlab"
-                class="h-5 w-5 shrink-0 object-contain"
-              >
+              6G-DALI
             </a>
           </div>
         </div>

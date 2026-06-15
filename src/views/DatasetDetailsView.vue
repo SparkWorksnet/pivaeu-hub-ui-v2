@@ -7,10 +7,13 @@ import { useRouteParams } from '@vueuse/router'
 import DOMPurify from 'isomorphic-dompurify'
 import { marked } from 'marked'
 
-import { computed, provide, ref, shallowReactive, toValue } from 'vue'
+import { computed, onMounted, provide, ref, shallowReactive, toValue } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRoute, useRouter } from 'vue-router'
 import KButton from '../components/base/button/KButton.vue'
+import appConfig from '../../config/appConfig'
+
+const servicesCatalogue = (appConfig as any).servicesCatalogue || '6g-dali-services'
 
 import KCard from '../components/base/card/KCard.vue'
 import KTag from '../components/base/tag/KTag.vue'
@@ -52,11 +55,18 @@ const getFormattedDistributions = computed(() => {
       title: dist.title ?? dist.id ?? '',
       description: dist.description ?? '',
       descriptionMarkup: DOMPurify.sanitize(marked(dist.description ?? '', { async: false })),
-      downloadUrls: dist.accessUrls || [],
+      downloadUrls: dist.downloadUrls?.length ? dist.downloadUrls : (dist.accessUrls || []),
       format: dist.format ?? '',
       id: dist.id,
       accessUrls: dist.accessUrls,
       modified: dist.modified ?? '',
+      issued: dist.issued ?? '',
+      byteSize: dist.byteSize ?? null,
+      license: dist.license ?? null,
+      mediaType: dist.mediaType ?? '',
+      language: dist.language ?? null,
+      checksum: dist.checksum ?? null,
+      compressFormat: dist.compressFormat ?? null,
       data: {
         type: 'node',
         id: 'root',
@@ -73,6 +83,38 @@ const getFormattedDistributions = computed(() => {
     }
   })
 })
+
+const isService = computed(() => resultEnhanced.value?.getCatalogId === servicesCatalogue)
+
+const DALI_NS = 'https://dali-project.eu/ns#'
+const distributionConnectorTypes = ref<Record<string, string>>({})
+
+onMounted(async () => {
+  try {
+    const hubUrl = (appConfig as any).piveauHubRepoUrl
+    const r = await fetch(`${hubUrl}datasets/${toValue(datasetId)}`, {
+      headers: { Accept: 'application/ld+json' },
+    })
+    if (!r.ok) return
+    const data = await r.json()
+    const graph: any[] = data['@graph'] || []
+    const map: Record<string, string> = {}
+    for (const node of graph) {
+      const types = [].concat(node['@type'] || [])
+      if (!types.some((t: string) => t.includes('Distribution'))) continue
+      const ct = node[`${DALI_NS}connectorType`]
+      if (!ct) continue
+      const val = Array.isArray(ct) ? ct[0] : ct
+      const id = node['@id']?.split('/').pop() || node['@id'] || ''
+      map[id] = (val?.['@value'] || val?.['@id'] || String(val) || '').toLowerCase()
+    }
+    distributionConnectorTypes.value = map
+  } catch { /* silent */ }
+})
+
+const pageHeadline = computed(() =>
+  isService.value ? 'Service' : t('dataset.title')
+)
 
 const { isError: searchError, error } = query
 const errorView = computed(() => {
@@ -102,6 +144,7 @@ const { t } = useI18n()
 provide('datasetDetails', {
   resultEnhanced: computed(() => resultEnhanced?.value),
   isSuccess: computed(() => isSuccess?.value),
+  distributionConnectorTypes,
 })
 </script>
 
@@ -114,7 +157,8 @@ provide('datasetDetails', {
       </KCard>
     </div>
     <DetailsPage
-      :headline="t('dataset.title')" :title="resultEnhanced?.getTitle || ''"
+      :headline="pageHeadline"
+      :hide-quality="isService" :title="resultEnhanced?.getTitle || ''"
       :subtitle="resultEnhanced?.getPublisher?.name || ''" :dataset-id="datasetId" :summary="[
         {
           title: t('dataset.provider'),
@@ -156,6 +200,11 @@ provide('datasetDetails', {
                   :title="distribution.title || ''" :description="distribution.descriptionMarkup || ''"
                   :format="distribution.format || 'Unknown'" :download-url="distribution.downloadUrls?.[0]!"
                   :last-updated="distribution.modified" :data="distribution.data" :linked-data="distribution.linkedData"
+                  :issued="distribution.issued" :byte-size="distribution.byteSize"
+                  :license="distribution.license" :media-type="distribution.mediaType"
+                  :language="distribution.language" :checksum="distribution.checksum"
+                  :compress-format="distribution.compressFormat"
+                  :connector-type-override="distributionConnectorTypes[distribution.id]"
                   :distribution-id="distribution.id" :showDropdown="activeDropdownId === i"
                   @toggle="toggleDropdown(i)" download-text="Download" save-text="Linked Data"
                 />

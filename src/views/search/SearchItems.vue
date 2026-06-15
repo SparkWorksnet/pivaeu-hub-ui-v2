@@ -1,8 +1,55 @@
 <script setup lang="ts">
 import DataInfoCard from '@/components/base/data-info-box/DataInfoCard.vue'
 import { computed } from 'vue'
-
+import appConfig from '../../../config/appConfig'
 import { useSearchParams } from './useSearchParams'
+
+/* ── Resource type resolver — based on content, not catalogue ───────── */
+type ResourceType = 'dataset' | 'service' | 'model'
+
+const servicesCatalogue = (appConfig as any).servicesCatalogue || '6g-dali-services'
+const modelsCatalogue   = (appConfig as any).modelsCatalogue   || '6g-dali-models'
+
+function getResourceType(item: any): ResourceType {
+  if (item.catalogueId === servicesCatalogue) return 'service'
+  if (item.catalogueId === modelsCatalogue)   return 'model'
+  return 'dataset'
+}
+
+const RESOURCE_STYLE: Record<ResourceType, { border: string, hover: string, pill: string, label: string }> = {
+  dataset: {
+    border: 'border-l-4 !border-l-[var(--secondary)]',
+    hover:  'hover:border-b-[var(--secondary)]',
+    pill:   'bg-[var(--secondary)]',
+    label:  'Dataset',
+  },
+  service: {
+    border: 'border-l-4 !border-l-indigo-500',
+    hover:  'hover:border-b-indigo-500',
+    pill:   'bg-indigo-600',
+    label:  'Data Processing Service',
+  },
+  model: {
+    border: 'border-l-4 !border-l-purple-500',
+    hover:  'hover:border-b-purple-500',
+    pill:   'bg-purple-600',
+    label:  'ML Model',
+  },
+}
+
+/* ── Service type sub-badge colours ─────────────────────────────────── */
+const SERVICE_TYPE_COLOURS: Record<string, { bg: string, text: string, border: string }> = {
+  QualityCheck:          { bg: 'bg-green-50',  text: 'text-green-800',  border: 'border-green-200'  },
+  Transformation:        { bg: 'bg-blue-50',   text: 'text-blue-800',   border: 'border-blue-200'   },
+  Augmentation:          { bg: 'bg-purple-50', text: 'text-purple-800', border: 'border-purple-200' },
+  Aggregation:           { bg: 'bg-yellow-50', text: 'text-yellow-800', border: 'border-yellow-200' },
+  Anonymisation:         { bg: 'bg-pink-50',   text: 'text-pink-800',   border: 'border-pink-200'   },
+  'Feature Engineering': { bg: 'bg-teal-50',   text: 'text-teal-800',   border: 'border-teal-200'   },
+}
+
+function serviceTypeStyle(type: string) {
+  return SERVICE_TYPE_COLOURS[type] || { bg: 'bg-gray-100', text: 'text-gray-700', border: 'border-gray-200' }
+}
 
 const props = defineProps<{
   items: []
@@ -52,13 +99,75 @@ function goToPage(page: number) {
   <div class="flex flex-col gap-2">
     <template v-if="!isLoading && !isFetching">
       <slot v-for="item in items" :key="item.id" :item="item">
+
+        <!-- Data Processing Service card -->
         <DataInfoCard
+          v-if="getResourceType(item) === 'service'"
+          :to="{ name: 'dataset-details', params: { datasetId: item.id } }"
+          :title="item.title"
+          :description="item?.getDescriptionMarkup"
+          :hover-border-class="RESOURCE_STYLE.service.hover"
+          :class="RESOURCE_STYLE.service.border"
+        >
+          <template #title-badge>
+            <div class="flex shrink-0 items-center gap-2">
+              <span class="inline-flex items-center gap-1.5 rounded-full bg-indigo-600 px-3 py-0.5 text-xs font-semibold text-white">
+                <svg class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/>
+                </svg>
+                Data Processing Service
+              </span>
+              <span
+                v-if="item.summary?.find(s => s.title === 'Service Type')?.text"
+                :class="[
+                  'inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-medium',
+                  serviceTypeStyle(item.summary.find(s => s.title === 'Service Type').text).bg,
+                  serviceTypeStyle(item.summary.find(s => s.title === 'Service Type').text).text,
+                  serviceTypeStyle(item.summary.find(s => s.title === 'Service Type').text).border,
+                ]"
+              >
+                {{ item.summary.find(s => s.title === 'Service Type').text }}
+              </span>
+            </div>
+          </template>
+          <template #body>
+            <div class="flex flex-col gap-4">
+              <div class="line-clamp-3 text-sm text-surface-light break-words">
+                <div class="markdown-content" v-html="item.getDescriptionMarkup" />
+              </div>
+              <div v-if="item.summary?.length" class="grid grid-cols-2 gap-3 text-xs md:grid-cols-4">
+                <div v-for="prop in item.summary.filter(s => s.title !== 'Service Type')" :key="prop.title">
+                  <div class="font-medium text-gray-500">{{ prop.title }}</div>
+                  <div class="truncate text-gray-800 dark:text-white">{{ prop.text || '—' }}</div>
+                </div>
+              </div>
+            </div>
+          </template>
+        </DataInfoCard>
+
+        <!-- Regular dataset card -->
+        <DataInfoCard
+          v-else
           :to="{ name: 'dataset-details', params: { datasetId: item.id } }"
           :title="item.title"
           :description="item?.getDescriptionMarkup"
           :file-formats="item.formats"
           :properties="item.summary"
-        />
+          :hover-border-class="RESOURCE_STYLE[getResourceType(item)].hover"
+          :class="RESOURCE_STYLE[getResourceType(item)].border"
+        >
+          <template #title-badge>
+            <span class="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-[var(--secondary)] px-3 py-0.5 text-xs font-semibold text-white">
+              <svg class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M3 12v3c0 1.657 3.134 3 7 3s7-1.343 7-3v-3c0 1.657-3.134 3-7 3s-7-1.343-7-3z"/>
+                <path d="M3 7v3c0 1.657 3.134 3 7 3s7-1.343 7-3V7c0 1.657-3.134 3-7 3S3 8.657 3 7z"/>
+                <path d="M17 5c0 1.657-3.134 3-7 3S3 6.657 3 5s3.134-3 7-3 7 1.343 7 3z"/>
+              </svg>
+              Dataset
+            </span>
+          </template>
+        </DataInfoCard>
+
       </slot>
     </template>
     <template v-else>

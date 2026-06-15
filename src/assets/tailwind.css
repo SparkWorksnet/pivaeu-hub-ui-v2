@@ -50,12 +50,12 @@
     /*****************************/
     /* Piveau Background Colors */
     /*****************************/
-    --piveau-primary: #7B61FF;
-    --piveau-primary-variant: #3B2F79;
-    --piveau-primary-light: #e6e3f5s;
+    --piveau-primary: #343a41;
+    --piveau-primary-variant: #202272;
+    --piveau-primary-light: #eaebec;
     --piveau-primary-disabled: #787878;
-    --piveau-secondary: #B5D0D7;
-    --piveau-secondary-variant: #2f6f88;
+    --piveau-secondary: #f9a01b;
+    --piveau-secondary-variant: #e08a00;
     --piveau-secondary-disabled: #8d8d8d;
     --piveau-background: #F4F4F4;
     --piveau-surface: #FFFFFF;
@@ -76,9 +76,9 @@
     /*************************/
     /* Header and Footer */
     /*************************/
-    --piveau-header-bg: #ffffff;
-    --piveau-header-text: #262626;
-    --piveau-footer-bg: #424242;
+    --piveau-header-bg: #343a41;
+    --piveau-header-text: #ffffff;
+    --piveau-footer-bg: #343a41;
     --piveau-footer-text: #ffffff;
     
     /**************************************************************************************************************************************/

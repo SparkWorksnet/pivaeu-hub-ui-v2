@@ -9,5 +9,6 @@ export default {
   piveauHubStoreUrl: import.meta.env.VITE_API_HUB_STORE_URL || 'https://demo.piveau.io/api/hub/store/',
   piveauSparqlUrl: 'https://demo.piveau.io/sparql',
   piveauDataQualityUrl: import.meta.env.VITE_API_DATA_QUALITY_URL ?? 'https://demo.piveau.io/api/metrics/cache/',
+  servicesCatalogue: import.meta.env.VITE_SERVICES_CATALOGUE || '6g-dali-services',
 
 }

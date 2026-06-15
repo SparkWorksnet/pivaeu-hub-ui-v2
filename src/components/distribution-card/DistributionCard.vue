@@ -22,6 +22,14 @@ interface CardProps {
   data: PropertyTableEntryNode
   showDropdown?: boolean
   onSave?: () => void
+  issued?: string
+  byteSize?: number | null
+  license?: { label?: string, resource?: string } | null
+  mediaType?: string
+  language?: { label?: string } | null
+  checksum?: { checksum_value?: string } | null
+  compressFormat?: { label?: string } | null
+  connectorTypeOverride?: string
 }
 const props = withDefaults(defineProps<CardProps>(), {
   downloadText: 'Download',
@@ -30,7 +38,44 @@ const props = withDefaults(defineProps<CardProps>(), {
   onSave: () => { },
 })
 
+function formatBytes(bytes: number | null | undefined): string {
+  if (!bytes) return ''
+  if (bytes < 1024) return `${bytes} B`
+  if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`
+  if (bytes < 1024 * 1024 * 1024) return `${(bytes / (1024 * 1024)).toFixed(1)} MB`
+  return `${(bytes / (1024 * 1024 * 1024)).toFixed(1)} GB`
+}
+
+function formatDate(d?: string): string {
+  if (!d) return ''
+  try { return new Date(d).toLocaleDateString('en-GB') } catch { return d }
+}
+
 defineEmits(['toggle'])
+const DSPACE_CONNECTOR = 'dspaceconnector'
+
+function findValue(nodes: any[], id: string): string {
+  for (const node of nodes || []) {
+    if (node.id?.toLowerCase().includes(id.toLowerCase())) {
+      if (node.type === 'value') return String(node.value ?? '')
+      if (node.data) return findValue(Array.isArray(node.data) ? node.data : [node.data], id)
+    }
+    if (node.data) {
+      const found = findValue(Array.isArray(node.data) ? node.data : [node.data], id)
+      if (found) return found
+    }
+  }
+  return ''
+}
+
+const connectorType = computed(() =>
+  findValue(props.data?.data || [], 'connectorType').toLowerCase()
+)
+
+const hideDownload = computed(() =>
+  (props.connectorTypeOverride?.toLowerCase() || connectorType.value) === DSPACE_CONNECTOR
+)
+
 const dataOrder = ['modified', 'license', 'created', 'languages']
 const resolvedData = computed(() => {
   const sortedData = [...props.data.data || []].sort((a, b) => {
@@ -92,15 +137,47 @@ const defaultSaveText = computed(() => props.saveText || 'Linked Data')
         </div>
       </div>
 
+      <!-- Extra metadata row -->
+      <div class="mt-3 mb-3 flex flex-wrap gap-x-6 gap-y-2 text-xs text-surface-light">
+        <span v-if="formatBytes(byteSize)">
+          <span class="font-medium text-surface-text">Size:</span> {{ formatBytes(byteSize) }}
+        </span>
+        <span v-if="mediaType">
+          <span class="font-medium text-surface-text">Media type:</span> {{ mediaType }}
+        </span>
+        <span v-if="compressFormat?.label">
+          <span class="font-medium text-surface-text">Compression:</span> {{ compressFormat.label }}
+        </span>
+        <span v-if="license?.label || license?.resource">
+          <span class="font-medium text-surface-text">License:</span>
+          <a v-if="license.resource" :href="license.resource" target="_blank" rel="noopener"
+             class="ml-1 text-primary hover:underline">{{ license.label || license.resource }}</a>
+          <span v-else class="ml-1">{{ license.label }}</span>
+        </span>
+        <span v-if="language?.label">
+          <span class="font-medium text-surface-text">Language:</span> {{ language.label }}
+        </span>
+        <span v-if="issued">
+          <span class="font-medium text-surface-text">Issued:</span> {{ formatDate(issued) }}
+        </span>
+        <span v-if="lastUpdated">
+          <span class="font-medium text-surface-text">Updated:</span> {{ formatDate(lastUpdated) }}
+        </span>
+        <span v-if="checksum?.checksum_value">
+          <span class="font-medium text-surface-text">Checksum:</span>
+          <code class="ml-1 text-[10px]">{{ checksum.checksum_value.slice(0, 16) }}…</code>
+        </span>
+      </div>
+
       <div class="flex items-center justify-between">
         <div class="flex gap-4">
-          <a :href="downloadUrl" target="_blank" nofollow noreferrer download
+          <a v-if="!hideDownload" :href="downloadUrl" target="_blank" nofollow noreferrer download
             class="text-white bg-primary dark:bg-primary-dark hover:bg-primary-hover dark:hover:bg-primary-dark-hover active:bg-primary dark:active:bg-primary-dark-pressed rounded-3xl border-transparent inline-flex min-w-fit items-center justify-center text-center font-medium align-bottom h-8 text-sm px-5 py-5">
             {{ defaultDownloadText }}
             <i class="icon-[ph--arrow-square-out] ml-2" />
           </a>
 
-          <LinkedDataSelector :show-dropdown="showDropdown" resource-id="distributionId" :indist="true" resource="distributions"
+          <LinkedDataSelector :show-dropdown="showDropdown" :resource-id="distributionId" :indist="true" resource="distributions"
             button-class="text-white bg-primary dark:bg-primary-dark hover:bg-primary-hover dark:hover:bg-primary-dark-hover active:bg-primary dark:active:bg-primary-dark-pressed rounded-3xl border-transparent inline-flex min-w-fit items-center justify-center text-center font-medium align-bottom h-8 text-sm px-5 py-5"
             @toggle="$emit('toggle')" />
 
