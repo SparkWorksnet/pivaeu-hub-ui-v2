@@ -9,6 +9,8 @@ import NavigationBar from './NavigationBar.vue'
 
 const { t } = useI18n()
 const visible = ref(false)
+const projectTitle = import.meta.env.VITE_PROJECT_TITLE
+const projectUrl = import.meta.env.VITE_PROJECT_URL
 </script>
 
 <template>
@@ -44,11 +46,12 @@ const visible = ref(false)
 
           <div class="hidden items-center gap-3 md:flex">
             <a
+              v-if="projectUrl"
               target="_blank"
-              href="https://6g-dali.eu"
+              :href="projectUrl"
               class="ml-2 inline-flex items-center whitespace-nowrap text-header-bg-text hover:text-secondary"
             >
-              6G-DALI
+              {{ projectTitle }}
             </a>
           </div>
         </div>
