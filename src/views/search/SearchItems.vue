@@ -51,13 +51,17 @@ function serviceTypeStyle(type: string) {
   return SERVICE_TYPE_COLOURS[type] || { bg: 'bg-gray-100', text: 'text-gray-700', border: 'border-gray-200' }
 }
 
-const props = defineProps<{
+const props = withDefaults(defineProps<{
   items: []
   getSearchResultsPagesCount: number
   isLoading: boolean
   isFetching: boolean
   showOnlyPublic: boolean
-}>()
+  /** Tailwind classes for the items container. Defaults to a single column. */
+  containerClass?: string
+}>(), {
+  containerClass: 'flex flex-col gap-2',
+})
 
 const searchParams = useSearchParams()
 const backendPage = searchParams.queryParams.page
@@ -96,7 +100,7 @@ function goToPage(page: number) {
 </script>
 
 <template>
-  <div class="flex flex-col gap-2">
+  <div :class="containerClass">
     <template v-if="!isLoading && !isFetching">
       <slot v-for="item in items" :key="item.id" :item="item">
 
