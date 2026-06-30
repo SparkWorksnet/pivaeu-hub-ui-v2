@@ -12,6 +12,7 @@ const { t } = useI18n()
 const visible = ref(false)
 const projectTitle = appConfig.projectTitle
 const projectUrl = appConfig.projectUrl
+const logoUrl = appConfig.logoUrl
 </script>
 
 <template>
@@ -21,7 +22,7 @@ const projectUrl = appConfig.projectUrl
         <!-- Left: Logo -->
         <div class="flex items-center flex-shrink-0">
           <RouterLink class="block" to="/">
-            <img src="/sparkworks-white.png" alt="SparkWorks" class="h-8 object-contain">
+            <img :src="logoUrl" :alt="projectTitle || 'Logo'" class="h-8 object-contain">
           </RouterLink>
         </div>
 
