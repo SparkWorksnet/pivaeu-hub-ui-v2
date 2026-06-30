@@ -42,6 +42,9 @@ function parseThemeColors(raw: string): Record<string, string> {
 export function useRuntimeTheme(): void {
   if (typeof document === 'undefined') return
 
+  // TEMP DIAGNOSTIC — remove once theming is confirmed working.
+  console.debug('[runtime-theme] raw themeColors =', JSON.stringify(appConfig.themeColors), '| mode =', import.meta.env.MODE)
+
   const colors = parseThemeColors(appConfig.themeColors)
 
   const declarations = Object.entries(COLOR_VAR_MAP)
